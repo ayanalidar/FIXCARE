@@ -52,8 +52,8 @@ Read more verified reviews on our [Reviews page](/reviews/).
 Booking a repair in Reasi takes less than five minutes, and next-day service means a technician is typically at your door within 24 hours of booking during business hours. Emergency same-day visits from Jammu city may be available for fridge and AC failures — call us for current availability.
 
 - **[Book a Repair Online](#book-repair)** — 60-second form, instant SMS confirmation with technician name
-- **[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Reasi)** — fastest response, share photos of the fault
-- **[Call Now](tel:+919XXXXXXXXX)** — 24/7, including weekends and holidays
+- **[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Reasi)** — fastest response, share photos of the fault
+- **[Call Now](tel:+917051587802)** — 24/7, including weekends and holidays
 
 <!-- Embed Google Map: https://www.google.com/maps/embed?pb=Reasi+center+coordinates+33.0812,74.8298 -->
 
@@ -73,8 +73,8 @@ Our call desk is open 24/7 including weekends and holidays. Technician visits in
 Don't let a broken appliance disrupt your home. A certified FixCare technician can be at your door in Reasi the next day, with genuine parts and a written warranty.
 
 **[Book a Repair Online](#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Reasi)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Reasi)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 
 We also serve [Jammu city](/locations/jammu/) (same-day), [Kathua](/locations/kathua/), [Samba](/locations/samba/), [Udhampur](/locations/udhampur/), [Rajouri](/locations/rajouri/), [Poonch](/locations/poonch/), and [Doda](/locations/doda/). See all our [service areas](/locations/).
 

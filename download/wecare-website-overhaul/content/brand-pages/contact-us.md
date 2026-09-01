@@ -1,6 +1,6 @@
 ---
 title: "Contact FixCare Service Center — Jammu Appliance Repair"
-meta_description: "Contact FixCare Service Center for same-day appliance repair across the Jammu region. Call +91 9XXXXXXXXX, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty."
+meta_description: "Contact FixCare Service Center for same-day appliance repair across the Jammu region. Call +91-70515-87802, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty."
 slug: /contact/
 target_keywords: ["contact FixCare Service Center", "appliance repair phone Jammu", "book repair"]
 schema: ["LocalBusiness"]
@@ -14,19 +14,19 @@ Reaching FixCare is simple — pick whichever channel works best for you and our
 
 - **Business Name:** FixCare Service Center
 - **Address:** Jammu, Jammu & Kashmir, India (placeholder)
-- **Phone:** +91 9XXXXXXXXX (24/7)
-- **WhatsApp:** [+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)
-- **Email:** [care@fixcareservicecenter.in](mailto:care@fixcareservicecenter.in)
+- **Phone:** +91-70515-87802 (24/7)
+- **WhatsApp:** [+91-70515-87802](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)
+- **Email:** [hello@fixcareservicecenter.in](mailto:hello@fixcareservicecenter.in)
 
 ## Three Ways to Reach Us
 
 ### 1. Call Us — 24/7
 
-For the fastest spoken response, call **[+91 9XXXXXXXXX](tel:+919XXXXXXXXX)** any time of day or night. Our team will ask for the appliance type, the brand, and a brief description of the problem, then schedule a technician for the earliest available slot in your area. You will receive a booking reference number by SMS within two minutes of hanging up.
+For the fastest spoken response, call **[+91-70515-87802](tel:+917051587802)** any time of day or night. Our team will ask for the appliance type, the brand, and a brief description of the problem, then schedule a technician for the earliest available slot in your area. You will receive a booking reference number by SMS within two minutes of hanging up.
 
 ### 2. WhatsApp Us — Instant Chat
 
-If you prefer to message, send us a WhatsApp chat at **[+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)**. You can send photos or a short video of the appliance, the error code displayed, or the fault symptom, which helps our technician arrive prepared with the right spare parts and tools. WhatsApp is also the best way to share feedback or ask follow-up questions after a repair.
+If you prefer to message, send us a WhatsApp chat at **[+91-70515-87802](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)**. You can send photos or a short video of the appliance, the error code displayed, or the fault symptom, which helps our technician arrive prepared with the right spare parts and tools. WhatsApp is also the best way to share feedback or ask follow-up questions after a repair.
 
 ### 3. Book Online — 60-Second Form
 

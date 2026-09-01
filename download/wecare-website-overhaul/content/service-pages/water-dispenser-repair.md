@@ -94,8 +94,8 @@ See our full [FAQ page](/faq/) for more answers.
 A broken dispenser is a small thing that everyone in the house notices. Book a repair now and a certified FixCare technician will be at your door the same day in Jammu city, or the next day across the rest of Jammu region.
 
 **[Book a Repair Online](#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20my%20water%20dispenser%20needs%20repair)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20my%20water%20dispenser%20needs%20repair)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 
 <!-- Suggested image: technician repairing water dispenser tap, alt="FixCare technician replacing water dispenser tap on Blue Star floor-standing model in Jammu city office" -->
 <!-- Suggested image: close-up of water dispenser condenser coil cleaning, alt="Cleaning a choked water dispenser condenser coil to restore cooling" -->

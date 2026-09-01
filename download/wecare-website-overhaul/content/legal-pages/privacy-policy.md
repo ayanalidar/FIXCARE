@@ -70,7 +70,7 @@ You have the following rights regarding your personal information held by FixCar
 - **Withdrawal of consent:** you can withdraw consent for marketing communications at any time.
 - **Grievance redressal:** you can raise a complaint about how your data has been handled.
 
-To exercise any of these rights, email us at care@fixcareservicecenter.in. We will respond to your request within 30 working days of receipt.
+To exercise any of these rights, email us at hello@fixcareservicecenter.in. We will respond to your request within 30 working days of receipt.
 
 ## 8. Children's Privacy
 
@@ -89,8 +89,8 @@ We may update this Privacy Policy from time to time to reflect changes in our pr
 If you have any questions, concerns, or requests regarding this Privacy Policy or the way we handle your personal information, please contact us:
 
 - **FixCare Service Center**
-- **Email:** [care@fixcareservicecenter.in](mailto:care@fixcareservicecenter.in)
-- **Phone:** +91 9XXXXXXXXX
+- **Email:** [hello@fixcareservicecenter.in](mailto:hello@fixcareservicecenter.in)
+- **Phone:** +91-70515-87802
 - **Address:** Jammu city, Jammu region, Jammu & Jammu region, India
 
 ---

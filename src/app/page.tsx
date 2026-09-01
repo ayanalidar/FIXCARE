@@ -168,7 +168,7 @@ const localBusinessSchema = {
   description:
     "Same-day appliance repair service across the Jammu region. Certified technicians for washing machine, refrigerator, AC, microwave, water dispenser, and dishwasher repair. Genuine parts, written warranty, 24/7 service.",
   url: SITE.domain,
-  telephone: "+91-9XXXXXXXXX",
+  telephone: "+91-70515-87802",
   email: SITE.email,
   priceRange: "₹₹",
   currenciesAccepted: "INR",

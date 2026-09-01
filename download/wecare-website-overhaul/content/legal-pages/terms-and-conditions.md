@@ -68,8 +68,8 @@ We may revise these Terms at any time by posting an updated version on this page
 If you have any questions about these Terms & Conditions, please contact us:
 
 - **FixCare Service Center**
-- **Email:** [care@fixcareservicecenter.in](mailto:care@fixcareservicecenter.in)
-- **Phone:** +91 9XXXXXXXXX
+- **Email:** [hello@fixcareservicecenter.in](mailto:hello@fixcareservicecenter.in)
+- **Phone:** +91-70515-87802
 - **Address:** Jammu city, Jammu region, Jammu & Jammu region, India
 
 ---

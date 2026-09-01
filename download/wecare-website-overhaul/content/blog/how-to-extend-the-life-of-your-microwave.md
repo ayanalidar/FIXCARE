@@ -65,7 +65,7 @@ Yes, when the door seal is intact. Microwaves use non-ionising radiation that si
 
 None of these ten habits takes more than a minute, and together they add years to a microwave's life. Clean spills, use the right containers, never run it empty, never slam the door, and protect it from power surges. A microwave that is treated with care will quietly outlast most other appliances in your kitchen.
 
-If your microwave is still acting up, [book a repair](/services/microwave-repair/) or [WhatsApp us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20my%20microwave%20needs%20repair). We serve [Jammu city](/locations/jammu/) and [Udhampur](/locations/udhampur/) with same-day response.
+If your microwave is still acting up, [book a repair](/services/microwave-repair/) or [WhatsApp us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20my%20microwave%20needs%20repair). We serve [Jammu city](/locations/jammu/) and [Udhampur](/locations/udhampur/) with same-day response.
 
 ---
 

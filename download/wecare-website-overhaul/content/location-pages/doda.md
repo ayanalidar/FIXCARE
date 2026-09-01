@@ -52,8 +52,8 @@ Read more verified reviews on our [Reviews page](/reviews/).
 Booking a repair in Doda takes less than five minutes, and 2-day service means a technician is typically at your door within 48 hours of booking during business hours. For Doda town and Ramban we can sometimes compress this to next-day — call us for current availability. Emergency visits from Jammu city may be possible for fridge and AC failures during peak summer.
 
 - **[Book a Repair Online](#book-repair)** — 60-second form, instant SMS confirmation with technician name
-- **[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Doda)** — fastest response, share photos of the fault
-- **[Call Now](tel:+919XXXXXXXXX)** — 24/7, including weekends and holidays
+- **[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Doda)** — fastest response, share photos of the fault
+- **[Call Now](tel:+917051587802)** — 24/7, including weekends and holidays
 
 <!-- Embed Google Map: https://www.google.com/maps/embed?pb=Doda+center+coordinates+33.1464,75.5613 -->
 
@@ -73,8 +73,8 @@ Our call desk is open 24/7 including weekends and holidays. Technician visits in
 Don't let a broken appliance disrupt your home. A certified FixCare technician can be at your door in Doda within 2 days, with genuine parts and a written warranty.
 
 **[Book a Repair Online](#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Doda)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Doda)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 
 We also serve [Jammu city](/locations/jammu/) (same-day), [Kathua](/locations/kathua/), [Samba](/locations/samba/), [Udhampur](/locations/udhampur/), [Reasi](/locations/reasi/), [Rajouri](/locations/rajouri/), and [Poonch](/locations/poonch/). See all our [service areas](/locations/).
 

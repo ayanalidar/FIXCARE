@@ -79,7 +79,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
     name: `FixCare Service Center — ${location.name}`,
     description: frontmatter.meta_description,
     url: `${SITE.domain}/locations/${slug}`,
-    telephone: "+91-9XXXXXXXXX",
+    telephone: "+91-70515-87802",
     areaServed: { "@type": "City", name: location.name },
     address: {
       "@type": "PostalAddress",

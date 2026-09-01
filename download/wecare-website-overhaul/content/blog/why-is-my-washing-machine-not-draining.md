@@ -56,7 +56,7 @@ Yes. Continued use forces the pump to run dry, overheats the motor, and can shor
 
 Most washing machine drainage failures are preventable with regular filter cleaning and the right detergent dose. When the cause is a worn pump, a faulty switch or a sensor issue, a trained technician can fix it in a single visit and get your laundry routine back on track the same day. A little attention now saves you an expensive control board replacement later.
 
-If your washing machine is still acting up, [book a repair](/services/washing-machine-repair/) or [WhatsApp us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20my%20washing%20machine%20is%20not%20draining). We serve [Jammu city](/locations/jammu/) and surrounding districts including [Kathua](/locations/kathua/) and [Samba](/locations/samba/).
+If your washing machine is still acting up, [book a repair](/services/washing-machine-repair/) or [WhatsApp us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20my%20washing%20machine%20is%20not%20draining). We serve [Jammu city](/locations/jammu/) and surrounding districts including [Kathua](/locations/kathua/) and [Samba](/locations/samba/).
 
 ---
 

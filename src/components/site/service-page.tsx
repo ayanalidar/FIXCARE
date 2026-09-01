@@ -91,7 +91,7 @@ export function ServicePage({ slug, icon, shortName }: ServicePageInput) {
     provider: {
       "@type": "ApplianceRepair",
       name: "FixCare Service Center",
-      telephone: "+91-9XXXXXXXXX",
+      telephone: "+91-70515-87802",
       areaServed: LOCATIONS.map((l) => ({ "@type": "City", name: l.name })),
     },
     areaServed: LOCATIONS.map((l) => ({ "@type": "City", name: l.name })),

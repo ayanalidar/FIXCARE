@@ -37,7 +37,7 @@ This warranty does not cover: any physical damage to the appliance or the replac
 
 ## 5. How to Claim Warranty
 
-To make a warranty claim, call us at +91 9XXXXXXXXX or WhatsApp us with your warranty reference number and a brief description of the recurring fault. Please keep your original invoice and warranty card accessible, as we will need to verify the part replaced and the warranty period. We will schedule a priority visit, and where possible the original technician will be assigned to your case so they have full context of the original repair. There is no charge for lodging a warranty claim, and the visit fee is fully waived for valid claims.
+To make a warranty claim, call us at +91-70515-87802 or WhatsApp us with your warranty reference number and a brief description of the recurring fault. Please keep your original invoice and warranty card accessible, as we will need to verify the part replaced and the warranty period. We will schedule a priority visit, and where possible the original technician will be assigned to your case so they have full context of the original repair. There is no charge for lodging a warranty claim, and the visit fee is fully waived for valid claims.
 
 ## 6. Warranty Service Process
 
@@ -56,9 +56,9 @@ If the warranty period on your original repair has expired, or if the recurring 
 For warranty claims, questions about this policy, or any post-repair concern, please contact us:
 
 - **FixCare Service Center**
-- **Email:** [care@fixcareservicecenter.in](mailto:care@fixcareservicecenter.in)
-- **Phone:** +91 9XXXXXXXXX
-- **WhatsApp:** [+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20want%20to%20claim%20warranty)
+- **Email:** [hello@fixcareservicecenter.in](mailto:hello@fixcareservicecenter.in)
+- **Phone:** +91-70515-87802
+- **WhatsApp:** [+91-70515-87802](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20want%20to%20claim%20warranty)
 - **Address:** Jammu city, Jammu region, Jammu & Jammu region, India
 
 ---

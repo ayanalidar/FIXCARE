@@ -1,0 +1,103 @@
+{
+  "name": "FixCare Service Center — Appliance Repair in Jammu",
+  "short_name": "FixCare",
+  "description": "Same-day appliance repair across the Jammu region. Certified technicians for washing machine, refrigerator, AC, microwave, water dispenser, and dishwasher repair. Genuine parts, written warranty, 24/7 service.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#FAFAF7",
+  "theme_color": "#0F2540",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/favicon.ico",
+      "sizes": "16x16 32x32 48x48 64x64",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book a Repair",
+      "short_name": "Book",
+      "description": "Book a same-day repair in under 60 seconds",
+      "url": "/book-repair?source=pwa_shortcut",
+      "icons": [
+        { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Call FixCare",
+      "short_name": "Call",
+      "description": "Call +91-70515-87802 (24/7)",
+      "url": "tel:+917051587802",
+      "icons": [
+        { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "WhatsApp Us",
+      "short_name": "WhatsApp",
+      "description": "Chat on WhatsApp for instant response",
+      "url": "https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair",
+      "icons": [
+        { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Our Services",
+      "short_name": "Services",
+      "description": "Browse our 6 appliance repair services",
+      "url": "/services?source=pwa_shortcut",
+      "icons": [
+        { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Service Areas",
+      "short_name": "Areas",
+      "description": "Check if we serve your city",
+      "url": "/locations?source=pwa_shortcut",
+      "icons": [
+        { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "screenshots": [],
+  "features": [
+    "Offline browsing",
+    "One-tap call & WhatsApp",
+    "Multi-step booking form",
+    "Pincode service-area checker",
+    "Push notifications (coming soon)"
+  ]
+}

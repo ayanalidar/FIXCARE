@@ -34,8 +34,8 @@ Our technicians are the heart of FixCare. Every member of our team is formally c
 Whether you need a repair today or just want to ask a question, we are one call away.
 
 **[Book a Repair Online](/#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 
 ---
 

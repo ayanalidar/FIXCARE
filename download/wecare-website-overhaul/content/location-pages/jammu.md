@@ -56,8 +56,8 @@ Read more verified reviews on our [Reviews page](/reviews/).
 Booking a repair in Jammu city takes less than five minutes, and same-day service means a technician is typically at your door within 2 to 4 hours of booking during business hours. Emergency 1-hour visits are also available for an additional charge.
 
 - **[Book a Repair Online](#book-repair)** — 60-second form, instant SMS confirmation with technician name
-- **[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Jammu)** — fastest response, share photos of the fault
-- **[Call Now](tel:+919XXXXXXXXX)** — 24/7, including weekends and holidays
+- **[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Jammu)** — fastest response, share photos of the fault
+- **[Call Now](tel:+917051587802)** — 24/7, including weekends and holidays
 
 <!-- Embed Google Map: https://www.google.com/maps/embed?pb=Jammu+city+center+coordinates+32.7266,74.8570 -->
 
@@ -77,8 +77,8 @@ Our call desk is open 24/7 including weekends and holidays. Technician visits in
 Don't let a broken appliance disrupt your home. A certified FixCare technician can be at your door anywhere in Jammu city within hours of your call, with genuine parts and a written warranty.
 
 **[Book a Repair Online](#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Jammu)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair%20in%20Jammu)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 
 We also serve [Kathua](/locations/kathua/), [Samba](/locations/samba/), [Udhampur](/locations/udhampur/), [Reasi](/locations/reasi/), [Rajouri](/locations/rajouri/), [Poonch](/locations/poonch/), and [Doda](/locations/doda/) on a next-day or 2-day basis. See all our [service areas](/locations/).
 

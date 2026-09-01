@@ -105,8 +105,8 @@ See our full [FAQ page](/faq/) for 15+ answers to common questions.
 Don't let a broken appliance disrupt your home. Book a repair now and a certified FixCare technician will be at your door the same day in Jammu city, the next day across the rest of the Jammu region, and within 2 days in remote areas.
 
 **[Book a Repair Online](#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 
 ---
 

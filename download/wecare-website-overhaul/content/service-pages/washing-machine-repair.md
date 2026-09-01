@@ -95,8 +95,8 @@ See our full [FAQ page](/faq/) for more answers.
 Don't let a pile of laundry sit for a week waiting on the brand service center. Book a repair now and a certified FixCare technician will be at your door the same day in Jammu city, or the next day across the rest of Jammu region.
 
 **[Book a Repair Online](#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20my%20washing%20machine%20needs%20repair)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20my%20washing%20machine%20needs%20repair)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 
 <!-- Suggested image: technician repairing front-load washing machine in Jammu city home, alt="FixCare technician fixing Samsung front-load washing machine drum motor in Jammu city" -->
 <!-- Suggested image: close-up of washing machine error code on display, alt="Washing machine OE drain error code on Samsung display panel" -->

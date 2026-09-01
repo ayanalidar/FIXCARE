@@ -61,7 +61,7 @@ E3 (compressor overload) and F1/F2 (refrigerant leak) are the most serious. E3 r
 
 Error codes are the AC's way of warning you before a small fault becomes a costly failure. Note the code, try one reset, and if it returns, book a technician the same day. The hour you spend waiting will save you thousands compared to a burnt-out compressor or a frozen coil. See our [FAQ page](/faq/) for more on AC service and warranty.
 
-If your AC is still showing an error code, [book a repair](/services/air-conditioner-repair/) or [WhatsApp us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20my%20AC%20is%20showing%20an%20error%20code). We serve [Jammu city](/locations/jammu/), [Kathua](/locations/kathua/) and [Samba](/locations/samba/) with same-day and next-day response.
+If your AC is still showing an error code, [book a repair](/services/air-conditioner-repair/) or [WhatsApp us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20my%20AC%20is%20showing%20an%20error%20code). We serve [Jammu city](/locations/jammu/), [Kathua](/locations/kathua/) and [Samba](/locations/samba/) with same-day and next-day response.
 
 ---
 

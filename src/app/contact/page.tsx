@@ -13,7 +13,7 @@ const slug = "contact-us";
 export const metadata: Metadata = {
   title: "Contact FixCare Service Center — Jammu Appliance Repair",
   description:
-    "Contact FixCare Service Center for same-day appliance repair across the Jammu region. Call +91 9XXXXXXXXX, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty.",
+    "Contact FixCare Service Center for same-day appliance repair across the Jammu region. Call +91-70515-87802, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty.",
   keywords: [
     "contact FixCare Service Center",
     "appliance repair phone Jammu",
@@ -49,7 +49,7 @@ export default function ContactPage() {
     name: "FixCare Service Center",
     description: frontmatter.meta_description,
     url: `${SITE.domain}/contact`,
-    telephone: "+91-9XXXXXXXXX",
+    telephone: "+91-70515-87802",
     email: SITE.email,
     address: {
       "@type": "PostalAddress",
@@ -143,12 +143,20 @@ export default function ContactPage() {
                     <li className="flex items-start gap-3">
                       <Mail className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
                       <span className="text-muted-foreground">
-                        <strong className="text-primary">Email:</strong>{" "}
+                        <strong className="text-primary">General:</strong>{" "}
                         <a
                           href={SITE.emailHref}
                           className="font-medium text-accent hover:text-primary"
                         >
                           {SITE.email}
+                        </a>
+                        <br />
+                        <strong className="text-primary">Bookings:</strong>{" "}
+                        <a
+                          href={SITE.bookingEmailHref}
+                          className="font-medium text-accent hover:text-primary"
+                        >
+                          {SITE.bookingEmail}
                         </a>
                       </span>
                     </li>

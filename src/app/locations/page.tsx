@@ -42,10 +42,10 @@ export default function LocationsHub() {
             </Link>{" "}
             or call us at{" "}
             <a
-              href="tel:+919XXXXXXXXX"
+              href="tel:+917051587802"
               className="font-semibold text-accent hover:text-primary"
             >
-              +91 9XXXXXXXXX
+              +91-70515-87802
             </a>
             .
           </p>

@@ -9,7 +9,7 @@
   "provider": {
     "@type": "ApplianceRepair",
     "name": "FixCare Service Center",
-    "telephone": "+91-9XXXXXXXXX",
+    "telephone": "+91-70515-87802",
     "url": "https://www.fixcareservicecenter.in/",
     "address": {
       "@type": "PostalAddress",

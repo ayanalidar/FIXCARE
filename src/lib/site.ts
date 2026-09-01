@@ -6,13 +6,16 @@
 export const SITE = {
   name: "FixCare Service Center",
   tagline: "Same-Day Appliance Repair Across the Jammu Region",
-  phone: "+91 9XXXXXXXXX",
-  phoneHref: "tel:+919XXXXXXXXX",
-  whatsapp: "919XXXXXXXXX",
+  phone: "+91-70515-87802",
+  phoneHref: "tel:+917051587802",
+  whatsapp: "917051587802",
   whatsappLink: (text: string) =>
     `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`,
-  email: "care@fixcareservicecenter.in",
-  emailHref: "mailto:care@fixcareservicecenter.in",
+  // hello@ for general inquiries, fix@ for repair-booking inquiries
+  email: "hello@fixcareservicecenter.in",
+  emailHref: "mailto:hello@fixcareservicecenter.in",
+  bookingEmail: "fix@fixcareservicecenter.in",
+  bookingEmailHref: "mailto:fix@fixcareservicecenter.in",
   domain: "https://www.fixcareservicecenter.in",
   addressLine: "Jammu, Jammu & Kashmir, India",
   reviewUrl: "https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID",

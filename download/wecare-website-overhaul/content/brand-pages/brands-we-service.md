@@ -57,8 +57,8 @@ Each appliance brand uses unique error codes, part numbers, software diagnostics
 Whatever brand of appliance has stopped working in your home, our team is ready to help — usually the same day in Jammu city, and next-day across the rest of the Jammu region.
 
 **[Book a Repair Online](/#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 
 ---
 

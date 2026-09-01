@@ -57,7 +57,7 @@ Internal sweating means humid kitchen air is entering faster than the fridge can
 
 Refrigerators almost always warn you before they fail. A strange noise, a puddle, a spoiled dish — each is the appliance asking for help. Acting within 48 hours of noticing a sign usually means a quick, affordable repair and a fridge that lasts years longer.
 
-If your refrigerator is still acting up, [book a repair](/services/refrigerator-repair/) or [WhatsApp us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20my%20refrigerator%20needs%20repair). We serve [Jammu city](/locations/jammu/), [Udhampur](/locations/udhampur/) and [Rajouri](/locations/rajouri/) with same-day response.
+If your refrigerator is still acting up, [book a repair](/services/refrigerator-repair/) or [WhatsApp us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20my%20refrigerator%20needs%20repair). We serve [Jammu city](/locations/jammu/), [Udhampur](/locations/udhampur/) and [Rajouri](/locations/rajouri/) with same-day response.
 
 ---
 

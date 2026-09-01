@@ -363,7 +363,7 @@ export function BookingForm() {
                   type="tel"
                   value={data.phone}
                   onChange={(e) => update("phone", e.target.value)}
-                  placeholder="+91 9XXXXXXXXX"
+                  placeholder="Your 10-digit mobile number"
                 />
                 {errors.phone && (
                   <p className="mt-1 text-xs text-destructive">{errors.phone}</p>

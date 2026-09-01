@@ -49,7 +49,7 @@ Most likely the refrigerant has leaked slowly over winter, or the filters and co
 
 Jammu's AC season is long and hot, and a small amount of attention in late March and April pays for itself in comfort, electricity savings and avoided breakdowns all summer. Clean filters, sealed rooms, sensible temperatures and one pre-season service — that is the complete recipe.
 
-If your AC is still acting up, [book a repair](/services/air-conditioner-repair/) or [WhatsApp us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20AC%20service). We serve [Jammu city](/locations/jammu/), [Kathua](/locations/kathua/) and [Reasi](/locations/reasi/) with same-day and next-day response.
+If your AC is still acting up, [book a repair](/services/air-conditioner-repair/) or [WhatsApp us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20AC%20service). We serve [Jammu city](/locations/jammu/), [Kathua](/locations/kathua/) and [Reasi](/locations/reasi/) with same-day and next-day response.
 
 ---
 

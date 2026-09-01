@@ -58,7 +58,7 @@ For the majority of repairs, yes — our technicians carry common spare parts in
 
 ### How do I book a repair with FixCare?
 
-You can book in three ways: call us at +91 9XXXXXXXXX (24/7), WhatsApp us at the same number for the fastest text response, or fill out our 60-second online booking form on the homepage. After booking, you immediately receive an SMS confirmation with your booking reference number and the assigned technician's name. There is no need to repeat your details to multiple people.
+You can book in three ways: call us at +91-70515-87802 (24/7), WhatsApp us at the same number for the fastest text response, or fill out our 60-second online booking form on the homepage. After booking, you immediately receive an SMS confirmation with your booking reference number and the assigned technician's name. There is no need to repeat your details to multiple people.
 
 ### What payment methods do you accept?
 
@@ -80,8 +80,8 @@ You can get a broad indicative range by phone or WhatsApp based on the appliance
 
 If your question is not covered here, our team is happy to answer it directly.
 
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20have%20a%20question)** — fastest response
-**[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20have%20a%20question)** — fastest response
+**[Call Now](tel:+917051587802)** — 24/7, including holidays
 **[Book a Repair](/#book-repair)** — 60 seconds, instant confirmation
 
 ---
