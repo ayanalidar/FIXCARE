@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITE, SERVICES, LOCATIONS, BLOG_POSTS } from "@/lib/site";
 
-export default function sitemap(): MetadataRoute.Sitemap[] {
+export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticRoutes: MetadataRoute.Sitemap[] = [
+  const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${SITE.domain}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE.domain}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE.domain}/locations`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
@@ -20,21 +20,21 @@ export default function sitemap(): MetadataRoute.Sitemap[] {
     { url: `${SITE.domain}/warranty-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  const serviceRoutes: MetadataRoute.Sitemap[] = SERVICES.map((s) => ({
+  const serviceRoutes: MetadataRoute.Sitemap = SERVICES.map((s) => ({
     url: `${SITE.domain}${s.href}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
-  const locationRoutes: MetadataRoute.Sitemap[] = LOCATIONS.map((l) => ({
+  const locationRoutes: MetadataRoute.Sitemap = LOCATIONS.map((l) => ({
     url: `${SITE.domain}${l.href}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
-  const blogRoutes: MetadataRoute.Sitemap[] = BLOG_POSTS.map((p) => ({
+  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
     url: `${SITE.domain}${p.href}`,
     lastModified: now,
     changeFrequency: "yearly" as const,
