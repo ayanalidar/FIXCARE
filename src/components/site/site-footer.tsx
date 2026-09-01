@@ -198,6 +198,22 @@ export function SiteFooter() {
             Certified technicians · Genuine parts · Written warranty · 24/7 service
           </p>
         </div>
+
+        {/* Made and maintained by GuardianX — link opens www.guardianx.in */}
+        <div className="mt-4 flex justify-center border-t border-border pt-4 text-[11px] text-muted-foreground sm:justify-end">
+          <p className="tracking-wide">
+            MADE AND MAINTAINED BY:{" "}
+            <a
+              href="https://www.guardianx.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-accent transition-colors hover:text-primary hover:underline underline-offset-2"
+              aria-label="Visit GuardianX - opens in a new tab"
+            >
+              GUARDIANX
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -10,6 +10,7 @@ import { TestimonialCard } from "@/components/site/testimonial-card";
 import { FAQAccordion } from "@/components/site/faq-accordion";
 import { TrustStats } from "@/components/site/trust-stats";
 import { PincodeChecker } from "@/components/site/pincode-checker";
+import { ParticleLogo } from "@/components/site/particle-logo";
 import { Icon } from "@/components/site/icon";
 import { SERVICES, LOCATIONS, SITE } from "@/lib/site";
 import {
@@ -224,6 +225,16 @@ export default function HomePage() {
         eyebrow="Locally owned in the Jammu region · 24/7 service"
         title="Same-Day Appliance Repair Across Jammu Region - Certified Technicians You Can Trust"
         subtitle="When your washing machine stops mid-cycle, your refrigerator stops cooling, or your AC gives up on a humid Jammu afternoon, you need a repair service that arrives the same day, fixes the problem with genuine parts, and stands behind their work with a written warranty."
+        header={
+          <ParticleLogo
+            color="#FAFAF7"
+            maxWidth={420}
+            step={4}
+            particleSize={1.6}
+            mouseRadius={70}
+            className="opacity-95"
+          />
+        }
       >
         <div className="flex flex-wrap gap-3">
           <Button

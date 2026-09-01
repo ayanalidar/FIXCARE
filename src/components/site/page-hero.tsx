@@ -4,12 +4,15 @@ export function PageHero({
   title,
   subtitle,
   eyebrow,
+  header,
   className,
   children,
 }: {
   title: string;
   subtitle?: string;
   eyebrow?: string;
+  /** Optional content rendered above the title (e.g. particle logo) */
+  header?: React.ReactNode;
   className?: string;
   children?: React.ReactNode;
 }) {
@@ -21,6 +24,9 @@ export function PageHero({
       )}
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        {header && (
+          <div className="mb-6 flex justify-center sm:mb-8">{header}</div>
+        )}
         {eyebrow && (
           <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground/80">
             {eyebrow}
