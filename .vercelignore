@@ -1,0 +1,43 @@
+# Files/directories to exclude from Vercel deployments
+# This reduces build time and deployment size
+
+# Development files
+dev.log
+server.log
+*.log
+
+# Local database
+db/
+prisma/*.db
+prisma/*.db-journal
+
+# Sandbox infrastructure
+.zscripts/
+agent-ctx/
+.z-ai-config/
+
+# Tooling
+tool-results/
+upload/
+tests/
+scripts/
+
+# Skills (internal tools, not part of the app)
+skills/
+
+# Download package (strategy docs, content .md files, code samples)
+# These are only used as content source during dev — the Next.js app
+# reads from this directory via src/lib/content.ts using fs.readFileSync
+# So we CANNOT exclude this! The app needs it at runtime.
+# download/
+
+# Backups
+*.bak
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
