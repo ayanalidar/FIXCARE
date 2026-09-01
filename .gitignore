@@ -52,3 +52,25 @@ prompt
 server.log
 # Skills directory
 /skills/
+# Sandbox infrastructure
+/.zscripts/
+/agent-ctx/
+/.z-ai-config/
+
+# Build outputs
+/build/
+
+# Local DB (Prisma SQLite)
+*.db
+*.db-journal
+prisma/*.db
+prisma/*.db-journal
+
+# Tool results
+/tool-results/
+/upload/
+/tests/
+
+# Backup files
+*.bak
+*.py.bak
