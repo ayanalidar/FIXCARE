@@ -1,0 +1,13 @@
+import { BlogArticle, buildBlogMetadata } from "@/components/site/blog-article";
+import { readContentBySlug } from "@/lib/content";
+
+const slug = "how-to-extend-the-life-of-your-microwave";
+
+export async function generateMetadata() {
+  const { frontmatter } = readContentBySlug("blog", slug);
+  return buildBlogMetadata(frontmatter, slug);
+}
+
+export default function Page() {
+  return <BlogArticle slug={slug} icon="Microwave" />;
+}

@@ -1,0 +1,204 @@
+import Link from "next/link";
+import { Wrench, Phone, Mail, Facebook, Instagram, Twitter } from "lucide-react";
+import { SERVICES, LOCATIONS, SITE } from "@/lib/site";
+
+export function SiteFooter() {
+  const year = new Date().getFullYear();
+  return (
+    <footer className="mt-auto border-t border-border bg-card">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Company */}
+          <div>
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-primary font-bold tracking-tight"
+              aria-label="WeCare Home Solutions — home"
+            >
+              <span className="flex size-8 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+                <Wrench className="size-4" aria-hidden="true" />
+              </span>
+              <span className="text-base">WeCare Home Solutions</span>
+            </Link>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Locally owned appliance repair business serving the Kashmir Valley.
+              Same-day service in Srinagar, next-day across the rest of the valley.
+            </p>
+            <div className="mt-4 flex flex-col gap-2 text-sm">
+              <a
+                href={SITE.phoneHref}
+                className="flex items-center gap-2 text-primary hover:text-accent"
+              >
+                <Phone className="size-4" aria-hidden="true" />
+                <span>{SITE.phone}</span>
+              </a>
+              <a
+                href={SITE.emailHref}
+                className="flex items-center gap-2 text-primary hover:text-accent"
+              >
+                <Mail className="size-4" aria-hidden="true" />
+                <span>{SITE.email}</span>
+              </a>
+            </div>
+            <div className="mt-4 flex items-center gap-3">
+              <a
+                href="https://www.facebook.com/wecarehomesolutions"
+                aria-label="WeCare on Facebook"
+                className="text-muted-foreground hover:text-accent"
+              >
+                <Facebook className="size-5" aria-hidden="true" />
+              </a>
+              <a
+                href="https://www.instagram.com/wecarehomesolutions"
+                aria-label="WeCare on Instagram"
+                className="text-muted-foreground hover:text-accent"
+              >
+                <Instagram className="size-5" aria-hidden="true" />
+              </a>
+              <a
+                href="https://twitter.com/wecarehomesoln"
+                aria-label="WeCare on Twitter"
+                className="text-muted-foreground hover:text-accent"
+              >
+                <Twitter className="size-5" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          {/* Company links */}
+          <div>
+            <h2 className="text-sm font-semibold text-primary">Company</h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/reviews"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  Reviews
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/brands"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  Brands We Service
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h2 className="text-sm font-semibold text-primary">Services</h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              {SERVICES.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={s.href}
+                    className="text-muted-foreground hover:text-accent"
+                  >
+                    {s.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/book-repair"
+                  className="text-accent font-medium hover:text-primary"
+                >
+                  Book a Repair
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Locations + Legal */}
+          <div>
+            <h2 className="text-sm font-semibold text-primary">Locations</h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              {LOCATIONS.slice(0, 8).map((l) => (
+                <li key={l.slug}>
+                  <Link
+                    href={l.href}
+                    className="text-muted-foreground hover:text-accent"
+                  >
+                    {l.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h2 className="mt-5 text-sm font-semibold text-primary">Legal</h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/warranty-policy"
+                  className="text-muted-foreground hover:text-accent"
+                >
+                  Warranty Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} WeCare Home Solutions. All rights reserved. Locally owned in Kashmir.
+          </p>
+          <p className="text-muted-foreground">
+            Certified technicians · Genuine parts · Written warranty · 24/7 service
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

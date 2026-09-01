@@ -1,0 +1,240 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* WeCare palette */
+  --background: #FAFAF7;        /* warm white */
+  --foreground: #151617;        /* primary text */
+  --card: #F4F3EE;              /* card bg */
+  --card-foreground: #151617;
+  --popover: #FFFFFF;
+  --popover-foreground: #151617;
+  --primary: #0F2540;           /* deep navy */
+  --primary-foreground: #FAFAF7;
+  --secondary: #EDEDE7;
+  --secondary-foreground: #0F2540;
+  --muted: #EDEDE7;
+  --muted-foreground: #4a5560;
+  --accent: #0E7C66;            /* warm teal */
+  --accent-foreground: #FAFAF7;
+  --destructive: #b91c1c;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #0E7C66;
+  --chart-1: #0E7C66;
+  --chart-2: #0F2540;
+  --chart-3: #C2842B;
+  --chart-4: #8B5A2B;
+  --chart-5: #B7935F;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #151617;
+  --sidebar-primary: #0F2540;
+  --sidebar-primary-foreground: #FAFAF7;
+  --sidebar-accent: #F4F3EE;
+  --sidebar-accent-foreground: #151617;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #0E7C66;
+}
+
+.dark {
+  --background: #0F2540;
+  --foreground: #FAFAF7;
+  --card: #1a2f4d;
+  --card-foreground: #FAFAF7;
+  --popover: #1a2f4d;
+  --popover-foreground: #FAFAF7;
+  --primary: #FAFAF7;
+  --primary-foreground: #0F2540;
+  --secondary: #2a4060;
+  --secondary-foreground: #FAFAF7;
+  --muted: #2a4060;
+  --muted-foreground: #c9d1d9;
+  --accent: #0E7C66;
+  --accent-foreground: #FAFAF7;
+  --destructive: #ef4444;
+  --border: rgba(255,255,255,0.10);
+  --input: rgba(255,255,255,0.15);
+  --ring: #0E7C66;
+  --chart-1: #0E7C66;
+  --chart-2: #FAFAF7;
+  --chart-3: #C2842B;
+  --chart-4: #8B5A2B;
+  --chart-5: #B7935F;
+  --sidebar: #1a2f4d;
+  --sidebar-foreground: #FAFAF7;
+  --sidebar-primary: #FAFAF7;
+  --sidebar-primary-foreground: #0F2540;
+  --sidebar-accent: #2a4060;
+  --sidebar-accent-foreground: #FAFAF7;
+  --sidebar-border: rgba(255,255,255,0.10);
+  --sidebar-ring: #0E7C66;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar for long lists */
+.wecare-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.wecare-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.wecare-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+.wecare-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* WhatsApp pulse animation */
+@keyframes wecare-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(14, 124, 102, 0.55); }
+  70% { box-shadow: 0 0 0 14px rgba(14, 124, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(14, 124, 102, 0); }
+}
+.wecare-pulse {
+  animation: wecare-pulse 2.4s infinite;
+}
+
+/* Markdown article body styling */
+.prose-wecare {
+  color: var(--foreground);
+  line-height: 1.75;
+}
+.prose-wecare h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.prose-wecare h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+.prose-wecare h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+.prose-wecare p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.prose-wecare ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+.prose-wecare ul li {
+  margin-bottom: 0.4rem;
+}
+.prose-wecare ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-wecare ol li {
+  margin-bottom: 0.4rem;
+}
+.prose-wecare a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-wecare a:hover {
+  color: var(--primary);
+}
+.prose-wecare strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+.prose-wecare blockquote {
+  border-left: 4px solid var(--accent);
+  background: var(--card);
+  padding: 0.75rem 1.25rem;
+  margin: 1.25rem 0;
+  border-radius: 0.25rem;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+.prose-wecare hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+.prose-wecare table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.875rem;
+}
+.prose-wecare th, .prose-wecare td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.prose-wecare th {
+  background: var(--card);
+  font-weight: 600;
+}
