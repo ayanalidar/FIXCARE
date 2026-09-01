@@ -99,12 +99,12 @@ export function BlogArticle({ slug, icon }: BlogArticleInput) {
     description: frontmatter.meta_description,
     author: {
       "@type": "Organization",
-      name: "WeCare Home Solutions",
+      name: "FixCare Service Center",
       url: SITE.domain,
     },
     publisher: {
       "@type": "Organization",
-      name: "WeCare Home Solutions",
+      name: "FixCare Service Center",
       url: SITE.domain,
       logo: {
         "@type": "ImageObject",
@@ -137,7 +137,7 @@ export function BlogArticle({ slug, icon }: BlogArticleInput) {
   return (
     <div>
       <PageHero
-        eyebrow="WeCare · Blog"
+        eyebrow="FixCare · Blog"
         title={frontmatter.title}
         subtitle={frontmatter.meta_description}
       />
@@ -152,7 +152,7 @@ export function BlogArticle({ slug, icon }: BlogArticleInput) {
                 {postMeta?.date ?? "Recent"}
               </span>
               <span aria-hidden="true">·</span>
-              <span>By WeCare Home Solutions</span>
+              <span>By FixCare Service Center</span>
             </div>
 
             {/* Main body */}
@@ -239,7 +239,7 @@ export function BlogArticle({ slug, icon }: BlogArticleInput) {
                   <p className="mt-1 text-sm text-muted-foreground">
                     Reading is great — but if your appliance is acting up right
                     now, we can have a certified technician at your door the same
-                    day in Srinagar, next-day across the Valley.
+                    day in Jammu city, next-day across the Jammu region.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -249,7 +249,7 @@ export function BlogArticle({ slug, icon }: BlogArticleInput) {
                   <Button asChild variant="outline">
                     <a
                       href={SITE.whatsappLink(
-                        `Hi WeCare, I just read your article on ${frontmatter.title} and I need a repair`
+                        `Hi FixCare, I just read your article on ${frontmatter.title} and I need a repair`
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -296,7 +296,7 @@ export function BlogArticle({ slug, icon }: BlogArticleInput) {
 
       <CTASection
         title="Skip the Reading, Get the Repair"
-        subtitle="If your appliance is already acting up, don't wait for the problem to get worse. Book a repair now — a certified WeCare technician will be at your door the same day in Srinagar, or the next day across the rest of Kashmir."
+        subtitle="If your appliance is already acting up, don't wait for the problem to get worse. Book a repair now — a certified FixCare technician will be at your door the same day in Jammu city, or the next day across the rest of the Jammu region."
       />
 
       <script

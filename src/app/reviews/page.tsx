@@ -10,19 +10,19 @@ import { SITE } from "@/lib/site";
 const slug = "reviews";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews — WeCare Home Solutions Kashmir",
+  title: "Customer Reviews — FixCare Service Center Jammu",
   description:
-    "Read verified customer reviews of WeCare Home Solutions across Kashmir. 4.8-star average rating from 9 verified reviews for washing machine, fridge, AC, microwave, and dishwasher repair.",
+    "Read verified customer reviews of FixCare Service Center across the Jammu region. 4.8-star average rating from 9 verified reviews for washing machine, fridge, AC, microwave, and dishwasher repair.",
   keywords: [
-    "WeCare Home Solutions reviews",
-    "appliance repair review Kashmir",
+    "FixCare Service Center reviews",
+    "appliance repair review Jammu",
     "customer feedback",
   ],
   alternates: { canonical: "/reviews" },
   openGraph: {
-    title: "Customer Reviews — WeCare Home Solutions",
+    title: "Customer Reviews — FixCare Service Center",
     description:
-      "4.8-star average rating from 9 verified reviews across Kashmir.",
+      "4.8-star average rating from 9 verified reviews across the Jammu region.",
     url: `${SITE.domain}/reviews`,
     type: "website",
   },
@@ -126,7 +126,7 @@ export default function ReviewsPage() {
   const aggregateSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "WeCare Home Solutions",
+    name: "FixCare Service Center",
     url: SITE.domain,
     aggregateRating: {
       "@type": "AggregateRating",
@@ -150,7 +150,7 @@ export default function ReviewsPage() {
       itemReviewed: {
         "@type": "Service",
         name: r.service,
-        provider: { "@type": "Organization", name: "WeCare Home Solutions" },
+        provider: { "@type": "Organization", name: "FixCare Service Center" },
       },
     })),
   };
@@ -158,7 +158,7 @@ export default function ReviewsPage() {
   return (
     <div>
       <PageHero
-        eyebrow="WeCare · Customer Reviews"
+        eyebrow="FixCare · Customer Reviews"
         title={frontmatter.title
           .replace(/\s+—\s+.*$/, "")
           .replace(/\s+\|\s+.*$/, "")}
@@ -186,7 +186,7 @@ export default function ReviewsPage() {
                 <p className="text-sm text-muted-foreground">
                   based on{" "}
                   <strong className="text-primary">{reviews.length} verified reviews</strong>{" "}
-                  from customers across the Kashmir Valley.
+                  from customers across the Jammu region.
                 </p>
               </div>
             </div>
@@ -204,7 +204,7 @@ export default function ReviewsPage() {
               <Button asChild variant="outline">
                 <a
                   href={SITE.whatsappLink(
-                    "Hi WeCare, I want to share feedback"
+                    "Hi FixCare, I want to share feedback"
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -219,11 +219,11 @@ export default function ReviewsPage() {
 
         {/* Intro */}
         <p className="mt-8 text-base leading-relaxed text-muted-foreground">
-          At WeCare Home Solutions, our reputation in Kashmir has been built one
-          repair at a time — through polite, certified technicians who arrive
-          when promised, transparent pricing, and written warranties that we
-          actually honor. Below are {reviews.length} verified reviews from
-          households across the Valley, covering washing machines, refrigerators,
+          At FixCare Service Center, our reputation in the Jammu region has been
+          built one repair at a time — through polite, certified technicians who
+          arrive when promised, transparent pricing, and written warranties that
+          we actually honor. Below are {reviews.length} verified reviews from
+          households across the region, covering washing machines, refrigerators,
           air conditioners, microwaves and more.
         </p>
 
@@ -259,10 +259,10 @@ export default function ReviewsPage() {
                 Leave a Review
               </h2>
               <p className="mt-2 max-w-xl text-primary-foreground/85">
-                If WeCare has repaired an appliance in your home, we&apos;d love
-                to hear about your experience. Your feedback helps other Kashmiri
-                families choose a reliable repair service, and it helps us keep
-                improving.
+                If FixCare has repaired an appliance in your home, we&apos;d love
+                to hear about your experience. Your feedback helps other families
+                in the Jammu region choose a reliable repair service, and it
+                helps us keep improving.
               </p>
             </div>
             <Button

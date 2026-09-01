@@ -170,3 +170,95 @@ Stage Summary:
   was resolved by removing the public file)
 - No incomplete items — every page in the brief is built and renders its
   full content from the corresponding .md file
+
+---
+Task ID: W-2a
+Agent: general-purpose (content rebrand)
+Task: Rename brand + swap Kashmir→Jammu in all content .md files
+
+Work Log:
+- Initial survey: discovered prior agent (task W-2) had already completed the
+  bulk of the brand rename and Kashmir→Jammu swap across all 28 .md files.
+  Verified zero residual "WeCare" or "wecarehomesolutions" references; all
+  28 files consistently use "FixCare" / "FixCare Service Center" brand.
+- Targeted cleanup edits applied to the few remaining issues:
+  - homepage/homepage.md — already fully updated (FixCare brand, 8 Jammu
+    cities, Jammu neighborhoods, mixed Hindu testimonials, Jammu FAQ); no
+    further changes needed.
+  - service-pages/microwave-repair.md — replaced Kashmiri name
+    "Farhana B., Nanak Nagar, Jammu city" → "Tanvir B., Nanak Nagar,
+    Jammu city" (Jammu Muslim name, preserves Eid-eve story context);
+    replaced "Katihar" → "Katra" in process paragraph (Katihar is in
+    Bihar; Katra is the Jammu town near Udhampur).
+  - service-pages/water-dispenser-repair.md — replaced "Dr. Sameer K.,
+    Trikuta Nagar, Jammu city" → "Dr. Anil K., Trikuta Nagar, Jammu
+    city" (Hindu name matching Trikuta Nagar demography); replaced
+    "Katihar" → "Katra".
+  - service-pages/air-conditioner-repair.md — replaced "Katihar" →
+    "Katra"; rewrote FAQ on service frequency to reflect Jammu's long,
+    hot April-September cooling season (was misleadingly "short
+    cooling season").
+  - service-pages/refrigerator-repair.md — replaced "Katihar" → "Katra".
+  - blog/why-is-my-washing-machine-not-draining.md — replaced "thick
+    pashmina shawls" → "thick local shawls" (per brief: pashmina → local
+    shawl); fixed typo "Jammu Regioni" → "Jammu Region".
+  - blog/summer-ac-maintenance-tips.md — rewrote intro and meta_description
+    to reflect Jammu's long, hot April-September AC season (was
+    incorrectly described as "short but intense May-July"); fixed filter-
+    cleaning cadence from "May through July" → "April through September";
+    rewrote conclusion paragraph; fixed typo "Jammu Regioni" → "Jammu
+    Region".
+  - blog/common-ac-error-codes-explained.md — rewrote "Why Jammu Region
+    ACs Show Error Codes More Often" section to reflect 6-month April-
+    September season with 6-month idle period (was incorrectly "three
+    months a year / nine months idle"); corrected season start from May
+    to April.
+  - blog/blog-topic-ideas.md — updated topic #3 outline and description
+    to reflect Jammu's long April-September AC season (was "9 months
+    idle / May-July heat" / "short AC season"); replaced topic #12
+    outline item "Fridge placement away from Kangri and hamam heat" →
+    "Fridge placement away from room heaters and direct heat" (per
+    brief: Kangri → room heater, hamam → remove).
+- Brand page, location page, and legal page files reviewed — all already
+  using "FixCare Service Center" brand and "fixcareservicecenter.in"
+  domain; remaining "Kashmir" references in 6 files verified as
+  legitimate (state name "Jammu & Kashmir" x4, geographic neighbor
+  reference "Kashmir Valley" x2 in Udhampur/Doda, cultural nickname
+  "mini-Kashmir" for Bhaderwah x2 in Doda, "Jammu-Srinagar NH" highway
+  name x1 in Doda) — all explicitly allowed by brief verification
+  criteria.
+- Verified testimonials across all files use mixed Jammu names: Hindu
+  (Arjun, Meena, Rajesh, Sandeep, Anil, Veena, Deepak, Sunil), Sikh
+  (Sandeep Singh), and Muslim (Khalid Hussain, Bashir Ahmed, Tanvir B.,
+  Imran Sheikh) — appropriate to Jammu region's mixed demography.
+
+Stage Summary:
+- All 28 .md files in /content/ now use "FixCare Service Center" brand
+  (zero "WeCare" or "wecarehomesolutions" matches across entire tree)
+- All Kashmir references replaced with Jammu region references except 8
+  legitimate neighbor/state references ("Jammu & Kashmir" state name,
+  "Kashmir Valley" geographic neighbor, "mini-Kashmir" Bhaderwah
+  nickname, "Jammu-Srinagar NH" highway name) — explicitly allowed by
+  brief verification criteria
+- All Kashmiri customer names replaced with mixed Jammu names (Hindu +
+  Sikh + Muslim) reflecting Jammu region's mixed demography
+- Cultural references adapted per brief (pashmina → local shawl, Kangri
+  → room heater, hamam → removed, eid prep kept, rajma-chawal & Dogra
+  feast used in place of noon chai / wazwan)
+- AC seasonality corrected throughout to reflect Jammu's long, hot
+  April-September season (peak 45°C in May-June), replacing the prior
+  Kashmir-style "short May-July season" phrasing
+- Typo "Jammu Regioni" (×2) corrected to "Jammu Region"
+- Out-of-place "Katihar" (Bihar city) replaced with "Katra" (Jammu
+  town) in 4 service page files
+- Files updated in this task: 8 files
+  - homepage/homepage.md (no changes — verified already correct)
+  - service-pages/air-conditioner-repair.md
+  - service-pages/microwave-repair.md
+  - service-pages/water-dispenser-repair.md
+  - service-pages/refrigerator-repair.md
+  - blog/why-is-my-washing-machine-not-draining.md
+  - blog/summer-ac-maintenance-tips.md
+  - blog/common-ac-error-codes-explained.md
+  - blog/blog-topic-ideas.md
+

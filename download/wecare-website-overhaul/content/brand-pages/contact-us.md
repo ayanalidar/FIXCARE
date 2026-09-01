@@ -1,22 +1,22 @@
 ---
-title: "Contact WeCare Home Solutions — Kashmir Appliance Repair"
-meta_description: "Contact WeCare Home Solutions for same-day appliance repair across Kashmir. Call +91 9XXXXXXXXX, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty."
+title: "Contact FixCare Service Center — Jammu Appliance Repair"
+meta_description: "Contact FixCare Service Center for same-day appliance repair across the Jammu region. Call +91 9XXXXXXXXX, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty."
 slug: /contact/
-target_keywords: ["contact WeCare Home Solutions", "appliance repair phone Kashmir", "book repair"]
+target_keywords: ["contact FixCare Service Center", "appliance repair phone Jammu", "book repair"]
 schema: ["LocalBusiness"]
 ---
 
-# Contact WeCare Home Solutions
+# Contact FixCare Service Center
 
-Reaching WeCare is simple — pick whichever channel works best for you and our team will respond promptly. We operate 24 hours a day, 7 days a week, including public holidays, because appliance failures rarely wait for business hours. Below you will find our name, address, and phone details followed by three ways to reach us, our service hours, and a note on the cities we cover.
+Reaching FixCare is simple — pick whichever channel works best for you and our team will respond promptly. We operate 24 hours a day, 7 days a week, including public holidays, because appliance failures rarely wait for business hours. Below you will find our name, address, and phone details followed by three ways to reach us, our service hours, and a note on the cities we cover.
 
 ## Our Details
 
-- **Business Name:** WeCare Home Solutions
-- **Address:** Srinagar, Kashmir, Jammu & Kashmir, India (placeholder)
+- **Business Name:** FixCare Service Center
+- **Address:** Jammu, Jammu & Kashmir, India (placeholder)
 - **Phone:** +91 9XXXXXXXXX (24/7)
-- **WhatsApp:** [+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20WeCare%2C%20I%20need%20appliance%20repair)
-- **Email:** [care@wecarehomesolutions.in](mailto:care@wecarehomesolutions.in)
+- **WhatsApp:** [+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)
+- **Email:** [care@fixcareservicecenter.in](mailto:care@fixcareservicecenter.in)
 
 ## Three Ways to Reach Us
 
@@ -26,7 +26,7 @@ For the fastest spoken response, call **[+91 9XXXXXXXXX](tel:+919XXXXXXXXX)** an
 
 ### 2. WhatsApp Us — Instant Chat
 
-If you prefer to message, send us a WhatsApp chat at **[+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20WeCare%2C%20I%20need%20appliance%20repair)**. You can send photos or a short video of the appliance, the error code displayed, or the fault symptom, which helps our technician arrive prepared with the right spare parts and tools. WhatsApp is also the best way to share feedback or ask follow-up questions after a repair.
+If you prefer to message, send us a WhatsApp chat at **[+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)**. You can send photos or a short video of the appliance, the error code displayed, or the fault symptom, which helps our technician arrive prepared with the right spare parts and tools. WhatsApp is also the best way to share feedback or ask follow-up questions after a repair.
 
 ### 3. Book Online — 60-Second Form
 
@@ -45,16 +45,16 @@ Use our **[online booking form](/#book-repair)** on the homepage to book a repai
 | Sunday | 24 hours |
 | Public Holidays | 24 hours |
 
-Our phone line, WhatsApp, and online booking are all monitored 24/7. Same-day service applies to Srinagar; next-day service applies to all other cities we cover.
+Our phone line, WhatsApp, and online booking are all monitored 24/7. Same-day service applies to Jammu city; next-day service applies to nearby districts; 2-day service to remote areas.
 
 ## Find Us on the Map
 
-<!-- Embed Google Map of Srinagar center -->
-Our base of operations is in Srinagar, with technicians dispatched daily to surrounding districts across the Kashmir Valley.
+<!-- Embed Google Map of Jammu city center -->
+Our base of operations is in Jammu city, with technicians dispatched daily to surrounding districts across the Jammu region.
 
 ## Service Area
 
-WeCare Home Solutions serves eight cities across the Kashmir Valley: Srinagar (same-day), Anantnag, Baramulla, Budgam, Pulwama, Ganderbal, Bandipora, and Kupwara (next-day). Visit our **[Locations page](/locations/)** for area-specific contact details, neighborhoods covered, and local notes for each city. If your area is not listed, call us — we may still be able to help.
+FixCare Service Center serves eight cities across the Jammu region: Jammu city (same-day), Kathua, Samba, Udhampur, Reasi (next-day), and Rajouri, Poonch, Doda (2-day). Visit our **[Locations page](/locations/)** for area-specific contact details, neighborhoods covered, and local notes for each city. If your area is not listed, call us — we may still be able to help.
 
 ## Send Us a Message
 

@@ -14,7 +14,7 @@ export default function Page() {
       section="brand-pages"
       slug={slug}
       urlSlug="about"
-      eyebrow="About WeCare"
+      eyebrow="About FixCare"
       withCta={true}
       ctaTitle="Let's Get Your Appliance Working Again"
       ctaSubtitle="Whether you need a repair today or just want to ask a question, we are one call away."

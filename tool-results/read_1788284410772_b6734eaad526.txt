@@ -1,0 +1,1152 @@
+     1→"""
+     2→WeCare Home Solutions - Master Strategy Report
+     3→Multi-page ReportLab PDF with TOC, structured tables, and proper typography.
+     4→"""
+     5→import os
+     6→import sys
+     7→import hashlib
+     8→import platform
+     9→
+    10→from reportlab.lib.pagesizes import A4
+    11→from reportlab.lib.units import inch, mm
+    12→from reportlab.lib import colors
+    13→from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT, TA_JUSTIFY
+    14→from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+    15→from reportlab.platypus import (
+    16→    SimpleDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle,
+    17→    KeepTogether, CondPageBreak, Image, ListFlowable, ListItem,
+    18→    HRFlowable
+    19→)
+    20→from reportlab.platypus.tableofcontents import TableOfContents
+    21→from reportlab.pdfbase import pdfmetrics
+    22→from reportlab.pdfbase.ttfonts import TTFont
+    23→from reportlab.pdfbase.pdfmetrics import registerFontFamily
+    24→
+    25→# ---------- Font Registration ----------
+    26→FONT_DIR = '/usr/share/fonts'
+    27→pdfmetrics.registerFont(TTFont('FreeSerif', f'{FONT_DIR}/truetype/freefont/FreeSerif.ttf'))
+    28→pdfmetrics.registerFont(TTFont('FreeSerif-Bold', f'{FONT_DIR}/truetype/freefont/FreeSerifBold.ttf'))
+    29→pdfmetrics.registerFont(TTFont('FreeSerif-Italic', f'{FONT_DIR}/truetype/freefont/FreeSerifItalic.ttf'))
+    30→pdfmetrics.registerFont(TTFont('FreeSerif-BoldItalic', f'{FONT_DIR}/truetype/freefont/FreeSerifBoldItalic.ttf'))
+    31→pdfmetrics.registerFont(TTFont('DejaVuSans', f'{FONT_DIR}/truetype/dejavu/DejaVuSansMono.ttf'))
+    32→
+    33→registerFontFamily('FreeSerif', normal='FreeSerif', bold='FreeSerif-Bold',
+    34→                   italic='FreeSerif-Italic', boldItalic='FreeSerif-BoldItalic')
+    35→registerFontFamily('DejaVuSans', normal='DejaVuSans', bold='DejaVuSans')
+    36→
+    37→# Install font fallback for mixed content
+    38→sys.path.insert(0, '/home/z/my-project/skills/pdf/scripts')
+    39→try:
+    40→    from pdf import install_font_fallback
+    41→    install_font_fallback()
+    42→except Exception as e:
+    43→    print(f"Warning: install_font_fallback unavailable: {e}")
+    44→
+    45→# ---------- Cascade Palette ----------
+    46→PAGE_BG       = colors.HexColor('#f0f0f1')
+    47→SECTION_BG    = colors.HexColor('#eeeff0')
+    48→CARD_BG       = colors.HexColor('#e9eced')
+    49→TABLE_STRIPE  = colors.HexColor('#eaebec')
+    50→HEADER_FILL   = colors.HexColor('#475b66')
+    51→COVER_BLOCK   = colors.HexColor('#536e7b')
+    52→BORDER        = colors.HexColor('#b2c3cc')
+    53→ICON          = colors.HexColor('#416f85')
+    54→ACCENT        = colors.HexColor('#2b6886')
+    55→ACCENT_2      = colors.HexColor('#b76e4a')
+    56→TEXT_PRIMARY  = colors.HexColor('#151617')
+    57→TEXT_MUTED    = colors.HexColor('#80878a')
+    58→SEM_SUCCESS   = colors.HexColor('#437a55')
+    59→SEM_WARNING   = colors.HexColor('#93773d')
+    60→SEM_ERROR     = colors.HexColor('#964e47')
+    61→SEM_INFO      = colors.HexColor('#4b6c8d')
+    62→
+    63→TABLE_HEADER_COLOR = HEADER_FILL
+    64→TABLE_HEADER_TEXT  = colors.white
+    65→TABLE_ROW_EVEN     = colors.white
+    66→TABLE_ROW_ODD      = TABLE_STRIPE
+    67→
+    68→# ---------- Styles ----------
+    69→styles = getSampleStyleSheet()
+    70→
+    71→H1 = ParagraphStyle('H1', fontName='FreeSerif-Bold', fontSize=18, leading=24,
+    72→                    textColor=HEADER_FILL, spaceBefore=18, spaceAfter=12, alignment=TA_LEFT)
+    73→H2 = ParagraphStyle('H2', fontName='FreeSerif-Bold', fontSize=14, leading=20,
+    74→                    textColor=HEADER_FILL, spaceBefore=14, spaceAfter=8, alignment=TA_LEFT)
+    75→H3 = ParagraphStyle('H3', fontName='FreeSerif-Bold', fontSize=11.5, leading=16,
+    76→                    textColor=ACCENT, spaceBefore=10, spaceAfter=6, alignment=TA_LEFT)
+    77→BODY = ParagraphStyle('Body', fontName='FreeSerif', fontSize=10.5, leading=16,
+    78→                      textColor=TEXT_PRIMARY, alignment=TA_JUSTIFY, spaceAfter=8)
+    79→BODY_LEFT = ParagraphStyle('BodyLeft', parent=BODY, alignment=TA_LEFT)
+    80→MUTED = ParagraphStyle('Muted', fontName='FreeSerif-Italic', fontSize=9.5, leading=14,
+    81→                       textColor=TEXT_MUTED, alignment=TA_LEFT, spaceAfter=4)
+    82→BULLET = ParagraphStyle('Bullet', parent=BODY, leftIndent=18, bulletIndent=6, spaceAfter=4, alignment=TA_LEFT)
+    83→TABLE_HEADER_STYLE = ParagraphStyle('TH', fontName='FreeSerif-Bold', fontSize=10, leading=14,
+    84→                                     textColor=colors.white, alignment=TA_CENTER)
+    85→TABLE_CELL_STYLE = ParagraphStyle('TC', fontName='FreeSerif', fontSize=9.5, leading=13,
+    86→                                   textColor=TEXT_PRIMARY, alignment=TA_LEFT)
+    87→TABLE_CELL_CENTER = ParagraphStyle('TCC', parent=TABLE_CELL_STYLE, alignment=TA_CENTER)
+    88→TABLE_CELL_BOLD = ParagraphStyle('TCB', parent=TABLE_CELL_STYLE, fontName='FreeSerif-Bold')
+    89→COVER_TITLE = ParagraphStyle('CT', fontName='FreeSerif-Bold', fontSize=32, leading=42,
+    90→                              textColor=HEADER_FILL, alignment=TA_LEFT, spaceAfter=18)
+    91→COVER_SUBTITLE = ParagraphStyle('CS', fontName='FreeSerif-Italic', fontSize=15, leading=22,
+    92→                                textColor=ACCENT, alignment=TA_LEFT, spaceAfter=24)
+    93→COVER_META = ParagraphStyle('CM', fontName='FreeSerif', fontSize=11, leading=18,
+    94→                             textColor=TEXT_PRIMARY, alignment=TA_LEFT)
+    95→
+    96→TOC_STYLE_0 = ParagraphStyle('TOC0', fontName='FreeSerif-Bold', fontSize=12, leading=18,
+    97→                             leftIndent=8, textColor=HEADER_FILL, spaceAfter=4)
+    98→TOC_STYLE_1 = ParagraphStyle('TOC1', fontName='FreeSerif', fontSize=10.5, leading=15,
+    99→                             leftIndent=24, textColor=TEXT_PRIMARY, spaceAfter=2)
+   100→
+   101→# ---------- TOC DocTemplate ----------
+   102→class TocDocTemplate(SimpleDocTemplate):
+   103→    def afterFlowable(self, flowable):
+   104→        if hasattr(flowable, 'bookmark_name'):
+   105→            level = getattr(flowable, 'bookmark_level', 0)
+   106→            text = getattr(flowable, 'bookmark_text', '')
+   107→            key = getattr(flowable, 'bookmark_key', '')
+   108→            self.notify('TOCEntry', (level, text, self.page, key))
+   109→
+   110→# ---------- Heading helpers ----------
+   111→def make_heading(text, style, level=0):
+   112→    key = 'h_' + hashlib.md5(text.encode()).hexdigest()[:8]
+   113→    p = Paragraph(f'<a name="{key}"/>{text}', style)
+   114→    p.bookmark_name = key
+   115→    p.bookmark_level = level
+   116→    p.bookmark_text = text
+   117→    p.bookmark_key = key
+   118→    return p
+   119→
+   120→def h1(text):
+   121→    return make_heading(text, H1, level=0)
+   122→
+   123→def h2(text):
+   124→    return make_heading(text, H2, level=1)
+   125→
+   126→def h3(text):
+   127→    return make_heading(text, H3, level=2)
+   128→
+   129→def p(text):
+   130→    return Paragraph(text, BODY)
+   131→
+   132→def pl(text):
+   133→    return Paragraph(text, BODY_LEFT)
+   134→
+   135→def muted(text):
+   136→    return Paragraph(text, MUTED)
+   137→
+   138→def bullet_list(items):
+   139→    items_p = [Paragraph(it, BULLET) for it in items]
+   140→    return ListFlowable([ListItem(it, bulletColor=ACCENT) for it in items_p],
+   141→                        bulletType='bullet', start='•', leftIndent=18)
+   142→
+   143→def std_table(data, col_ratios, header=True, hAlign='CENTER'):
+   144→    """Build a styled table with proper paragraph cells."""
+   145→    page_width = A4[0]
+   146→    left_margin = 0.75 * inch
+   147→    right_margin = 0.75 * inch
+   148→    available = page_width - left_margin - right_margin
+   149→    col_widths = [r * available for r in col_ratios]
+   150→    # Wrap all cells in Paragraph
+   151→    wrapped = []
+   152→    for row_idx, row in enumerate(data):
+   153→        wrapped_row = []
+   154→        for cell in row:
+   155→            if isinstance(cell, str):
+   156→                if row_idx == 0 and header:
+   157→                    wrapped_row.append(Paragraph(f'<b>{cell}</b>', TABLE_HEADER_STYLE))
+   158→                else:
+   159→                    wrapped_row.append(Paragraph(cell, TABLE_CELL_STYLE))
+   160→            else:
+   161→                wrapped_row.append(cell)
+   162→        wrapped.append(wrapped_row)
+   163→    t = Table(wrapped, colWidths=col_widths, hAlign=hAlign, repeatRows=1 if header else 0)
+   164→    style_cmds = [
+   165→        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+   166→        ('LEFTPADDING', (0, 0), (-1, -1), 7),
+   167→        ('RIGHTPADDING', (0, 0), (-1, -1), 7),
+   168→        ('TOPPADDING', (0, 0), (-1, -1), 6),
+   169→        ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+   170→        ('GRID', (0, 0), (-1, -1), 0.4, BORDER),
+   171→    ]
+   172→    if header:
+   173→        style_cmds += [
+   174→            ('BACKGROUND', (0, 0), (-1, 0), TABLE_HEADER_COLOR),
+   175→            ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+   176→        ]
+   177→        # Alternating rows
+   178→        for i in range(1, len(data)):
+   179→            if i % 2 == 0:
+   180→                style_cmds.append(('BACKGROUND', (0, i), (-1, i), TABLE_ROW_ODD))
+   181→            else:
+   182→                style_cmds.append(('BACKGROUND', (0, i), (-1, i), TABLE_ROW_EVEN))
+   183→    t.setStyle(TableStyle(style_cmds))
+   184→    return t
+   185→
+   186→def callout_box(title, body_text, color=ACCENT, bg=CARD_BG):
+   187→    """Decorative callout box for stats and key insights."""
+   188→    title_style = ParagraphStyle('CBT', fontName='FreeSerif-Bold', fontSize=11, leading=16,
+   189→                                  textColor=color, alignment=TA_LEFT, spaceAfter=4)
+   190→    body_style = ParagraphStyle('CBB', fontName='FreeSerif', fontSize=10, leading=15,
+   191→                                textColor=TEXT_PRIMARY, alignment=TA_LEFT)
+   192→    inner = [Paragraph(title, title_style), Paragraph(body_text, body_style)]
+   193→    t = Table([[inner]], colWidths=[A4[0] - 1.5*inch], hAlign='CENTER')
+   194→    t.setStyle(TableStyle([
+   195→        ('BACKGROUND', (0, 0), (-1, -1), bg),
+   196→        ('LINEBEFORE', (0, 0), (0, -1), 3, color),
+   197→        ('LEFTPADDING', (0, 0), (-1, -1), 14),
+   198→        ('RIGHTPADDING', (0, 0), (-1, -1), 12),
+   199→        ('TOPPADDING', (0, 0), (-1, -1), 10),
+   200→        ('BOTTOMPADDING', (0, 0), (-1, -1), 10),
+   201→    ]))
+   202→    return t
+   203→
+   204→def stat_row(stats):
+   205→    """Row of stat cards: stats = [(number, label), ...]"""
+   206→    cells = []
+   207→    for num, label in stats:
+   208→        num_style = ParagraphStyle('SN', fontName='FreeSerif-Bold', fontSize=20, leading=24,
+   209→                                    textColor=ACCENT, alignment=TA_CENTER)
+   210→        lab_style = ParagraphStyle('SL', fontName='FreeSerif', fontSize=9, leading=12,
+   211→                                    textColor=TEXT_MUTED, alignment=TA_CENTER)
+   212→        cells.append([Paragraph(num, num_style), Paragraph(label, lab_style)])
+   213→    col_w = (A4[0] - 1.5*inch) / len(stats)
+   214→    t = Table([cells], colWidths=[col_w]*len(stats), hAlign='CENTER')
+   215→    t.setStyle(TableStyle([
+   216→        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+   217→        ('TOPPADDING', (0, 0), (-1, -1), 14),
+   218→        ('BOTTOMPADDING', (0, 0), (-1, -1), 14),
+   219→        ('LINEABOVE', (0, 0), (-1, 0), 2, ACCENT),
+   220→        ('LINEBELOW', (0, 0), (-1, -1), 0.5, BORDER),
+   221→    ]))
+   222→    return t
+   223→
+   224→# ---------- Page Number Footer ----------
+   225→def footer_page_number(canvas, doc):
+   226→    canvas.saveState()
+   227→    canvas.setFont('FreeSerif', 9)
+   228→    canvas.setFillColor(TEXT_MUTED)
+   229→    page_num = canvas.getPageNumber()
+   230→    canvas.drawRightString(A4[0] - 0.5*inch, 0.4*inch, f"Page {page_num}")
+   231→    canvas.drawString(0.5*inch, 0.4*inch, "WeCare Home Solutions — Website Overhaul Strategy")
+   232→    canvas.setStrokeColor(BORDER)
+   233→    canvas.setLineWidth(0.5)
+   234→    canvas.line(0.5*inch, 0.55*inch, A4[0] - 0.5*inch, 0.55*inch)
+   235→    canvas.restoreState()
+   236→
+   237→# ---------- Build Story ----------
+   238→story = []
+   239→
+   240→# ============== COVER PAGE ==============
+   241→# Use a centered table to create a professional cover layout
+   242→cover_top_spacer = Spacer(1, 120)
+   243→cover_title_p = Paragraph("WeCare Home Solutions", ParagraphStyle(
+   244→    'CTBig', fontName='FreeSerif-Bold', fontSize=36, leading=44,
+   245→    textColor=HEADER_FILL, alignment=TA_LEFT, spaceAfter=8))
+   246→cover_subtitle_p = Paragraph("Complete Website Overhaul Strategy", ParagraphStyle(
+   247→    'CTSub', fontName='FreeSerif-Bold', fontSize=22, leading=28,
+   248→    textColor=ACCENT, alignment=TA_LEFT, spaceAfter=16))
+   249→cover_tagline = Paragraph("An SEO-driven multi-page architecture to transform a single-page brochure into a high-converting lead generation platform for the Kashmir appliance repair market.", ParagraphStyle(
+   250→    'CTag', fontName='FreeSerif-Italic', fontSize=13, leading=20,
+   251→    textColor=TEXT_PRIMARY, alignment=TA_LEFT, spaceAfter=40))
+   252→
+   253→# Cover meta block
+   254→cover_meta_data = [
+   255→    [Paragraph('<b>Prepared for</b>', ParagraphStyle('CM1', fontName='FreeSerif-Bold', fontSize=10, leading=14, textColor=TEXT_MUTED, alignment=TA_LEFT)),
+   256→     Paragraph('WeCare Home Solutions, Kashmir', ParagraphStyle('CM2', fontName='FreeSerif', fontSize=11, leading=16, textColor=TEXT_PRIMARY, alignment=TA_LEFT))],
+   257→    [Paragraph('<b>Prepared by</b>', ParagraphStyle('CM3', fontName='FreeSerif-Bold', fontSize=10, leading=14, textColor=TEXT_MUTED, alignment=TA_LEFT)),
+   258→     Paragraph('Digital Strategy & SEO Advisory', ParagraphStyle('CM4', fontName='FreeSerif', fontSize=11, leading=16, textColor=TEXT_PRIMARY, alignment=TA_LEFT))],
+   259→    [Paragraph('<b>Date</b>', ParagraphStyle('CM5', fontName='FreeSerif-Bold', fontSize=10, leading=14, textColor=TEXT_MUTED, alignment=TA_LEFT)),
+   260→     Paragraph('September 2026', ParagraphStyle('CM6', fontName='FreeSerif', fontSize=11, leading=16, textColor=TEXT_PRIMARY, alignment=TA_LEFT))],
+   261→    [Paragraph('<b>Document type</b>', ParagraphStyle('CM7', fontName='FreeSerif-Bold', fontSize=10, leading=14, textColor=TEXT_MUTED, alignment=TA_LEFT)),
+   262→     Paragraph('Strategy Report & Implementation Plan', ParagraphStyle('CM8', fontName='FreeSerif', fontSize=11, leading=16, textColor=TEXT_PRIMARY, alignment=TA_LEFT))],
+   263→]
+   264→cover_meta_t = Table(cover_meta_data, colWidths=[1.4*inch, 4*inch], hAlign='LEFT')
+   265→cover_meta_t.setStyle(TableStyle([
+   266→    ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+   267→    ('LEFTPADDING', (0, 0), (-1, -1), 0),
+   268→    ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+   269→    ('TOPPADDING', (0, 0), (-1, -1), 4),
+   270→    ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+   271→]))
+   272→
+   273→cover_accent_bar = HRFlowable(width="100%", thickness=3, color=ACCENT, spaceBefore=20, spaceAfter=20)
+   274→
+   275→story.append(cover_top_spacer)
+   276→story.append(cover_title_p)
+   277→story.append(cover_subtitle_p)
+   278→story.append(cover_accent_bar)
+   279→story.append(cover_tagline)
+   280→story.append(Spacer(1, 80))
+   281→story.append(cover_meta_t)
+   282→story.append(Spacer(1, 60))
+   283→story.append(HRFlowable(width="40%", thickness=1, color=BORDER, hAlign='LEFT', spaceBefore=10, spaceAfter=10))
+   284→story.append(muted("Confidential — for client review and developer handover."))
+   285→
+   286→story.append(PageBreak())
+   287→
+   288→# ============== TABLE OF CONTENTS ==============
+   289→story.append(Paragraph('<b>Table of Contents</b>', ParagraphStyle(
+   290→    'TOCMain', fontName='FreeSerif-Bold', fontSize=18, leading=24,
+   291→    textColor=HEADER_FILL, alignment=TA_LEFT, spaceAfter=18)))
+   292→story.append(HRFlowable(width="100%", thickness=1.5, color=ACCENT, spaceBefore=0, spaceAfter=18))
+   293→
+   294→toc = TableOfContents()
+   295→toc.levelStyles = [TOC_STYLE_0, TOC_STYLE_1]
+   296→story.append(toc)
+   297→story.append(PageBreak())
+   298→
+   299→# ============== SECTION 1: EXECUTIVE SUMMARY ==============
+   300→story.append(h1("Executive Summary"))
+   301→story.append(p(
+   302→    "WeCare Home Solutions currently operates a single-page brochure website that under-utilizes the company's strong local reputation in the Kashmir appliance repair market. With more than 500 completed repairs, a 4.8-star rating across 9 verified reviews, service coverage in 10+ cities, and expertise across 8+ major appliance brands, the business has the operational credentials to dominate local search — yet the current website is structurally unable to capture this demand. The single-page architecture means every search query — whether for \"washing machine repair in Anantnag\" or \"Samsung refrigerator technician in Srinagar\" — competes for the same thin page, diluting relevance signals and pushing WeCare below competitors who have invested in dedicated service and location pages."
+   303→))
+   304→story.append(p(
+   305→    "This document proposes a complete overhaul of the digital platform, transforming the website from a static brochure into a multi-page, SEO-optimized lead generation engine. The new architecture is built around three pillars: dedicated service pages for each of the six appliance categories, dedicated location pages for each of the eight major Kashmir cities served, and a content engine (blog + FAQs) that captures informational and long-tail commercial search traffic. Each page is engineered with proper heading hierarchy, schema markup (LocalBusiness, FAQ, Service), and conversion-focused calls to action that channel visitors into the booking system or WhatsApp chat."
+   306→))
+   307→story.append(p(
+   308→    "The expected outcome within 6-9 months of launch is a measurable increase in organic search visibility for high-intent local keywords, a doubling of form submissions and WhatsApp inquiries, and the establishment of WeCare Home Solutions as the most discoverable and trusted appliance repair brand in the Kashmir region. The technical specification in this report is developer-ready and includes a recommended technology stack (WordPress + GeneratePress + Rank Math), complete schema markup code, sitemap and robots.txt templates, a multi-step booking form architecture, and a 30-day implementation timeline with a budget estimate in Indian Rupees."
+   309→))
+   310→story.append(Spacer(1, 14))
+   311→story.append(stat_row([
+   312→    ("500+", "Repairs completed"),
+   313→    ("4.8★", "Average rating (9 reviews)"),
+   314→    ("10+", "Cities served"),
+   315→    ("8+", "Appliance brands serviced"),
+   316→]))
+   317→story.append(Spacer(1, 12))
+   318→story.append(callout_box(
+   319→    "Project Goal in One Sentence",
+   320→    "Transform wecarehomesolutions.in from a single-page brochure into a 25+ page, schema-optimized, locally-ranked lead generation platform that captures demand across 6 services and 8 Kashmir cities, supported by a multi-step online booking system and a structured 6-month content roadmap.",
+   321→    color=ACCENT, bg=CARD_BG
+   322→))
+   323→
+   324→story.append(PageBreak())
+   325→
+   326→# ============== SECTION 2: EXISTING WEBSITE ANALYSIS ==============
+   327→story.append(h1("Phase 1.1 — Existing Website Analysis"))
+   328→story.append(p(
+   329→    "The current WeCare Home Solutions website (https://www.wecarehomesolutions.in/) is a single-page brochure that lists all services, location coverage, and contact information on one URL. While this approach was adequate at launch, it now actively prevents the business from ranking for the spectrum of service-specific and location-specific keywords that potential customers in Kashmir are typing into Google every day. The table below summarizes the business information extracted from the existing site, followed by a structured gap analysis."
+   330→))
+   331→
+   332→story.append(h2("Current Business Information Captured"))
+   333→story.append(std_table(
+   334→    [
+   335→        ["Category", "Detail"],
+   336→        ["Services offered", "Washing Machine, Refrigerator, Microwave, Water Dispenser, Air Conditioner, Dishwasher repair"],
+   337→        ["Service area", "Kashmir — Srinagar, Anantnag, Baramulla, Budgam, Pulwama, Ganderbal, Bandipora, Kupwara"],
+   338→        ["Key selling points", "24/7 service, same-day service, certified technicians, genuine parts, warranty service"],
+   339→        ["Trust signals", "500+ repairs, 10+ cities served, 8+ major brands, 9 customer reviews, 4.8 rating"],
+   340→        ["Brand footprint", "Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, Panasonic"],
+   341→        ["Contact options shown", "Phone number, WhatsApp click-to-chat, simple contact form"],
+   342→    ],
+   343→    col_ratios=[0.30, 0.70]
+   344→))
+   345→story.append(Spacer(1, 14))
+   346→
+   347→story.append(h2("Gap Analysis — Where the Current Site Falls Short"))
+   348→story.append(p(
+   349→    "Each gap below represents both a missed SEO opportunity and a friction point for potential customers. The right-hand column maps each gap to the specific phase of this overhaul that addresses it."
+   350→))
+   351→story.append(std_table(
+   352→    [
+   353→        ["Gap / Weakness", "Impact on Business", "Fix in This Project"],
+   354→        ["Single-page architecture", "All keywords compete for one URL; relevance signals diluted", "Phase 2 — 25+ page multi-page architecture"],
+   355→        ["No dedicated service pages", "Cannot rank for \"washing machine repair\", \"AC service\" etc.", "Phase 3 — 6 service pages, 500+ words each"],
+   356→        ["No dedicated location pages", "Cannot rank for \"repair in Srinagar\", \"repair in Anantnag\" etc.", "Phase 3 — 8 location pages, 300-400 words each"],
+   357→        ["No online booking system", "Customers must call or WhatsApp — friction, lost overnight leads", "Phase 4 — multi-step booking form + CRM integration"],
+   358→        ["No payment integration", "Cannot collect advance/service fees online", "Phase 4 — Razorpay/UPI integration"],
+   359→        ["Missing legal pages", "Privacy, Terms, Warranty policy absent — GDPR/IT Act compliance risk", "Phase 3 — 3 legal pages drafted"],
+   360→        ["No blog or educational content", "Misses informational search traffic; no authority signal", "Phase 3 — 5 blog articles + 10 topic ideas"],
+   361→        ["Basic design and branding", "Looks like a 2015 template; weak mobile UX", "Phase 4 — GeneratePress + custom design system"],
+   362→        ["No schema markup", "No rich snippets in SERPs, no Local Business signals to Google", "Phase 4 — LocalBusiness + FAQ + Service schema"],
+   363→        ["No Google Business Profile optimization", "Inconsistent NAP, no review funnel", "Phase 5 — Post-launch GBP optimization plan"],
+   364→        ["No FAQ section", "Misses FAQ rich snippets; customers call for repeatable questions", "Phase 3 — 15+ question FAQ with FAQ Schema"],
+   365→        ["No analytics or Search Console", "Cannot measure traffic, conversions, or keyword performance", "Phase 4 — GA4 + GSC + tag manager setup"],
+   366→    ],
+   367→    col_ratios=[0.30, 0.40, 0.30]
+   368→))
+   369→story.append(Spacer(1, 12))
+   370→story.append(callout_box(
+   371→    "Strategic Insight",
+   372→    "The single biggest unlock is not a design refresh — it is the move from 1 URL to 25+ URLs. Each new page is a new opportunity to rank for a specific service, a specific city, and a specific brand. The compound effect of 25 indexed pages with proper internal linking is typically a 3-5x increase in organic search visibility within 6 months for local service businesses of this size.",
+   373→    color=ACCENT_2, bg=CARD_BG
+   374→))
+   375→
+   376→story.append(PageBreak())
+   377→
+   378→# ============== SECTION 3: KEYWORD RESEARCH ==============
+   379→story.append(h1("Phase 1.2 — Keyword Research"))
+   380→story.append(p(
+   381→    "The Kashmir appliance repair search market is fragmented across three intent layers: service-based queries (what is broken), location-based queries (where the customer is), and intent-based queries (what the customer wants to do next). A robust keyword strategy must capture all three layers. The tables below present a structured target keyword list grouped by category, with estimated monthly search volume (India-level, filtered to J&K region where possible) and a qualitative competition score (Low/Medium/High) based on the strength of currently ranking pages."
+   382→))
+   383→story.append(p(
+   384→    "Search volume estimates are indicative — actual volumes vary by season (AC repair peaks in May-July, refrigerator and washing machine queries peak during festival months Oct-Nov). Volumes marked \"Long-tail\" indicate low individual volume but high cumulative value across variants."
+   385→))
+   386→
+   387→story.append(h2("A. Service-Based Keywords"))
+   388→story.append(std_table(
+   389→    [
+   390→        ["Keyword", "Intent", "Est. Volume/mo", "Competition", "Target Page"],
+   391→        ["washing machine repair Kashmir", "Commercial", "150-250", "Medium", "Service page"],
+   392→        ["washing machine not spinning", "Informational", "200-300", "Low", "Service + Blog"],
+   393→        ["washing machine not draining", "Informational", "150-220", "Low", "Blog article"],
+   394→        ["washing machine error code", "Informational", "120-180", "Low", "Blog + Service"],
+   395→        ["refrigerator repair Srinagar", "Commercial", "120-180", "Medium", "Service + Location"],
+   396→        ["fridge not cooling", "Informational", "250-350", "Medium", "Blog + Service"],
+   397→        ["fridge leaking water", "Informational", "100-150", "Low", "Blog article"],
+   398→        ["AC service Srinagar", "Commercial", "200-300", "Medium-High", "Service page"],
+   399→        ["AC gas refill Kashmir", "Transactional", "80-120", "Low-Medium", "Service page"],
+   400→        ["AC not cooling", "Informational", "300-400", "Medium", "Blog + Service"],
+   401→        ["microwave repair near me", "Commercial", "150-220", "High", "Service page"],
+   402→        ["microwave not heating", "Informational", "180-260", "Low-Medium", "Blog + Service"],
+   403→        ["water dispenser repair", "Commercial", "60-100", "Low", "Service page"],
+   404→        ["dishwasher repair Kashmir", "Commercial", "40-80", "Low", "Service page"],
+   405→        ["Samsung washing machine repair", "Commercial", "200-280", "Medium-High", "Brand page"],
+   406→        ["LG refrigerator technician", "Commercial", "150-220", "Medium-High", "Brand page"],
+   407→        ["Whirlpool service center Kashmir", "Commercial", "80-120", "Medium", "Brand page"],
+   408→        ["Bosch dishwasher service", "Commercial", "40-70", "Low", "Brand page"],
+   409→    ],
+   410→    col_ratios=[0.32, 0.16, 0.16, 0.18, 0.18]
+   411→))
+   412→
+   413→story.append(Spacer(1, 14))
+   414→story.append(h2("B. Location-Based Keywords (Sample — One per City)"))
+   415→story.append(p(
+   416→    "Each of the 8 location pages will target a primary \"appliance repair [city]\" keyword plus 6-8 secondary \"service + city\" combinations. The table below shows the primary keyword per location; the full keyword set per location is provided in the corresponding location page content brief."
+   417→))
+   418→story.append(std_table(
+   419→    [
+   420→        ["City", "Primary Keyword", "Est. Volume/mo", "Secondary Keyword Examples"],
+   421→        ["Srinagar", "appliance repair Srinagar", "300-450", "washing machine repair Lal Chowk, AC repair Hyderpora, fridge repair Rajbagh"],
+   422→        ["Anantnag", "appliance repair Anantnag", "80-140", "AC repair Anantnag, refrigerator repair Khanabal"],
+   423→        ["Baramulla", "appliance repair Baramulla", "60-110", "washing machine repair Baramulla, microwave repair Baramulla"],
+   424→        ["Budgam", "appliance repair Budgam", "50-90", "fridge repair Budgam, AC repair Beerwah"],
+   425→        ["Pulwama", "appliance repair Pulwama", "40-80", "washing machine repair Pulwama, AC repair Pulwama"],
+   426→        ["Ganderbal", "appliance repair Ganderbal", "30-60", "refrigerator repair Ganderbal, microwave repair Ganderbal"],
+   427→        ["Bandipora", "appliance repair Bandipora", "20-50", "AC repair Bandipora, fridge repair Bandipora"],
+   428→        ["Kupwara", "appliance repair Kupwara", "20-50", "washing machine repair Kupwara, water dispenser repair Kupwara"],
+   429→    ],
+   430→    col_ratios=[0.14, 0.30, 0.18, 0.38]
+   431→))
+   432→
+   433→story.append(Spacer(1, 14))
+   434→story.append(h2("C. Intent-Based Keywords"))
+   435→story.append(std_table(
+   436→    [
+   437→        ["Intent Type", "Sample Keywords", "Funnel Stage", "Content Format"],
+   438→        ["Informational", "how to fix a washing machine, why is my fridge leaking water, signs your AC needs repair", "Top of funnel (awareness)", "Blog articles, FAQ page"],
+   439→        ["Commercial", "best appliance repair in Kashmir, same-day AC repair near me, reliable washing machine service Srinagar", "Middle of funnel (consideration)", "Service pages, About page, Reviews page"],
+   440→        ["Transactional", "book washing machine repair, AC service cost in Srinagar, fridge repair price Kashmir, schedule dishwasher repair", "Bottom of funnel (decision)", "Booking form, service page CTAs, contact page"],
+   441→        ["Navigational", "WeCare Home Solutions, wecarehomesolutions.in, WeCare appliance repair contact", "Brand search", "Homepage, contact page, GBP"],
+   442→    ],
+   443→    col_ratios=[0.16, 0.42, 0.22, 0.20]
+   444→))
+   445→
+   446→story.append(Spacer(1, 12))
+   447→story.append(callout_box(
+   448→    "Keyword Targeting Strategy",
+   449→    "Use the \"Pillar + Cluster\" model: each service page (e.g. Washing Machine Repair) is a pillar that links to location-specific washing machine repair sections on the 8 location pages, and to blog articles answering specific problem queries (\"washing machine not spinning\"). This concentrates topical authority and creates a clear internal linking map Google can crawl efficiently.",
+   450→    color=ACCENT, bg=CARD_BG
+   451→))
+   452→
+   453→story.append(PageBreak())
+   454→
+   455→# ============== SECTION 4: COMPETITOR ANALYSIS ==============
+   456→story.append(h1("Phase 1.3 — Competitor Analysis & Opportunities"))
+   457→story.append(p(
+   458→    "The Kashmir appliance repair market is served by a mix of national-brand authorized service centers (Samsung, LG, Whirlpool), local independent repair shops with basic websites or JustDial/IndiaMART listings, and a small number of multi-brand local repair businesses with their own websites. WeCare Home Solutions competes primarily in the third category — multi-brand local repair — which is also the category with the weakest digital presence and therefore the largest opportunity."
+   459→))
+   460→
+   461→story.append(h2("Typical Competitor Profile — Kashmir Appliance Repair Websites"))
+   462→story.append(std_table(
+   463→    [
+   464→        ["Competitor Type", "Common Strengths", "Common Weaknesses"],
+   465→        ["National brand authorized service", "Strong domain authority, brand trust, official parts",
+   466→         "Slow response, expensive, no same-day service, generic local landing pages"],
+   467→        ["Independent repair shops (no website, only JustDial listings)",
+   468→         "Local trust, low prices, fast response",
+   469→         "No website, no SEO, no reviews management, no booking system, no content"],
+   470→        ["Multi-brand local repair businesses with basic websites",
+   471→         "Multiple services on one page, WhatsApp integration, phone numbers",
+   472→         "Single-page sites, no schema, no service-specific or location-specific pages, slow load, no blog, no GBP optimization"],
+   473→    ],
+   474→    col_ratios=[0.28, 0.36, 0.36]
+   475→))
+   476→
+   477→story.append(Spacer(1, 12))
+   478→story.append(h2("Opportunity Map for WeCare Home Solutions"))
+   479→story.append(p(
+   480→    "The gaps in competitor websites are clear and exploitable. WeCare has the operational credentials (500+ repairs, 4.8 rating, certified technicians, genuine parts, warranty) to back up the marketing claims — the missing piece is the digital infrastructure that surfaces these credentials to searchers at the right moment."
+   481→))
+   482→story.append(std_table(
+   483→    [
+   484→        ["Opportunity", "Competitor Gap", "WeCare Action", "Expected Outcome (6-9 months)"],
+   485→        ["Local SEO dominance",
+   486→         "Competitors have no dedicated location pages; Google shows JustDial aggregators for \"repair in Srinagar\"",
+   487→         "Build 8 location pages with unique content, landmarks, and local schema",
+   488→         "Rank in top 3 for \"appliance repair [city]\" for all 8 cities"],
+   489→        ["Service-specific authority",
+   490→         "Competitors list services on one page; cannot rank for \"AC gas refill\" vs \"microwave repair\" separately",
+   491→         "6 dedicated service pages, 500+ words, with FAQ schema",
+   492→         "Top 5 ranking for primary service keywords"],
+   493→        ["Review-driven trust",
+   494→         "Competitor reviews scattered; no review funnel; ratings not surfaced",
+   495→         "Reviews page + \"Leave a Review\" CTA + automated post-service review request",
+   496→         "50+ new Google reviews in 6 months; rating maintained above 4.7"],
+   497→        ["Content authority",
+   498→         "No competitor publishes educational content",
+   499→         "Publish 2 blog articles/month answering real customer questions",
+   500→         "Capture informational long-tail traffic; build topical authority"],
+   501→        ["Conversion infrastructure",
+   502→         "All competitors use phone-only or WhatsApp-only; no structured booking",
+   503→         "Multi-step booking form with CRM integration + WhatsApp fallback",
+   504→         "Measurable lead funnel; 30-50% increase in qualified inquiries"],
+   505→        ["Schema-rich SERP presence",
+   506→         "No competitor uses schema markup",
+   507→         "LocalBusiness, FAQ, Service schema on every relevant page",
+   508→         "Rich snippets in SERPs (stars, FAQs, prices) → higher CTR"],
+   509→    ],
+   510→    col_ratios=[0.20, 0.30, 0.25, 0.25]
+   511→))
+   512→
+   513→story.append(PageBreak())
+   514→
+   515→# ============== SECTION 5: SITEMAP ==============
+   516→story.append(h1("Phase 2.1 — Site Architecture & Sitemap"))
+   517→story.append(p(
+   518→    "The new website is organized into six content clusters: Homepage, Service pages, Location pages, Brand pages, Legal pages, and Blog. Each page has a defined URL structure, target keyword set, and role in the conversion funnel. The total page count at launch is 25 indexed pages plus 3 legal pages (set to noindex but accessible from the footer for compliance)."
+   519→))
+   520→
+   521→story.append(h2("URL Structure"))
+   522→story.append(p("The recommended URL pattern is short, keyword-rich, and uses hyphens as separators:"))
+   523→story.append(std_table(
+   524→    [
+   525→        ["Page Type", "URL Pattern", "Example", "Count"],
+   526→        ["Homepage", "/", "wecarehomesolutions.in/", "1"],
+   527→        ["Service page", "/services/{slug}/", "/services/washing-machine-repair/", "6"],
+   528→        ["Location page", "/locations/{city-slug}/", "/locations/srinagar/", "8"],
+   529→        ["Brand hub", "/brands/", "/brands/", "1"],
+   530→        ["Individual brand", "/brands/{brand-slug}/", "/brands/samsung/", "(optional, 8)"],
+   531→        ["About", "/about/", "/about/", "1"],
+   532→        ["Reviews", "/reviews/", "/reviews/", "1"],
+   533→        ["FAQ", "/faq/", "/faq/", "1"],
+   534→        ["Contact", "/contact/", "/contact/", "1"],
+   535→        ["Blog hub", "/blog/", "/blog/", "1"],
+   536→        ["Blog article", "/blog/{slug}/", "/blog/why-is-my-washing-machine-not-draining/", "5+ ongoing"],
+   537→        ["Privacy Policy", "/privacy-policy/", "/privacy-policy/", "1 (noindex)"],
+   538→        ["Terms & Conditions", "/terms/", "/terms/", "1 (noindex)"],
+   539→        ["Warranty Policy", "/warranty-policy/", "/warranty-policy/", "1 (noindex)"],
+   540→    ],
+   541→    col_ratios=[0.20, 0.25, 0.35, 0.20]
+   542→))
+   543→
+   544→story.append(Spacer(1, 14))
+   545→story.append(h2("Visual Sitemap Tree"))
+   546→sitemap_text = """
+   547→WeCare Home Solutions
+   548→|
+   549→|-- Homepage (/)
+   550→|
+   551→|-- Services
+   552→|   |-- Washing Machine Repair
+   553→|   |-- Refrigerator Repair
+   554→|   |-- Air Conditioner Repair
+   555→|   |-- Microwave Repair
+   556→|   |-- Water Dispenser Repair
+   557→|   |-- Dishwasher Repair
+   558→|
+   559→|-- Locations
+   560→|   |-- Srinagar
+   561→|   |-- Anantnag
+   562→|   |-- Baramulla
+   563→|   |-- Budgam
+   564→|   |-- Pulwama
+   565→|   |-- Ganderbal
+   566→|   |-- Bandipora
+   567→|   |-- Kupwara
+   568→|
+   569→|-- Brands We Service (hub)
+   570→|
+   571→|-- About Us
+   572→|-- Customer Reviews
+   573→|-- FAQ
+   574→|-- Contact Us
+   575→|
+   576→|-- Blog (hub)
+   577→|   |-- 5 articles at launch, ongoing 2/month
+   578→|
+   579→|-- Legal (footer, noindex)
+   580→    |-- Privacy Policy
+   581→    |-- Terms & Conditions
+   582→    |-- Warranty / Service Policy
+   583→"""
+   584→mono_style = ParagraphStyle('Mono', fontName='DejaVuSans', fontSize=9, leading=13,
+   585→                             textColor=TEXT_PRIMARY, alignment=TA_LEFT, leftIndent=14)
+   586→story.append(Paragraph(sitemap_text.replace('\n', '<br/>'), mono_style))
+   587→story.append(Spacer(1, 14))
+   588→
+   589→story.append(h2("SEO Priority Matrix"))
+   590→story.append(std_table(
+   591→    [
+   592→        ["Priority", "Page", "Reasoning"],
+   593→        ["P0 — Critical", "Homepage, 6 service pages, Srinagar location, Contact, Booking form", "Core conversion paths + highest-volume keywords"],
+   594→        ["P1 — High", "Other 7 location pages, Reviews, FAQ, About", "Local SEO coverage + trust signals"],
+   595→        ["P2 — Medium", "Blog hub + 5 articles, Brands hub, Privacy/Terms/Warranty", "Authority building + compliance"],
+   596→        ["P3 — Future", "Individual brand pages (Samsung, LG, etc.), additional blog content", "Scale after launch based on data"],
+   597→    ],
+   598→    col_ratios=[0.20, 0.45, 0.35]
+   599→))
+   600→
+   601→story.append(PageBreak())
+   602→
+   603→# ============== SECTION 6: CONTENT BRIEFS ==============
+   604→story.append(h1("Phase 2.2 — Content Briefs for Top 5 Pages"))
+   605→story.append(p(
+   606→    "Below are detailed content briefs for the five most important pages of the new website. The full written content for these and all other pages is delivered as separate Markdown files in the /content/ folder of this deliverable package. These briefs explain the strategic reasoning behind each page's structure so the developer and content team understand not just what to write but why."
+   607→))
+   608→
+   609→# Homepage brief
+   610→story.append(h2("Brief 1 — Homepage"))
+   611→story.append(std_table(
+   612→    [
+   613→        ["Element", "Specification"],
+   614→        ["Primary keyword", "appliance repair Kashmir, WeCare Home Solutions"],
+   615→        ["Secondary keywords", "same-day appliance repair, certified technician Kashmir, multi-brand repair service"],
+   616→        ["Title tag", "WeCare Home Solutions — Same-Day Appliance Repair in Kashmir | 24/7 Service"],
+   617→        ["Meta description", "Kashmir's trusted multi-brand appliance repair service. Same-day washing machine, fridge, AC, microwave, dishwasher & water dispenser repair across 10+ cities. Certified technicians, genuine parts, warranty. Call now."],
+   618→        ["Word count target", "1,200 - 1,500 words across all sections"],
+   619→        ["H1", "Same-Day Appliance Repair Across Kashmir — Certified Technicians You Can Trust"],
+   620→        ["Required sections", "Hero (headline + CTA + trust badges), Trust stats strip, Services grid (6 cards), How We Work (3 steps), Locations covered (8 city chips), Featured testimonials (3), FAQ teaser (6 questions), Footer CTA"],
+   621→        ["CTA strategy", "Primary CTA \"Book a Repair\" in hero and sticky header; secondary CTA \"WhatsApp Us\" sticky bottom-right on mobile; tertiary CTA \"Call Now\" phone link prominent on mobile"],
+   622→        ["Internal linking", "Service cards → service pages; city chips → location pages; testimonials → reviews page; FAQ teaser → FAQ page"],
+   623→        ["Schema markup", "LocalBusiness schema (organization, address, geo, hours, phone, rating), FAQPage schema for FAQ teaser section"],
+   624→    ],
+   625→    col_ratios=[0.25, 0.75]
+   626→))
+   627→story.append(Spacer(1, 10))
+   628→
+   629→# Washing Machine Repair brief
+   630→story.append(h2("Brief 2 — Washing Machine Repair Service Page"))
+   631→story.append(std_table(
+   632→    [
+   633→        ["Element", "Specification"],
+   634→        ["Primary keyword", "washing machine repair Kashmir"],
+   635→        ["Secondary keywords", "washing machine service Srinagar, washing machine not spinning, Samsung washing machine repair, LG washing machine technician, washing machine error code"],
+   636→        ["Title tag", "Washing Machine Repair in Kashmir — Same-Day Service for All Brands | WeCare"],
+   637→        ["Meta description", "Expert washing machine repair across Kashmir. Same-day service for Samsung, LG, Whirlpool, IFB, Bosch & more. Fixes for not spinning, not draining, error codes, leaking. Certified technicians, genuine parts, warranty. Book now."],
+   638→        ["Word count target", "600 - 800 words"],
+   639→        ["H1", "Washing Machine Repair in Kashmir — Same-Day Service for Every Brand & Problem"],
+   640→        ["Required sections", "Intro (problem + solution), Common problems we fix (6-8 items), Brands we service, Our repair process (3 steps), Why choose professional repair (benefits), Warranty information, Service areas, Customer testimonial (1), CTA, FAQ (5 questions)"],
+   641→        ["CTA", "Book a Washing Machine Repair (primary button) + WhatsApp Chat (secondary)"],
+   642→        ["Internal linking", "Brands → individual brand pages (if exists), Service areas → 8 location pages, Related services → Refrigerator/AC/Dishwasher pages"],
+   643→        ["Schema markup", "Service schema, FAQPage schema, BreadcrumbList schema"],
+   644→    ],
+   645→    col_ratios=[0.25, 0.75]
+   646→))
+   647→story.append(Spacer(1, 10))
+   648→
+   649→# Refrigerator Repair brief
+   650→story.append(h2("Brief 3 — Refrigerator Repair Service Page"))
+   651→story.append(std_table(
+   652→    [
+   653→        ["Element", "Specification"],
+   654→        ["Primary keyword", "refrigerator repair Kashmir"],
+   655→        ["Secondary keywords", "fridge not cooling, refrigerator service Srinagar, LG refrigerator technician, fridge leaking water, freezer not freezing"],
+   656→        ["Title tag", "Refrigerator Repair in Kashmir — Fridge Not Cooling? We Fix It Today | WeCare"],
+   657→        ["Meta description", "Same-day refrigerator repair in Kashmir. Fixes for not cooling, leaking, freezing issues, compressor problems. All brands serviced — Samsung, LG, Whirlpool, Godrej, Haier. Genuine parts, warranty. Book now."],
+   658→        ["Word count target", "600 - 800 words"],
+   659→        ["H1", "Refrigerator Repair in Kashmir — Same-Day Fixes for Cooling, Leaking & Freezer Issues"],
+   660→        ["Required sections", "Intro, Common fridge problems (not cooling, leaking, over-freezing, compressor, thermostat, defrost), Brands we service, Repair process, Why professional service matters (food safety angle), Warranty, Service areas, Testimonial, CTA, FAQ"],
+   661→        ["CTA", "Book a Refrigerator Repair (primary) + WhatsApp (secondary)"],
+   662→        ["Schema markup", "Service, FAQ, BreadcrumbList"],
+   663→    ],
+   664→    col_ratios=[0.25, 0.75]
+   665→))
+   666→story.append(Spacer(1, 10))
+   667→
+   668→# AC Repair brief
+   669→story.append(h2("Brief 4 — Air Conditioner Repair Service Page"))
+   670→story.append(std_table(
+   671→    [
+   672→        ["Element", "Specification"],
+   673→        ["Primary keyword", "AC repair Kashmir, AC service Srinagar"],
+   674→        ["Secondary keywords", "AC gas refill, AC not cooling, AC installation, split AC service, Voltas AC repair, LG AC technician"],
+   675→        ["Title tag", "AC Repair & Service in Kashmir — Gas Refill, Installation, All Brands | WeCare"],
+   676→        ["Meta description", "Same-day AC repair across Kashmir. Gas refill, not cooling fixes, installation, annual maintenance. All brands — Voltas, LG, Samsung, Daikin, Hitachi. Certified technicians, genuine parts. Book now."],
+   677→        ["Word count target", "600 - 800 words"],
+   678→        ["H1", "AC Repair & Service in Kashmir — Gas Refill, Installations & Cooling Fixes"],
+   679→        ["Required sections", "Intro (Kashmir summer angle), Common AC problems (not cooling, low cooling, gas refill, water leakage, noise, remote not working), Services offered (repair, gas refill, installation, AMC), Brands, Process, Why choose us (certified, genuine gas, warranty), Service areas, Testimonial, CTA, FAQ"],
+   680→        ["CTA", "Book an AC Repair / Book Free Site Visit (primary) + WhatsApp (secondary)"],
+   681→        ["Schema markup", "Service, FAQ, BreadcrumbList"],
+   682→    ],
+   683→    col_ratios=[0.25, 0.75]
+   684→))
+   685→story.append(Spacer(1, 10))
+   686→
+   687→# Srinagar location brief
+   688→story.append(h2("Brief 5 — Srinagar Location Page"))
+   689→story.append(std_table(
+   690→    [
+   691→        ["Element", "Specification"],
+   692→        ["Primary keyword", "appliance repair Srinagar"],
+   693→        ["Secondary keywords", "washing machine repair Lal Chowk, AC repair Hyderpora, refrigerator repair Rajbagh, microwave repair Srinagar"],
+   694→        ["Title tag", "Appliance Repair in Srinagar — Same-Day Service Across All Localities | WeCare"],
+   695→        ["Meta description", "Trusted appliance repair service in Srinagar covering Lal Chowk, Hyderpora, Rajbagh, Karan Nagar, Sonwar, Bemina. Same-day washing machine, fridge, AC & microwave repair. Certified technicians. Book now."],
+   696→        ["Word count target", "350 - 450 words"],
+   697→        ["H1", "Appliance Repair in Srinagar — Same-Day Service Across All Localities"],
+   698→        ["Required sections", "Local intro (mention Srinagar context, Dal Lake, Lal Chowk), Neighborhoods/landmarks we cover (8-10 named areas), Services offered (list of 6 with links to service pages), Why Srinagar customers choose WeCare (local trust angle), Customer testimonial (1 Srinagar customer), CTA, Embedded Google Map, FAQ (3 location-specific questions)"],
+   699→        ["CTA", "Book a Repair in Srinagar (primary) + WhatsApp + Call Srinagar team"],
+   700→        ["Internal linking", "Service links → 6 service pages, Other location pages (cross-link), Contact page"],
+   701→        ["Schema markup", "LocalBusiness schema with Srinagar geo-coordinates, BreadcrumbList, FAQPage"],
+   702→        ["Unique content rule", "Must be 100% unique — no copy-paste from other location pages. Local landmarks and neighborhood names must be specific to Srinagar."],
+   703→    ],
+   704→    col_ratios=[0.25, 0.75]
+   705→))
+   706→
+   707→story.append(PageBreak())
+   708→
+   709→# ============== SECTION 7: TECH STACK ==============
+   710→story.append(h1("Phase 4.1 — Technology Stack Recommendation"))
+   711→story.append(p(
+   712→    "The choice of technology stack determines the long-term cost, ease of content updates, SEO flexibility, and the available pool of developers who can maintain the site. For WeCare Home Solutions — a growing local service business with non-technical owners — the recommended stack is WordPress with the GeneratePress theme and the Rank Math SEO plugin. This combination offers the best balance of SEO capability, content management ease, and total cost of ownership."
+   713→))
+   714→
+   715→story.append(h2("Stack Comparison"))
+   716→story.append(std_table(
+   717→    [
+   718→        ["Criterion", "WordPress + GeneratePress", "Webflow", "Next.js (custom)"],
+   719→        ["SEO capability", "Excellent (Rank Math/Yoast; full control over schema, meta, sitemap)", "Very good (limited schema control without code)", "Excellent (full programmatic control)"],
+   720→        ["Ease of content updates", "Excellent — visual editor, content team can update without code", "Excellent — visual designer-friendly", "Poor — requires developer for content changes"],
+   721→        ["Cost (year 1)", "₹15,000-25,000 (hosting + premium theme + plugins)", "₹25,000-40,000/yr (CMS plan)", "₹80,000+ (custom development)"],
+   722→        ["Cost (ongoing)", "₹8,000-15,000/yr hosting", "₹25,000-40,000/yr", "₹0 software + dev maintenance cost"],
+   723→        ["Developer availability in India", "Very high", "Low", "Medium"],
+   724→        ["Booking system integration", "Mature plugins (WPForms, Amelia, BirchPress)", "Limited — Zapier-based", "Custom build required"],
+   725→        ["Performance (Core Web Vitals)", "Good with caching plugins", "Excellent", "Excellent"],
+   726→        ["Multi-page local SEO scale", "Excellent — easy to clone page templates", "Good", "Excellent but requires code"],
+   727→        ["Recommendation for WeCare", "RECOMMENDED — best balance", "Alternative for design-led teams", "Overkill for current scope"],
+   728→    ],
+   729→    col_ratios=[0.22, 0.26, 0.26, 0.26]
+   730→))
+   731→story.append(Spacer(1, 14))
+   732→
+   733→story.append(h2("Recommended Plugin Stack"))
+   734→story.append(std_table(
+   735→    [
+   736→        ["Function", "Recommended Plugin", "Alternative", "Why"],
+   737→        ["SEO", "Rank Math", "Yoast SEO", "Rank Math is free, more feature-rich, includes schema builder, local SEO module"],
+   738→        ["Caching / Performance", "WP Rocket (paid)", "W3 Total Cache / LiteSpeed Cache", "WP Rocket is most reliable; if hosting has LiteSpeed, use LiteSpeed Cache (free)"],
+   739→        ["Security", "Wordfence (free tier)", "Sucuri", "Wordfence free is sufficient for a small business site"],
+   740→        ["Forms", "WPForms (Pro)", "Contact Form 7 / Gravity Forms", "WPForms has a multi-step form add-on needed for the booking system"],
+   741→        ["Booking / CRM", "HubSpot Free CRM + WPForms Zapier integration", "Pipedrive, Amelia Booking", "HubSpot free is enough for lead management; Amelia if you want calendar-based booking"],
+   742→        ["Analytics", "Google Analytics 4 + Site Kit plugin", "Independent GA4 setup", "Site Kit integrates GA4, Search Console, AdSense in one plugin"],
+   743→        ["Schema markup", "Rank Math built-in", "Schema Pro", "Rank Math covers LocalBusiness, FAQ, Service schema out of the box"],
+   744→        ["Image optimization", "ShortPixel or Smush", "Imagify", "Auto-compress and convert to WebP on upload"],
+   745→        ["Backup", "UpdraftPlus", "BackupBuddy", "Free tier sufficient; schedule daily off-site backups"],
+   746→        ["WhatsApp chat", "Click to Chat plugin", "Join.chat", "Lightweight WhatsApp click-to-chat widget"],
+   747→    ],
+   748→    col_ratios=[0.20, 0.30, 0.25, 0.25]
+   749→))
+   750→
+   751→story.append(PageBreak())
+   752→
+   753→# ============== SECTION 8: TECHNICAL SEO ==============
+   754→story.append(h1("Phase 4.2 — Technical SEO Configuration"))
+   755→story.append(p(
+   756→    "Technical SEO is the foundation that allows content to rank. Even the best-written page will fail to rank if search engines cannot crawl it, understand it, or render it properly. This section provides the complete technical SEO configuration for the new WeCare Home Solutions website, including on-page rules, schema markup, sitemap and robots.txt templates, redirect strategy, and performance optimization. All code samples referenced here are provided as separate files in the /code-samples/ folder of this deliverable."
+   757→))
+   758→
+   759→story.append(h2("On-Page SEO Rules"))
+   760→story.append(p(
+   761→    "Every page on the new website must follow these on-page SEO rules. The Rank Math plugin enforces most of these via its content analysis, but the rules below should be the standard reference for the content team."
+   762→))
+   763→story.append(std_table(
+   764→    [
+   765→        ["Element", "Rule", "Example"],
+   766→        ["Title tag length", "50-60 characters", "\"Washing Machine Repair in Kashmir — Same-Day Service | WeCare\" (54 chars)"],
+   767→        ["Meta description length", "140-160 characters", "See content brief examples"],
+   768→        ["H1 per page", "Exactly one H1, contains primary keyword", "H1: \"Washing Machine Repair in Kashmir...\""],
+   769→        ["H2-H3 hierarchy", "Logical nesting; H2 for sections, H3 for sub-sections", "Never skip levels (H2 → H4 is forbidden)"],
+   770→        ["Image alt text", "Descriptive, contains keyword where natural", "alt=\"Samsung washing machine drum repair by WeCare technician\""],
+   771→        ["Image file naming", "kebab-case, descriptive", "samsung-washing-machine-drum-repair.jpg (NOT IMG_4032.jpg)"],
+   772→        ["Image format", "WebP for photos, SVG for icons", "Auto-convert via ShortPixel"],
+   773→        ["Internal linking", "Minimum 3 internal links per page to related content", "Service page → 3 location pages + 1 related service page + 1 blog article"],
+   774→        ["URL slug", "Short, hyphenated, keyword-rich, lowercase", "/services/washing-machine-repair/"],
+   775→        ["Canonical tag", "Self-canonical on every page", "Rank Math handles automatically"],
+   776→    ],
+   777→    col_ratios=[0.22, 0.40, 0.38]
+   778→))
+   779→
+   780→story.append(Spacer(1, 14))
+   781→story.append(h2("Schema Markup"))
+   782→story.append(p(
+   783→    "Three schema types are required across the new website. The complete JSON-LD code for each is provided as separate files in /code-samples/ — this section explains what each schema does and where it should be deployed."
+   784→))
+   785→story.append(std_table(
+   786→    [
+   787→        ["Schema Type", "Where to Deploy", "What It Enables in SERPs"],
+   788→        ["LocalBusiness (with sub-type ApplianceRepair)", "Homepage + every location page (with location-specific address & geo)", "Business name, address, phone, hours, rating, price range in knowledge panel"],
+   789→        ["FAQPage", "FAQ page + every service page (FAQ section) + every location page (FAQ section)", "Expandable FAQ rich snippets directly in search results"],
+   790→        ["Service", "Every service page (6 pages)", "Service name, description, provider, area served, price range"],
+   791→        ["BreadcrumbList", "Every page except homepage", "Breadcrumb trail display in SERPs"],
+   792→        ["Review / AggregateRating", "Reviews page + LocalBusiness schema on homepage", "Star rating in SERPs and knowledge panel"],
+   793→        ["Organization", "Homepage ( sitewide via Rank Math)", "Brand logo, contact points in knowledge panel"],
+   794→    ],
+   795→    col_ratios=[0.30, 0.40, 0.30]
+   796→))
+   797→story.append(p(
+   798→    "Code samples for each schema type are saved as separate files in /code-samples/schema-localbusiness.json, schema-faq.json, schema-service.json. The sitemap and robots.txt are saved as sitemap.xml and robots.txt respectively. These can be uploaded directly to the WordPress root directory or placed via the Rank Math schema module."
+   799→))
+   800→
+   801→story.append(Spacer(1, 12))
+   802→story.append(h2("Sitemap & Robots.txt"))
+   803→story.append(p(
+   804→    "WordPress with Rank Math automatically generates a dynamic sitemap at /sitemap_index.xml. The sample sitemap.xml file in /code-samples/ is a static reference for what the sitemap should contain — useful for custom platforms or for verifying the Rank Math output. The robots.txt file in /code-samples/ blocks WordPress admin and plugin folders, allows the rest of the site, and points to the sitemap URL."
+   805→))
+   806→
+   807→story.append(Spacer(1, 12))
+   808→story.append(h2("301 Redirect Strategy (Old → New)"))
+   809→story.append(p(
+   810→    "The existing single-page website has accumulated some domain authority and possibly a few backlinks. To preserve this equity, set up 301 redirects from the old URL structure to the most relevant new pages. Use the Redirection plugin (free) for WordPress or .htaccess for non-WordPress platforms."
+   811→))
+   812→story.append(std_table(
+   813→    [
+   814→        ["Old URL", "New URL", "Reason"],
+   815→        ["/ (homepage anchor sections like #services)", "/services/ (hub) or specific service pages", "Old anchor links now have their own pages"],
+   816→        ["/#contact", "/contact/", "Contact now has its own page"],
+   817→        ["/#about", "/about/", "About now has its own page"],
+   818→        ["/#reviews", "/reviews/", "Reviews now has its own page"],
+   819→        ["/index.html", "/", "Canonical homepage"],
+   820→        ["Any legacy /p/ or /page/ URLs", "Closest matching service/location page", "Preserve link equity"],
+   821→    ],
+   822→    col_ratios=[0.40, 0.35, 0.25]
+   823→))
+   824→
+   825→story.append(Spacer(1, 12))
+   826→story.append(h2("Performance Optimization Checklist"))
+   827→story.append(std_table(
+   828→    [
+   829→        ["Category", "Action", "Tool / Plugin"],
+   830→        ["Image optimization", "Auto-compress + WebP conversion on upload; lazy-load images below the fold", "ShortPixel / Smush + Rank Math lazy-load"],
+   831→        ["Browser caching", "Set 1-year cache for static assets via .htaccess or caching plugin", "WP Rocket / LiteSpeed Cache"],
+   832→        ["CDN", "Serve static assets via Cloudflare free tier; configure India edge POPs", "Cloudflare (free)"],
+   833→        ["Minify CSS/JS/HTML", "Auto-minify via caching plugin; remove unused CSS", "WP Rocket / Autoptimize"],
+   834→        ["Critical CSS", "Generate above-the-fold CSS for the homepage and service pages", "WP Rocket Critical CSS feature"],
+   835→        ["Database optimization", "Weekly cleanup of post revisions, spam, transients", "WP-Optimize"],
+   836→        ["Core Web Vitals target", "LCP < 2.5s, FID < 100ms, CLS < 0.1 on mobile", "Test with PageSpeed Insights + Search Console"],
+   837→        ["Server response time", "TTFB < 600ms on mobile; use PHP 8.2+, latest MySQL", "Hosting provider (Hostinger / Cloudways)"],
+   838→    ],
+   839→    col_ratios=[0.25, 0.45, 0.30]
+   840→))
+   841→
+   842→story.append(PageBreak())
+   843→
+   844→# ============== SECTION 9: KEY FUNCTIONALITIES ==============
+   845→story.append(h1("Phase 4.3 — Key Functionalities"))
+   846→story.append(p(
+   847→    "Beyond content and SEO, the new website must function as a lead generation tool. This section specifies four critical functional features: the online booking system, the WhatsApp live chat integration, the pincode/service-area checker, and the customer reviews management workflow. Each feature is described in terms of user flow, integration requirements, and developer reference."
+   848→))
+   849→
+   850→story.append(h2("A. Online Booking System"))
+   851→story.append(p(
+   852→    "The booking system is the primary conversion tool of the new website. It must be a multi-step form that progressively qualifies the lead without overwhelming the user. Each step should ask one question, show progress, and allow back navigation. On submission, the lead should be saved to a CRM (HubSpot Free recommended), trigger an automated confirmation SMS and email to the customer, and notify the WeCare team via WhatsApp and email."
+   853→))
+   854→story.append(std_table(
+   855→    [
+   856→        ["Step", "Field(s)", "Input Type", "Validation"],
+   857→        ["1. Select Appliance", "Appliance type", "Radio cards (6 options + Other)", "Required"],
+   858→        ["2. Describe Issue", "Problem description, Brand, Model (optional)", "Multi-line text + dropdown brand + free text model", "Description required"],
+   859→        ["3. Select Date & Time", "Preferred date, Preferred time slot", "Date picker + 4 slot radio buttons (Morning/Afternoon/Evening/Night)", "Required; date >= today"],
+   860→        ["4. Address & Contact", "Full name, Phone, Address line 1, City (auto-filled from referrer), Pincode", "Text inputs + pincode 6-digit", "All required; phone 10 digits"],
+   861→        ["5. Confirm & Submit", "Review summary, consent checkbox for SMS confirmation", "Read-only summary + checkbox + Submit button", "Checkbox required"],
+   862→    ],
+   863→    col_ratios=[0.20, 0.30, 0.30, 0.20]
+   864→))
+   865→story.append(Spacer(1, 10))
+   866→story.append(p(
+   867→    "Implementation: Use WPForms Pro with the Multi-Step Form add-on, or Gravity Forms with the Page Break field. Connect WPForms to HubSpot Free CRM via the official HubSpot WPForms addon (no Zapier needed). For SMS/email automation, use the HubSpot workflows (free tier allows up to 5 automated workflows). A reference HTML/JS prototype of the multi-step form is provided in /code-samples/booking-form.html for the developer to use as UX reference."
+   868→))
+   869→
+   870→story.append(h2("B. WhatsApp Live Chat Integration"))
+   871→story.append(p(
+   872→    "WhatsApp is the dominant communication channel in Kashmir. A floating WhatsApp button should appear on every page (sticky bottom-right on mobile, bottom-right on desktop). Clicking it opens WhatsApp with a pre-filled message that includes the page URL the user was on, allowing the WeCare team to understand context immediately."
+   873→))
+   874→story.append(p(
+   875→    "Implementation: Use the \"Click to Chat\" WordPress plugin (free) for the basic floating button. For the pre-filled message with page URL, add a small JS snippet that updates the wa.me link href on page load. The message template should be: \"Hi WeCare team, I'm on the [page name] page on your website and need help with [appliance/service].\" The complete code snippet is provided in /code-samples/whatsapp-widget.html."
+   876→))
+   877→
+   878→story.append(h2("C. Pincode / Service Area Checker"))
+   879→story.append(p(
+   880→    "A lightweight tool on the homepage and contact page that lets users enter their pincode and instantly see whether WeCare serves their area, plus a direct link to their location page if applicable. This reduces friction for out-of-area users (clear \"not served\" message) and creates an internal-linking signal for in-area users."
+   881→))
+   882→story.append(p(
+   883→    "Implementation: Maintain a JSON array of serviceable pincodes mapped to location pages. On submit, check the user's pincode against the array; if matched, show a success message with a CTA to the location page; if not, show a polite out-of-area message with a phone number for confirmation. The complete code (HTML + JS + sample pincode JSON) is provided in /code-samples/area-checker.html and /code-samples/serviceable-pincodes.json."
+   884→))
+   885→
+   886→story.append(h2("D. Customer Reviews Management"))
+   887→story.append(p(
+   888→    "Reviews are the single biggest trust signal in a local service business. The new website must (1) display existing Google reviews on a dedicated Reviews page using the Google Places API or an embedding plugin, (2) include a prominent \"Leave a Review\" button that links directly to the Google Business Profile review flow, and (3) feed every completed service into an automated review request workflow."
+   889→))
+   890→story.append(std_table(
+   891→    [
+   892→        ["Component", "Implementation", "Tool"],
+   893→        ["Reviews display", "Embed live Google reviews via plugin or Google Places API", "Google Reviews Widget plugin (free) or Places API"],
+   894→        ["\"Leave a Review\" CTA", "Button on Reviews page + every service page footer linking to GBP review URL", "Direct link: https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID"],
+   895→        ["Post-service review request", "Automated SMS + email 24 hours after service completion", "HubSpot workflow triggered by stage change in CRM"],
+   896→        ["Review request template", "Personalized SMS with technician name, service date, and GBP review link", "See /code-samples/review-request-sms-template.txt"],
+   897→        ["Negative review handling", "Auto-detect 1-3 star ratings → trigger internal alert → response within 24 hours", "HubSpot workflow + Slack/email alert"],
+   898→    ],
+   899→    col_ratios=[0.25, 0.45, 0.30]
+   900→))
+   901→
+   902→story.append(PageBreak())
+   903→
+   904→# ============== SECTION 10: TIMELINE ==============
+   905→story.append(h1("Phase 5.1 — Implementation Timeline"))
+   906→story.append(p(
+   907→    "The complete overhaul can be delivered in 15 working days, with a 15-day post-launch monitoring and stabilization period. Content creation runs in parallel with development from day 4 to maximize throughput. The table below is the master schedule; the developer and content team should treat this as the working plan, with daily check-ins during the build phase."
+   908→))
+   909→
+   910→story.append(std_table(
+   911→    [
+   912→        ["Phase", "Days", "Tasks", "Deliverables", "Owner"],
+   913→        ["1. Discovery & Strategy", "1-3",
+   914→         "Stakeholder kickoff, finalize sitemap, confirm keyword targets, audit existing assets, set up analytics accounts (GA4, GSC)",
+   915→         "Approved sitemap, keyword sheet, GA4+GSC configured",
+   916→         "Strategist + Client"],
+   917→        ["2. Design & Development", "4-12",
+   918→         "Wireframes → visual design → WordPress setup → theme customization → page templates → booking form → schema implementation → mobile testing",
+   919→         "Staging site with all page templates functional",
+   920→         "Developer + Designer"],
+   921→        ["3. Content Creation (parallel)", "4-10",
+   922→         "Write all 25 pages (homepage, 6 service, 8 location, 5 brand, 3 legal, 5 blog), SEO meta tags, image sourcing",
+   923→         "All content .md files delivered to developer",
+   924→         "Content writer + SEO"],
+   925→        ["4. Content Migration", "9-11",
+   926→         "Migrate content into WordPress pages, format headings, add internal links, upload images, set schema per page",
+   927→         "All pages populated on staging",
+   928→         "Developer + Content"],
+   929→        ["5. Testing & QA", "13-14",
+   930→         "Cross-browser testing, mobile testing, form submission tests, schema validation, page speed audit, broken link check, 301 redirect verification",
+   931→         "QA sign-off document, all issues resolved",
+   932→         "QA + Developer"],
+   933→        ["6. Launch & Go-Live", "15",
+   934→         "DNS cutover, SSL install, sitemap submission to GSC, final backup, post-launch smoke test",
+   935→         "Live site accessible, GSC indexing requested",
+   936→         "Developer + Client"],
+   937→        ["7. Post-Launch Monitoring", "16-30",
+   938→         "Daily uptime + speed checks, GSC error monitoring, weekly ranking report, content edits based on user behavior",
+   939→         "Weekly status report + final handover",
+   940→         "Strategist + Developer"],
+   941→    ],
+   942→    col_ratios=[0.20, 0.10, 0.30, 0.25, 0.15]
+   943→))
+   944→
+   945→story.append(PageBreak())
+   946→
+   947→# ============== SECTION 11: BUDGET ==============
+   948→story.append(h1("Phase 5.2 — Budget Estimation"))
+   949→story.append(p(
+   950→    "The budget is split into one-time project costs and annual recurring costs. All figures are in Indian Rupees (INR) with USD equivalents shown for international stakeholders (exchange rate ₹83 ≈ $1). Costs assume a freelance development team and are indicative; agency rates may be 50-100% higher. Hosting recommendations assume shared/managed WordPress hosting suitable for a small business site."
+   951→))
+   952→
+   953→story.append(h2("One-Time Project Costs"))
+   954→story.append(std_table(
+   955→    [
+   956→        ["Category", "Detail", "INR", "USD (~₹83/$)"],
+   957→        ["Web development", "WordPress setup, theme customization, 25 page templates, booking form, schema, mobile optimization", "₹60,000 - ₹1,20,000", "$720 - $1,450"],
+   958→        ["Visual design", "Custom logo refresh (optional), homepage hero, service icons, brand color system", "₹15,000 - ₹35,000", "$180 - $420"],
+   959→        ["Content writing", "25 pages @ ₹1,500-2,500/page (homepage ₹5,000) + 5 blog articles @ ₹1,500/article", "₹55,000 - ₹85,000", "$660 - $1,025"],
+   960→        ["SEO setup", "Keyword research, schema implementation, sitemap, robots.txt, GSC/GA4 setup, 301 redirects", "₹25,000 - ₹40,000", "$300 - $480"],
+   961→        ["Booking system integration", "WPForms Pro + HubSpot CRM setup + automation workflows", "₹15,000 - ₹25,000", "$180 - $300"],
+   962→        ["Testing & QA", "Cross-browser, mobile, performance, schema validation", "₹10,000 - ₹20,000", "$120 - $240"],
+   963→        ["Project management", "15-day engagement, daily standups, client communication", "₹15,000 - ₹25,000", "$180 - $300"],
+   964→        ["TOTAL ONE-TIME", "", "₹1,95,000 - ₹3,50,000", "$2,340 - $4,215"],
+   965→    ],
+   966→    col_ratios=[0.22, 0.48, 0.18, 0.12]
+   967→))
+   968→
+   969→story.append(Spacer(1, 14))
+   970→story.append(h2("Annual Recurring Costs"))
+   971→story.append(std_table(
+   972→    [
+   973→        ["Category", "Detail", "INR/yr", "USD/yr"],
+   974→        ["Domain", "wecarehomesolutions.in renewal", "₹1,000 - ₹1,500", "$12 - $18"],
+   975→        ["Hosting", "Managed WordPress hosting (Hostinger / Cloudways / BigRock)", "₹5,000 - ₹15,000", "$60 - $180"],
+   976→        ["Premium plugins", "WP Rocket + WPForms Pro + ShortPixel (yearly renewals)", "₹8,000 - ₹15,000", "$96 - $180"],
+   977→        ["CDN", "Cloudflare free tier (sufficient for traffic level)", "₹0", "$0"],
+   978→        ["HubSpot CRM", "Free tier (sufficient for current lead volume)", "₹0", "$0"],
+   979→        ["Maintenance retainer (optional)", "5 hours/month: backups, updates, security, minor edits", "₹30,000 - ₹60,000", "$360 - $720"],
+   980→        ["Content marketing (optional)", "2 blog articles/month @ ₹1,500", "₹36,000", "$435"],
+   981→        ["TOTAL ANNUAL", "Without retainer/content", "₹14,000 - ₹31,500", "$170 - $380"],
+   982→        ["TOTAL ANNUAL", "With retainer + content marketing", "₹80,000 - ₹1,27,500", "$960 - $1,535"],
+   983→    ],
+   984→    col_ratios=[0.22, 0.48, 0.18, 0.12]
+   985→))
+   986→
+   987→story.append(Spacer(1, 14))
+   988→story.append(callout_box(
+   989→    "Total Investment Summary",
+   990→    "One-time project: ₹1.95L - ₹3.50L ($2,340 - $4,215). Annual recurring (basic): ₹14K - ₹31.5K ($170 - $380). With content marketing & maintenance retainer: ₹80K - ₹1.28L ($960 - $1,535) per year. Recommended starting package: One-time ₹2.5L + Annual ₹50K for year 1, scaling content marketing in year 2 once ROI is proven.",
+   991→    color=ACCENT_2, bg=CARD_BG
+   992→))
+   993→
+   994→story.append(PageBreak())
+   995→
+   996→# ============== SECTION 12: POST-LAUNCH STRATEGY ==============
+   997→story.append(h1("Phase 5.3 — Post-Launch Strategy & Next Steps"))
+   998→story.append(p(
+   999→    "Launch is the starting line, not the finish line. The new website will reach its full potential only with a sustained 6-12 month post-launch program covering Google Business Profile optimization, review generation, content marketing, local citation building, and quarterly SEO audits. This section provides the 30/60/90 day roadmap and the long-term playbook."
+  1000→))
+  1001→
+  1002→story.append(h2("30/60/90 Day Roadmap"))
+  1003→story.append(std_table(
+  1004→    [
+  1005→        ["Period", "Focus", "Key Actions", "Success Metrics"],
+  1006→        ["Days 1-30", "Stabilization & GBP",
+  1007→         "Submit sitemap to GSC, monitor indexing, fix 404s, optimize Google Business Profile (categories, photos, services, Q&A, posts), set up review request workflow",
+  1008→         "All 25 pages indexed; GBP completeness score ≥ 95%; first 10 new Google reviews"],
+  1009→        ["Days 31-60", "Content Cadence & Local Citations",
+  1010→         "Publish 2 blog articles/month, build local citations on JustDial, IndiaMART, Sulekha, JustDial Kashmir, Yellow Pages, local business directories; respond to all reviews",
+  1011→         "8-12 published citations; 4 blog articles published; review response rate 100%"],
+  1012→        ["Days 61-90", "Conversion Optimization & First Audit",
+  1013→         "Run full technical SEO audit (Ahrefs/Semrush free trial or Screaming Frog), analyze GA4 user flow, A/B test CTA button copy and placement, add exit-intent popup",
+  1014→         "Audit report with action items; conversion rate baseline established; CTA test results"],
+  1015→    ],
+  1016→    col_ratios=[0.15, 0.20, 0.45, 0.20]
+  1017→))
+  1018→
+  1019→story.append(Spacer(1, 14))
+  1020→story.append(h2("Long-Term SEO & Growth Playbook"))
+  1021→story.append(h3("1. Google Business Profile Optimization"))
+  1022→story.append(p(
+  1023→    "The single highest-ROI activity for a local service business. Complete every GBP field: primary category (Appliance Repair Service), secondary categories (Refrigerator Repair Service, Air Conditioning Repair Service, etc.), service area (8 cities), business hours (24/7 if applicable, otherwise accurate), photos (logo, team, van, before/after repairs, technician at work, certificates), services list (link each to website service page), and Q&A section (seed 5-10 common questions with answers). Post weekly GBP updates announcing new services, completed jobs, or seasonal offers. GBP posts appear in local pack results and increase click-through rate by 20-30% on average."
+  1024→))
+  1025→
+  1026→story.append(h3("2. Customer Review Generation"))
+  1027→story.append(p(
+  1028→    "Reviews are a flywheel: more reviews → higher ranking → more customers → more reviews. The workflow is: (1) after every completed service, the technician enters the customer into HubSpot CRM with phone and email, (2) 24 hours later an automated SMS sends a personalized review request with the GBP review link, (3) 3 days later a follow-up email is sent if no review has been left, (4) all reviews — positive and negative — are responded to within 24 hours. Target: 4-6 new reviews per month. Reply template: \"Thank you [customer name] for trusting WeCare with your [appliance]. We're glad our technician [name] could help. Please consider leaving a Google review — it takes 30 seconds and helps other Kashmir families find reliable service. [link]\""
+  1029→))
+  1030→
+  1031→story.append(h3("3. Content Marketing Cadence"))
+  1032→story.append(p(
+  1033→    "Publish 2 blog articles per month, each answering a real customer question identified from Google Search Console (Queries report), customer calls, or FAQs. Article structure: 700-1,200 words, H2 sections, FAQ section with FAQ schema, 1 featured image + 2 in-content images, internal links to relevant service and location pages. Promote each article via GBP post, WhatsApp status, and the WeCare Facebook page (if active). Repurpose top-performing articles into short reels or carousels for Instagram."
+  1034→))
+  1035→
+  1036→story.append(h3("4. Local Citations & Link Building"))
+  1037→story.append(p(
+  1038→    "Submit WeCare to all major Indian business directories: JustDial, IndiaMART, Sulekha, TradeIndia, Yellow Pages India, and Kashmir-specific portals (Kashmiri portals, Kashmir Horizon business directory). Ensure NAP (Name, Address, Phone) is 100% consistent across all citations — even small variations (\"Srinagar, J&K\" vs \"Srinagar, Kashmir\") damage local SEO. Seek partnerships with local real estate agents, interior designers, and appliance retailers for mutual link building. Sponsor a local event or sports team for a high-quality backlink."
+  1039→))
+  1040→
+  1041→story.append(h3("5. Quarterly SEO Audit"))
+  1042→story.append(p(
+  1043→    "Every 90 days, run a full audit: (a) technical crawl with Screaming Frog (free up to 500 URLs) or Sitebulb, (b) ranking report for all target keywords, (c) GA4 traffic and conversion analysis, (d) Google Search Console review for new keyword opportunities and manual actions, (e) competitor ranking movement review. Convert the audit findings into a 10-15 item action list, prioritize by impact and effort, and execute before the next audit cycle."
+  1044→))
+  1045→
+  1046→story.append(h3("6. Conversion Rate Optimization (CRO)"))
+  1047→story.append(p(
+  1048→    "After 90 days of traffic data, identify the highest-traffic page with the lowest conversion rate and A/B test one variable at a time: CTA button copy (\"Book a Repair\" vs \"Get Same-Day Service\"), CTA button color, hero image, headline, number of form fields. Run each test for at least 2 weeks or until statistical significance (100+ conversions per variant). Implement the winner and move to the next test. Continuous CRO compounds: a 10% conversion rate improvement every quarter translates to 46% annual growth in leads from the same traffic."
+  1049→))
+  1050→
+  1051→story.append(PageBreak())
+  1052→
+  1053→# ============== APPENDIX ==============
+  1054→story.append(h1("Appendix A — Deliverables Index"))
+  1055→story.append(p(
+  1056→    "This strategy report is one of more than 30 deliverable files in this project package. The full set is organized into the folder structure below. Each file is named descriptively and contains ready-to-use content for the developer and content team."
+  1057→))
+  1058→
+  1059→story.append(h2("Strategy Report (this document)"))
+  1060→story.append(std_table(
+  1061→    [
+  1062→        ["File", "Description"],
+  1063→        ["WeCare-Home-Solutions-Website-Overhaul-Strategy.pdf", "This complete strategy report — Phases 1, 2, 4, 5 + Appendix"],
+  1064→    ],
+  1065→    col_ratios=[0.40, 0.60]
+  1066→))
+  1067→
+  1068→story.append(h2("Website Content Files (Markdown)"))
+  1069→story.append(std_table(
+  1070→    [
+  1071→        ["Folder / File", "Description"],
+  1072→        ["/content/homepage/homepage.md", "Homepage hero, services grid, process, testimonials, FAQ — ready to paste into WordPress"],
+  1073→        ["/content/service-pages/washing-machine-repair.md", "Full 600+ word service page with meta, H1, body, FAQ, CTA"],
+  1074→        ["/content/service-pages/refrigerator-repair.md", "Full refrigerator repair service page"],
+  1075→        ["/content/service-pages/air-conditioner-repair.md", "Full AC repair service page"],
+  1076→        ["/content/service-pages/microwave-repair.md", "Full microwave repair service page"],
+  1077→        ["/content/service-pages/water-dispenser-repair.md", "Full water dispenser repair service page"],
+  1078→        ["/content/service-pages/dishwasher-repair.md", "Full dishwasher repair service page"],
+  1079→        ["/content/location-pages/srinagar.md", "Srinagar location page (unique content)"],
+  1080→        ["/content/location-pages/anantnag.md", "Anantnag location page (unique)"],
+  1081→        ["/content/location-pages/baramulla.md", "Baramulla location page (unique)"],
+  1082→        ["/content/location-pages/budgam.md", "Budgam location page (unique)"],
+  1083→        ["/content/location-pages/pulwama.md", "Pulwama location page (unique)"],
+  1084→        ["/content/location-pages/ganderbal.md", "Ganderbal location page (unique)"],
+  1085→        ["/content/location-pages/bandipora.md", "Bandipora location page (unique)"],
+  1086→        ["/content/location-pages/kupwara.md", "Kupwara location page (unique)"],
+  1087→        ["/content/brand-pages/about-us.md", "About Us page content"],
+  1088→        ["/content/brand-pages/reviews.md", "Reviews page with 9 existing reviews + Leave a Review section"],
+  1089→        ["/content/brand-pages/faq.md", "15+ question FAQ page (FAQ Schema ready)"],
+  1090→        ["/content/brand-pages/contact-us.md", "Contact page content with NAP, form, map, WhatsApp"],
+  1091→        ["/content/brand-pages/brands-we-service.md", "Brands hub page listing 8+ brands"],
+  1092→        ["/content/legal-pages/privacy-policy.md", "Privacy Policy (IT Act 2000 + GDPR reference)"],
+  1093→        ["/content/legal-pages/terms-and-conditions.md", "Terms & Conditions of service"],
+  1094→        ["/content/legal-pages/warranty-policy.md", "Warranty / Service Policy"],
+  1095→        ["/content/blog/blog-topic-ideas.md", "10-15 blog topic ideas with outlines"],
+  1096→        ["/content/blog/why-is-my-washing-machine-not-draining.md", "Full 600+ word blog article"],
+  1097→        ["/content/blog/signs-your-refrigerator-needs-repair.md", "Full 600+ word blog article"],
+  1098→        ["/content/blog/summer-ac-maintenance-tips.md", "Full 600+ word blog article"],
+  1099→        ["/content/blog/how-to-extend-the-life-of-your-microwave.md", "Full 600+ word blog article"],
+  1100→        ["/content/blog/common-ac-error-codes-explained.md", "Full 600+ word blog article"],
+  1101→    ],
+  1102→    col_ratios=[0.45, 0.55]
+  1103→))
+  1104→
+  1105→story.append(Spacer(1, 14))
+  1106→story.append(h2("Code Samples"))
+  1107→story.append(std_table(
+  1108→    [
+  1109→        ["File", "Description"],
+  1110→        ["/code-samples/schema-localbusiness.json", "LocalBusiness schema JSON-LD for homepage + location pages"],
+  1111→        ["/code-samples/schema-faq.json", "FAQPage schema JSON-LD for FAQ and service pages"],
+  1112→        ["/code-samples/schema-service.json", "Service schema JSON-LD for service pages"],
+  1113→        ["/code-samples/sitemap.xml", "Sample XML sitemap covering all pages"],
+  1114→        ["/code-samples/robots.txt", "Robots.txt with sitemap reference"],
+  1115→        ["/code-samples/booking-form.html", "Multi-step booking form HTML/JS prototype"],
+  1116→        ["/code-samples/whatsapp-widget.html", "WhatsApp floating button with pre-filled message"],
+  1117→        ["/code-samples/area-checker.html", "Pincode service area checker tool"],
+  1118→        ["/code-samples/serviceable-pincodes.json", "Pincode → location page mapping data"],
+  1119→        ["/code-samples/review-request-sms-template.txt", "SMS template for post-service review requests"],
+  1120→    ],
+  1121→    col_ratios=[0.45, 0.55]
+  1122→))
+  1123→
+  1124→story.append(Spacer(1, 14))
+  1125→story.append(h2("How to Use This Package"))
+  1126→story.append(p(
+  1127→    "Hand this entire package to your developer with the following instruction: \"Build the new WeCare Home Solutions website using the Strategy PDF as the master brief, populate each page with the content from the matching .md file in /content/, and deploy the technical configurations from the /code-samples/ files. The 30-day timeline in Section 10 of the PDF is the project schedule.\""
+  1128→))
+  1129→story.append(p(
+  1130→    "For the business owner: read the Executive Summary (Section 1) and Phase 5.3 Post-Launch Strategy (Section 12) carefully — these two sections explain what you are buying and what you need to do after launch to make the investment pay off. The technical sections can be skimmed or delegated to your developer."
+  1131→))
+  1132→
+  1133→# Build the PDF
+  1134→output_path = '/home/z/my-project/download/wecare-website-overhaul/WeCare-Home-Solutions-Website-Overhaul-Strategy.pdf'
+  1135→doc = TocDocTemplate(
+  1136→    output_path,
+  1137→    pagesize=A4,
+  1138→    leftMargin=0.75*inch,
+  1139→    rightMargin=0.75*inch,
+  1140→    topMargin=0.75*inch,
+  1141→    bottomMargin=0.85*inch,
+  1142→    title="WeCare Home Solutions — Website Overhaul Strategy",
+  1143→    author="Z.ai Digital Strategy Advisory",
+  1144→    subject="Complete website overhaul strategy for WeCare Home Solutions Kashmir",
+  1145→    creator="Z.ai"
+  1146→)
+  1147→
+  1148→doc.multiBuild(story, onFirstPage=footer_page_number, onLaterPages=footer_page_number)
+  1149→
+  1150→print(f"PDF generated: {output_path}")
+  1151→print(f"File size: {os.path.getsize(output_path) / 1024:.1f} KB")
+  1152→

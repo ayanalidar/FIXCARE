@@ -59,7 +59,7 @@ export function TestimonialCard({
         </blockquote>
       </CardContent>
       <CardFooter>
-        <p className="text-xs text-muted-foreground">Verified WeCare customer</p>
+        <p className="text-xs text-muted-foreground">Verified FixCare customer</p>
       </CardFooter>
     </Card>
   );

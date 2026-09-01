@@ -6,9 +6,9 @@ import { LocationCard } from "@/components/site/location-card";
 import { LOCATIONS } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Appliance Repair Locations Across the Kashmir Valley",
+  title: "Appliance Repair Locations Across the Jammu Region",
   description:
-    "WeCare Home Solutions serves Srinagar (same-day) plus Anantnag, Baramulla, Budgam, Pulwama, Ganderbal, Bandipora and Kupwara on a next-day basis. Certified technicians, genuine parts, written warranty.",
+    "FixCare Service Center serves Jammu city (same-day) plus Kathua, Samba, Udhampur, Reasi, Rajouri, Poonch and Doda across the Jammu region. Certified technicians, genuine parts, written warranty.",
   alternates: { canonical: "/locations" },
 };
 
@@ -17,8 +17,8 @@ export default function LocationsHub() {
     <div>
       <PageHero
         eyebrow="Service Areas"
-        title="Appliance Repair Across the Kashmir Valley"
-        subtitle="Same-day service in Srinagar, next-day service across the rest of the Valley. Tap your city below for local contact details, neighborhoods covered and area-specific information."
+        title="Appliance Repair Across the Jammu Region"
+        subtitle="Same-day service in Jammu city, next-day across nearby districts, and 2-day service to remote areas like Rajouri, Poonch and Doda. Tap your city below for local contact details, neighborhoods covered and area-specific information."
       />
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

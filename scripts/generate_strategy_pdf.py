@@ -1,5 +1,5 @@
 """
-WeCare Home Solutions - Master Strategy Report
+FixCare Service Center - Master Strategy Report
 Multi-page ReportLab PDF with TOC, structured tables, and proper typography.
 """
 import os
@@ -228,7 +228,7 @@ def footer_page_number(canvas, doc):
     canvas.setFillColor(TEXT_MUTED)
     page_num = canvas.getPageNumber()
     canvas.drawRightString(A4[0] - 0.5*inch, 0.4*inch, f"Page {page_num}")
-    canvas.drawString(0.5*inch, 0.4*inch, "WeCare Home Solutions — Website Overhaul Strategy")
+    canvas.drawString(0.5*inch, 0.4*inch, "FixCare Service Center — Website Overhaul Strategy")
     canvas.setStrokeColor(BORDER)
     canvas.setLineWidth(0.5)
     canvas.line(0.5*inch, 0.55*inch, A4[0] - 0.5*inch, 0.55*inch)
@@ -240,20 +240,20 @@ story = []
 # ============== COVER PAGE ==============
 # Use a centered table to create a professional cover layout
 cover_top_spacer = Spacer(1, 120)
-cover_title_p = Paragraph("WeCare Home Solutions", ParagraphStyle(
+cover_title_p = Paragraph("FixCare Service Center", ParagraphStyle(
     'CTBig', fontName='FreeSerif-Bold', fontSize=36, leading=44,
     textColor=HEADER_FILL, alignment=TA_LEFT, spaceAfter=8))
 cover_subtitle_p = Paragraph("Complete Website Overhaul Strategy", ParagraphStyle(
     'CTSub', fontName='FreeSerif-Bold', fontSize=22, leading=28,
     textColor=ACCENT, alignment=TA_LEFT, spaceAfter=16))
-cover_tagline = Paragraph("An SEO-driven multi-page architecture to transform a single-page brochure into a high-converting lead generation platform for the Kashmir appliance repair market.", ParagraphStyle(
+cover_tagline = Paragraph("An SEO-driven multi-page architecture to transform a single-page brochure into a high-converting lead generation platform for the Jammu appliance repair market.", ParagraphStyle(
     'CTag', fontName='FreeSerif-Italic', fontSize=13, leading=20,
     textColor=TEXT_PRIMARY, alignment=TA_LEFT, spaceAfter=40))
 
 # Cover meta block
 cover_meta_data = [
     [Paragraph('<b>Prepared for</b>', ParagraphStyle('CM1', fontName='FreeSerif-Bold', fontSize=10, leading=14, textColor=TEXT_MUTED, alignment=TA_LEFT)),
-     Paragraph('WeCare Home Solutions, Kashmir', ParagraphStyle('CM2', fontName='FreeSerif', fontSize=11, leading=16, textColor=TEXT_PRIMARY, alignment=TA_LEFT))],
+     Paragraph('FixCare Service Center, Jammu region', ParagraphStyle('CM2', fontName='FreeSerif', fontSize=11, leading=16, textColor=TEXT_PRIMARY, alignment=TA_LEFT))],
     [Paragraph('<b>Prepared by</b>', ParagraphStyle('CM3', fontName='FreeSerif-Bold', fontSize=10, leading=14, textColor=TEXT_MUTED, alignment=TA_LEFT)),
      Paragraph('Digital Strategy & SEO Advisory', ParagraphStyle('CM4', fontName='FreeSerif', fontSize=11, leading=16, textColor=TEXT_PRIMARY, alignment=TA_LEFT))],
     [Paragraph('<b>Date</b>', ParagraphStyle('CM5', fontName='FreeSerif-Bold', fontSize=10, leading=14, textColor=TEXT_MUTED, alignment=TA_LEFT)),
@@ -299,13 +299,13 @@ story.append(PageBreak())
 # ============== SECTION 1: EXECUTIVE SUMMARY ==============
 story.append(h1("Executive Summary"))
 story.append(p(
-    "WeCare Home Solutions currently operates a single-page brochure website that under-utilizes the company's strong local reputation in the Kashmir appliance repair market. With more than 500 completed repairs, a 4.8-star rating across 9 verified reviews, service coverage in 10+ cities, and expertise across 8+ major appliance brands, the business has the operational credentials to dominate local search — yet the current website is structurally unable to capture this demand. The single-page architecture means every search query — whether for \"washing machine repair in Anantnag\" or \"Samsung refrigerator technician in Srinagar\" — competes for the same thin page, diluting relevance signals and pushing WeCare below competitors who have invested in dedicated service and location pages."
+    "FixCare Service Center currently operates a single-page brochure website that under-utilizes the company's strong local reputation in the Jammu appliance repair market. With more than 500 completed repairs, a 4.8-star rating across 9 verified reviews, service coverage in 10+ cities, and expertise across 8+ major appliance brands, the business has the operational credentials to dominate local search — yet the current website is structurally unable to capture this demand. The single-page architecture means every search query — whether for \"washing machine repair in Anantnag\" or \"Samsung refrigerator technician in Jammu city\" — competes for the same thin page, diluting relevance signals and pushing FixCare below competitors who have invested in dedicated service and location pages."
 ))
 story.append(p(
-    "This document proposes a complete overhaul of the digital platform, transforming the website from a static brochure into a multi-page, SEO-optimized lead generation engine. The new architecture is built around three pillars: dedicated service pages for each of the six appliance categories, dedicated location pages for each of the eight major Kashmir cities served, and a content engine (blog + FAQs) that captures informational and long-tail commercial search traffic. Each page is engineered with proper heading hierarchy, schema markup (LocalBusiness, FAQ, Service), and conversion-focused calls to action that channel visitors into the booking system or WhatsApp chat."
+    "This document proposes a complete overhaul of the digital platform, transforming the website from a static brochure into a multi-page, SEO-optimized lead generation engine. The new architecture is built around three pillars: dedicated service pages for each of the six appliance categories, dedicated location pages for each of the eight major Jammu cities served, and a content engine (blog + FAQs) that captures informational and long-tail commercial search traffic. Each page is engineered with proper heading hierarchy, schema markup (LocalBusiness, FAQ, Service), and conversion-focused calls to action that channel visitors into the booking system or WhatsApp chat."
 ))
 story.append(p(
-    "The expected outcome within 6-9 months of launch is a measurable increase in organic search visibility for high-intent local keywords, a doubling of form submissions and WhatsApp inquiries, and the establishment of WeCare Home Solutions as the most discoverable and trusted appliance repair brand in the Kashmir region. The technical specification in this report is developer-ready and includes a recommended technology stack (WordPress + GeneratePress + Rank Math), complete schema markup code, sitemap and robots.txt templates, a multi-step booking form architecture, and a 30-day implementation timeline with a budget estimate in Indian Rupees."
+    "The expected outcome within 6-9 months of launch is a measurable increase in organic search visibility for high-intent local keywords, a doubling of form submissions and WhatsApp inquiries, and the establishment of FixCare Service Center as the most discoverable and trusted appliance repair brand in the Jammu region. The technical specification in this report is developer-ready and includes a recommended technology stack (WordPress + GeneratePress + Rank Math), complete schema markup code, sitemap and robots.txt templates, a multi-step booking form architecture, and a 30-day implementation timeline with a budget estimate in Indian Rupees."
 ))
 story.append(Spacer(1, 14))
 story.append(stat_row([
@@ -317,7 +317,7 @@ story.append(stat_row([
 story.append(Spacer(1, 12))
 story.append(callout_box(
     "Project Goal in One Sentence",
-    "Transform wecarehomesolutions.in from a single-page brochure into a 25+ page, schema-optimized, locally-ranked lead generation platform that captures demand across 6 services and 8 Kashmir cities, supported by a multi-step online booking system and a structured 6-month content roadmap.",
+    "Transform fixcareservicecenter.in from a single-page brochure into a 25+ page, schema-optimized, locally-ranked lead generation platform that captures demand across 6 services and 8 Jammu cities, supported by a multi-step online booking system and a structured 6-month content roadmap.",
     color=ACCENT, bg=CARD_BG
 ))
 
@@ -326,7 +326,7 @@ story.append(PageBreak())
 # ============== SECTION 2: EXISTING WEBSITE ANALYSIS ==============
 story.append(h1("Phase 1.1 — Existing Website Analysis"))
 story.append(p(
-    "The current WeCare Home Solutions website (https://www.wecarehomesolutions.in/) is a single-page brochure that lists all services, location coverage, and contact information on one URL. While this approach was adequate at launch, it now actively prevents the business from ranking for the spectrum of service-specific and location-specific keywords that potential customers in Kashmir are typing into Google every day. The table below summarizes the business information extracted from the existing site, followed by a structured gap analysis."
+    "The current FixCare Service Center website (https://www.fixcareservicecenter.in/) is a single-page brochure that lists all services, location coverage, and contact information on one URL. While this approach was adequate at launch, it now actively prevents the business from ranking for the spectrum of service-specific and location-specific keywords that potential customers in the Jammu region are typing into Google every day. The table below summarizes the business information extracted from the existing site, followed by a structured gap analysis."
 ))
 
 story.append(h2("Current Business Information Captured"))
@@ -334,7 +334,7 @@ story.append(std_table(
     [
         ["Category", "Detail"],
         ["Services offered", "Washing Machine, Refrigerator, Microwave, Water Dispenser, Air Conditioner, Dishwasher repair"],
-        ["Service area", "Kashmir — Srinagar, Anantnag, Baramulla, Budgam, Pulwama, Ganderbal, Bandipora, Kupwara"],
+        ["Service area", "Jammu region — Jammu City, Kathua, Samba, Udhampur, Reasi, Rajouri, Poonch, Doda"],
         ["Key selling points", "24/7 service, same-day service, certified technicians, genuine parts, warranty service"],
         ["Trust signals", "500+ repairs, 10+ cities served, 8+ major brands, 9 customer reviews, 4.8 rating"],
         ["Brand footprint", "Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, Panasonic"],
@@ -353,7 +353,7 @@ story.append(std_table(
         ["Gap / Weakness", "Impact on Business", "Fix in This Project"],
         ["Single-page architecture", "All keywords compete for one URL; relevance signals diluted", "Phase 2 — 25+ page multi-page architecture"],
         ["No dedicated service pages", "Cannot rank for \"washing machine repair\", \"AC service\" etc.", "Phase 3 — 6 service pages, 500+ words each"],
-        ["No dedicated location pages", "Cannot rank for \"repair in Srinagar\", \"repair in Anantnag\" etc.", "Phase 3 — 8 location pages, 300-400 words each"],
+        ["No dedicated location pages", "Cannot rank for \"repair in Jammu city\", \"repair in Anantnag\" etc.", "Phase 3 — 8 location pages, 300-400 words each"],
         ["No online booking system", "Customers must call or WhatsApp — friction, lost overnight leads", "Phase 4 — multi-step booking form + CRM integration"],
         ["No payment integration", "Cannot collect advance/service fees online", "Phase 4 — Razorpay/UPI integration"],
         ["Missing legal pages", "Privacy, Terms, Warranty policy absent — GDPR/IT Act compliance risk", "Phase 3 — 3 legal pages drafted"],
@@ -378,7 +378,7 @@ story.append(PageBreak())
 # ============== SECTION 3: KEYWORD RESEARCH ==============
 story.append(h1("Phase 1.2 — Keyword Research"))
 story.append(p(
-    "The Kashmir appliance repair search market is fragmented across three intent layers: service-based queries (what is broken), location-based queries (where the customer is), and intent-based queries (what the customer wants to do next). A robust keyword strategy must capture all three layers. The tables below present a structured target keyword list grouped by category, with estimated monthly search volume (India-level, filtered to J&K region where possible) and a qualitative competition score (Low/Medium/High) based on the strength of currently ranking pages."
+    "The Jammu appliance repair search market is fragmented across three intent layers: service-based queries (what is broken), location-based queries (where the customer is), and intent-based queries (what the customer wants to do next). A robust keyword strategy must capture all three layers. The tables below present a structured target keyword list grouped by category, with estimated monthly search volume (India-level, filtered to J&K region where possible) and a qualitative competition score (Low/Medium/High) based on the strength of currently ranking pages."
 ))
 story.append(p(
     "Search volume estimates are indicative — actual volumes vary by season (AC repair peaks in May-July, refrigerator and washing machine queries peak during festival months Oct-Nov). Volumes marked \"Long-tail\" indicate low individual volume but high cumulative value across variants."
@@ -388,23 +388,23 @@ story.append(h2("A. Service-Based Keywords"))
 story.append(std_table(
     [
         ["Keyword", "Intent", "Est. Volume/mo", "Competition", "Target Page"],
-        ["washing machine repair Kashmir", "Commercial", "150-250", "Medium", "Service page"],
+        ["washing machine repair Jammu region", "Commercial", "150-250", "Medium", "Service page"],
         ["washing machine not spinning", "Informational", "200-300", "Low", "Service + Blog"],
         ["washing machine not draining", "Informational", "150-220", "Low", "Blog article"],
         ["washing machine error code", "Informational", "120-180", "Low", "Blog + Service"],
-        ["refrigerator repair Srinagar", "Commercial", "120-180", "Medium", "Service + Location"],
+        ["refrigerator repair Jammu city", "Commercial", "120-180", "Medium", "Service + Location"],
         ["fridge not cooling", "Informational", "250-350", "Medium", "Blog + Service"],
         ["fridge leaking water", "Informational", "100-150", "Low", "Blog article"],
-        ["AC service Srinagar", "Commercial", "200-300", "Medium-High", "Service page"],
-        ["AC gas refill Kashmir", "Transactional", "80-120", "Low-Medium", "Service page"],
+        ["AC service Jammu city", "Commercial", "200-300", "Medium-High", "Service page"],
+        ["AC gas refill Jammu region", "Transactional", "80-120", "Low-Medium", "Service page"],
         ["AC not cooling", "Informational", "300-400", "Medium", "Blog + Service"],
         ["microwave repair near me", "Commercial", "150-220", "High", "Service page"],
         ["microwave not heating", "Informational", "180-260", "Low-Medium", "Blog + Service"],
         ["water dispenser repair", "Commercial", "60-100", "Low", "Service page"],
-        ["dishwasher repair Kashmir", "Commercial", "40-80", "Low", "Service page"],
+        ["dishwasher repair Jammu region", "Commercial", "40-80", "Low", "Service page"],
         ["Samsung washing machine repair", "Commercial", "200-280", "Medium-High", "Brand page"],
         ["LG refrigerator technician", "Commercial", "150-220", "Medium-High", "Brand page"],
-        ["Whirlpool service center Kashmir", "Commercial", "80-120", "Medium", "Brand page"],
+        ["Whirlpool service center Jammu region", "Commercial", "80-120", "Medium", "Brand page"],
         ["Bosch dishwasher service", "Commercial", "40-70", "Low", "Brand page"],
     ],
     col_ratios=[0.32, 0.16, 0.16, 0.18, 0.18]
@@ -418,7 +418,7 @@ story.append(p(
 story.append(std_table(
     [
         ["City", "Primary Keyword", "Est. Volume/mo", "Secondary Keyword Examples"],
-        ["Srinagar", "appliance repair Srinagar", "300-450", "washing machine repair Lal Chowk, AC repair Hyderpora, fridge repair Rajbagh"],
+        ["Jammu City", "appliance repair Jammu city", "300-450", "washing machine repair Raghunath Bazar, AC repair Nanak Nagar, fridge repair Gandhinagar"],
         ["Anantnag", "appliance repair Anantnag", "80-140", "AC repair Anantnag, refrigerator repair Khanabal"],
         ["Baramulla", "appliance repair Baramulla", "60-110", "washing machine repair Baramulla, microwave repair Baramulla"],
         ["Budgam", "appliance repair Budgam", "50-90", "fridge repair Budgam, AC repair Beerwah"],
@@ -436,9 +436,9 @@ story.append(std_table(
     [
         ["Intent Type", "Sample Keywords", "Funnel Stage", "Content Format"],
         ["Informational", "how to fix a washing machine, why is my fridge leaking water, signs your AC needs repair", "Top of funnel (awareness)", "Blog articles, FAQ page"],
-        ["Commercial", "best appliance repair in Kashmir, same-day AC repair near me, reliable washing machine service Srinagar", "Middle of funnel (consideration)", "Service pages, About page, Reviews page"],
-        ["Transactional", "book washing machine repair, AC service cost in Srinagar, fridge repair price Kashmir, schedule dishwasher repair", "Bottom of funnel (decision)", "Booking form, service page CTAs, contact page"],
-        ["Navigational", "WeCare Home Solutions, wecarehomesolutions.in, WeCare appliance repair contact", "Brand search", "Homepage, contact page, GBP"],
+        ["Commercial", "best appliance repair in the Jammu region, same-day AC repair near me, reliable washing machine service Jammu city", "Middle of funnel (consideration)", "Service pages, About page, Reviews page"],
+        ["Transactional", "book washing machine repair, AC service cost in Jammu city, fridge repair price Jammu region, schedule dishwasher repair", "Bottom of funnel (decision)", "Booking form, service page CTAs, contact page"],
+        ["Navigational", "FixCare Service Center, fixcareservicecenter.in, FixCare appliance repair contact", "Brand search", "Homepage, contact page, GBP"],
     ],
     col_ratios=[0.16, 0.42, 0.22, 0.20]
 ))
@@ -455,10 +455,10 @@ story.append(PageBreak())
 # ============== SECTION 4: COMPETITOR ANALYSIS ==============
 story.append(h1("Phase 1.3 — Competitor Analysis & Opportunities"))
 story.append(p(
-    "The Kashmir appliance repair market is served by a mix of national-brand authorized service centers (Samsung, LG, Whirlpool), local independent repair shops with basic websites or JustDial/IndiaMART listings, and a small number of multi-brand local repair businesses with their own websites. WeCare Home Solutions competes primarily in the third category — multi-brand local repair — which is also the category with the weakest digital presence and therefore the largest opportunity."
+    "The Jammu appliance repair market is served by a mix of national-brand authorized service centers (Samsung, LG, Whirlpool), local independent repair shops with basic websites or JustDial/IndiaMART listings, and a small number of multi-brand local repair businesses with their own websites. FixCare Service Center competes primarily in the third category — multi-brand local repair — which is also the category with the weakest digital presence and therefore the largest opportunity."
 ))
 
-story.append(h2("Typical Competitor Profile — Kashmir Appliance Repair Websites"))
+story.append(h2("Typical Competitor Profile — Jammu Appliance Repair Websites"))
 story.append(std_table(
     [
         ["Competitor Type", "Common Strengths", "Common Weaknesses"],
@@ -475,15 +475,15 @@ story.append(std_table(
 ))
 
 story.append(Spacer(1, 12))
-story.append(h2("Opportunity Map for WeCare Home Solutions"))
+story.append(h2("Opportunity Map for FixCare Service Center"))
 story.append(p(
-    "The gaps in competitor websites are clear and exploitable. WeCare has the operational credentials (500+ repairs, 4.8 rating, certified technicians, genuine parts, warranty) to back up the marketing claims — the missing piece is the digital infrastructure that surfaces these credentials to searchers at the right moment."
+    "The gaps in competitor websites are clear and exploitable. FixCare has the operational credentials (500+ repairs, 4.8 rating, certified technicians, genuine parts, warranty) to back up the marketing claims — the missing piece is the digital infrastructure that surfaces these credentials to searchers at the right moment."
 ))
 story.append(std_table(
     [
-        ["Opportunity", "Competitor Gap", "WeCare Action", "Expected Outcome (6-9 months)"],
+        ["Opportunity", "Competitor Gap", "FixCare Action", "Expected Outcome (6-9 months)"],
         ["Local SEO dominance",
-         "Competitors have no dedicated location pages; Google shows JustDial aggregators for \"repair in Srinagar\"",
+         "Competitors have no dedicated location pages; Google shows JustDial aggregators for \"repair in Jammu city\"",
          "Build 8 location pages with unique content, landmarks, and local schema",
          "Rank in top 3 for \"appliance repair [city]\" for all 8 cities"],
         ["Service-specific authority",
@@ -523,9 +523,9 @@ story.append(p("The recommended URL pattern is short, keyword-rich, and uses hyp
 story.append(std_table(
     [
         ["Page Type", "URL Pattern", "Example", "Count"],
-        ["Homepage", "/", "wecarehomesolutions.in/", "1"],
+        ["Homepage", "/", "fixcareservicecenter.in/", "1"],
         ["Service page", "/services/{slug}/", "/services/washing-machine-repair/", "6"],
-        ["Location page", "/locations/{city-slug}/", "/locations/srinagar/", "8"],
+        ["Location page", "/locations/{city-slug}/", "/locations/jammu/", "8"],
         ["Brand hub", "/brands/", "/brands/", "1"],
         ["Individual brand", "/brands/{brand-slug}/", "/brands/samsung/", "(optional, 8)"],
         ["About", "/about/", "/about/", "1"],
@@ -544,7 +544,7 @@ story.append(std_table(
 story.append(Spacer(1, 14))
 story.append(h2("Visual Sitemap Tree"))
 sitemap_text = """
-WeCare Home Solutions
+FixCare Service Center
 |
 |-- Homepage (/)
 |
@@ -557,7 +557,7 @@ WeCare Home Solutions
 |   |-- Dishwasher Repair
 |
 |-- Locations
-|   |-- Srinagar
+|   |-- Jammu City
 |   |-- Anantnag
 |   |-- Baramulla
 |   |-- Budgam
@@ -590,7 +590,7 @@ story.append(h2("SEO Priority Matrix"))
 story.append(std_table(
     [
         ["Priority", "Page", "Reasoning"],
-        ["P0 — Critical", "Homepage, 6 service pages, Srinagar location, Contact, Booking form", "Core conversion paths + highest-volume keywords"],
+        ["P0 — Critical", "Homepage, 6 service pages, Jammu City location, Contact, Booking form", "Core conversion paths + highest-volume keywords"],
         ["P1 — High", "Other 7 location pages, Reviews, FAQ, About", "Local SEO coverage + trust signals"],
         ["P2 — Medium", "Blog hub + 5 articles, Brands hub, Privacy/Terms/Warranty", "Authority building + compliance"],
         ["P3 — Future", "Individual brand pages (Samsung, LG, etc.), additional blog content", "Scale after launch based on data"],
@@ -611,12 +611,12 @@ story.append(h2("Brief 1 — Homepage"))
 story.append(std_table(
     [
         ["Element", "Specification"],
-        ["Primary keyword", "appliance repair Kashmir, WeCare Home Solutions"],
-        ["Secondary keywords", "same-day appliance repair, certified technician Kashmir, multi-brand repair service"],
-        ["Title tag", "WeCare Home Solutions — Same-Day Appliance Repair in Kashmir | 24/7 Service"],
-        ["Meta description", "Kashmir's trusted multi-brand appliance repair service. Same-day washing machine, fridge, AC, microwave, dishwasher & water dispenser repair across 10+ cities. Certified technicians, genuine parts, warranty. Call now."],
+        ["Primary keyword", "appliance repair Jammu region, FixCare Service Center"],
+        ["Secondary keywords", "same-day appliance repair, certified technician Jammu region, multi-brand repair service"],
+        ["Title tag", "FixCare Service Center — Same-Day Appliance Repair in the Jammu region | 24/7 Service"],
+        ["Meta description", "Jammu's trusted multi-brand appliance repair service. Same-day washing machine, fridge, AC, microwave, dishwasher & water dispenser repair across 10+ cities. Certified technicians, genuine parts, warranty. Call now."],
         ["Word count target", "1,200 - 1,500 words across all sections"],
-        ["H1", "Same-Day Appliance Repair Across Kashmir — Certified Technicians You Can Trust"],
+        ["H1", "Same-Day Appliance Repair Across the Jammu region — Certified Technicians You Can Trust"],
         ["Required sections", "Hero (headline + CTA + trust badges), Trust stats strip, Services grid (6 cards), How We Work (3 steps), Locations covered (8 city chips), Featured testimonials (3), FAQ teaser (6 questions), Footer CTA"],
         ["CTA strategy", "Primary CTA \"Book a Repair\" in hero and sticky header; secondary CTA \"WhatsApp Us\" sticky bottom-right on mobile; tertiary CTA \"Call Now\" phone link prominent on mobile"],
         ["Internal linking", "Service cards → service pages; city chips → location pages; testimonials → reviews page; FAQ teaser → FAQ page"],
@@ -631,12 +631,12 @@ story.append(h2("Brief 2 — Washing Machine Repair Service Page"))
 story.append(std_table(
     [
         ["Element", "Specification"],
-        ["Primary keyword", "washing machine repair Kashmir"],
-        ["Secondary keywords", "washing machine service Srinagar, washing machine not spinning, Samsung washing machine repair, LG washing machine technician, washing machine error code"],
-        ["Title tag", "Washing Machine Repair in Kashmir — Same-Day Service for All Brands | WeCare"],
-        ["Meta description", "Expert washing machine repair across Kashmir. Same-day service for Samsung, LG, Whirlpool, IFB, Bosch & more. Fixes for not spinning, not draining, error codes, leaking. Certified technicians, genuine parts, warranty. Book now."],
+        ["Primary keyword", "washing machine repair Jammu region"],
+        ["Secondary keywords", "washing machine service Jammu city, washing machine not spinning, Samsung washing machine repair, LG washing machine technician, washing machine error code"],
+        ["Title tag", "Washing Machine Repair in the Jammu region — Same-Day Service for All Brands | FixCare"],
+        ["Meta description", "Expert washing machine repair across the Jammu region. Same-day service for Samsung, LG, Whirlpool, IFB, Bosch & more. Fixes for not spinning, not draining, error codes, leaking. Certified technicians, genuine parts, warranty. Book now."],
         ["Word count target", "600 - 800 words"],
-        ["H1", "Washing Machine Repair in Kashmir — Same-Day Service for Every Brand & Problem"],
+        ["H1", "Washing Machine Repair in the Jammu region — Same-Day Service for Every Brand & Problem"],
         ["Required sections", "Intro (problem + solution), Common problems we fix (6-8 items), Brands we service, Our repair process (3 steps), Why choose professional repair (benefits), Warranty information, Service areas, Customer testimonial (1), CTA, FAQ (5 questions)"],
         ["CTA", "Book a Washing Machine Repair (primary button) + WhatsApp Chat (secondary)"],
         ["Internal linking", "Brands → individual brand pages (if exists), Service areas → 8 location pages, Related services → Refrigerator/AC/Dishwasher pages"],
@@ -651,12 +651,12 @@ story.append(h2("Brief 3 — Refrigerator Repair Service Page"))
 story.append(std_table(
     [
         ["Element", "Specification"],
-        ["Primary keyword", "refrigerator repair Kashmir"],
-        ["Secondary keywords", "fridge not cooling, refrigerator service Srinagar, LG refrigerator technician, fridge leaking water, freezer not freezing"],
-        ["Title tag", "Refrigerator Repair in Kashmir — Fridge Not Cooling? We Fix It Today | WeCare"],
-        ["Meta description", "Same-day refrigerator repair in Kashmir. Fixes for not cooling, leaking, freezing issues, compressor problems. All brands serviced — Samsung, LG, Whirlpool, Godrej, Haier. Genuine parts, warranty. Book now."],
+        ["Primary keyword", "refrigerator repair Jammu region"],
+        ["Secondary keywords", "fridge not cooling, refrigerator service Jammu city, LG refrigerator technician, fridge leaking water, freezer not freezing"],
+        ["Title tag", "Refrigerator Repair in the Jammu region — Fridge Not Cooling? We Fix It Today | FixCare"],
+        ["Meta description", "Same-day refrigerator repair in the Jammu region. Fixes for not cooling, leaking, freezing issues, compressor problems. All brands serviced — Samsung, LG, Whirlpool, Godrej, Haier. Genuine parts, warranty. Book now."],
         ["Word count target", "600 - 800 words"],
-        ["H1", "Refrigerator Repair in Kashmir — Same-Day Fixes for Cooling, Leaking & Freezer Issues"],
+        ["H1", "Refrigerator Repair in the Jammu region — Same-Day Fixes for Cooling, Leaking & Freezer Issues"],
         ["Required sections", "Intro, Common fridge problems (not cooling, leaking, over-freezing, compressor, thermostat, defrost), Brands we service, Repair process, Why professional service matters (food safety angle), Warranty, Service areas, Testimonial, CTA, FAQ"],
         ["CTA", "Book a Refrigerator Repair (primary) + WhatsApp (secondary)"],
         ["Schema markup", "Service, FAQ, BreadcrumbList"],
@@ -670,13 +670,13 @@ story.append(h2("Brief 4 — Air Conditioner Repair Service Page"))
 story.append(std_table(
     [
         ["Element", "Specification"],
-        ["Primary keyword", "AC repair Kashmir, AC service Srinagar"],
+        ["Primary keyword", "AC repair Jammu region, AC service Jammu city"],
         ["Secondary keywords", "AC gas refill, AC not cooling, AC installation, split AC service, Voltas AC repair, LG AC technician"],
-        ["Title tag", "AC Repair & Service in Kashmir — Gas Refill, Installation, All Brands | WeCare"],
-        ["Meta description", "Same-day AC repair across Kashmir. Gas refill, not cooling fixes, installation, annual maintenance. All brands — Voltas, LG, Samsung, Daikin, Hitachi. Certified technicians, genuine parts. Book now."],
+        ["Title tag", "AC Repair & Service in the Jammu region — Gas Refill, Installation, All Brands | FixCare"],
+        ["Meta description", "Same-day AC repair across the Jammu region. Gas refill, not cooling fixes, installation, annual maintenance. All brands — Voltas, LG, Samsung, Daikin, Hitachi. Certified technicians, genuine parts. Book now."],
         ["Word count target", "600 - 800 words"],
-        ["H1", "AC Repair & Service in Kashmir — Gas Refill, Installations & Cooling Fixes"],
-        ["Required sections", "Intro (Kashmir summer angle), Common AC problems (not cooling, low cooling, gas refill, water leakage, noise, remote not working), Services offered (repair, gas refill, installation, AMC), Brands, Process, Why choose us (certified, genuine gas, warranty), Service areas, Testimonial, CTA, FAQ"],
+        ["H1", "AC Repair & Service in the Jammu region — Gas Refill, Installations & Cooling Fixes"],
+        ["Required sections", "Intro (Jammu summer angle), Common AC problems (not cooling, low cooling, gas refill, water leakage, noise, remote not working), Services offered (repair, gas refill, installation, AMC), Brands, Process, Why choose us (certified, genuine gas, warranty), Service areas, Testimonial, CTA, FAQ"],
         ["CTA", "Book an AC Repair / Book Free Site Visit (primary) + WhatsApp (secondary)"],
         ["Schema markup", "Service, FAQ, BreadcrumbList"],
     ],
@@ -684,22 +684,22 @@ story.append(std_table(
 ))
 story.append(Spacer(1, 10))
 
-# Srinagar location brief
-story.append(h2("Brief 5 — Srinagar Location Page"))
+# Jammu City location brief
+story.append(h2("Brief 5 — Jammu City Location Page"))
 story.append(std_table(
     [
         ["Element", "Specification"],
-        ["Primary keyword", "appliance repair Srinagar"],
-        ["Secondary keywords", "washing machine repair Lal Chowk, AC repair Hyderpora, refrigerator repair Rajbagh, microwave repair Srinagar"],
-        ["Title tag", "Appliance Repair in Srinagar — Same-Day Service Across All Localities | WeCare"],
-        ["Meta description", "Trusted appliance repair service in Srinagar covering Lal Chowk, Hyderpora, Rajbagh, Karan Nagar, Sonwar, Bemina. Same-day washing machine, fridge, AC & microwave repair. Certified technicians. Book now."],
+        ["Primary keyword", "appliance repair Jammu city"],
+        ["Secondary keywords", "washing machine repair Raghunath Bazar, AC repair Nanak Nagar, refrigerator repair Gandhinagar, microwave repair Jammu city"],
+        ["Title tag", "Appliance Repair in Jammu city — Same-Day Service Across All Localities | FixCare"],
+        ["Meta description", "Trusted appliance repair service in Jammu City covering Raghunath Bazar, Nanak Nagar, Gandhinagar, Talab Tillo, Bakshi Nagar, Janipur. Same-day washing machine, fridge, AC & microwave repair. Certified technicians. Book now."],
         ["Word count target", "350 - 450 words"],
-        ["H1", "Appliance Repair in Srinagar — Same-Day Service Across All Localities"],
-        ["Required sections", "Local intro (mention Srinagar context, Dal Lake, Lal Chowk), Neighborhoods/landmarks we cover (8-10 named areas), Services offered (list of 6 with links to service pages), Why Srinagar customers choose WeCare (local trust angle), Customer testimonial (1 Srinagar customer), CTA, Embedded Google Map, FAQ (3 location-specific questions)"],
-        ["CTA", "Book a Repair in Srinagar (primary) + WhatsApp + Call Srinagar team"],
+        ["H1", "Appliance Repair in Jammu city — Same-Day Service Across All Localities"],
+        ["Required sections", "Local intro (mention Jammu context, Tawi river, Raghunath Bazar), Neighborhoods/landmarks we cover (8-10 named areas), Services offered (list of 6 with links to service pages), Why Jammu customers choose FixCare (local trust angle), Customer testimonial (1 Jammu customer), CTA, Embedded Google Map, FAQ (3 location-specific questions)"],
+        ["CTA", "Book a Repair in Jammu city (primary) + WhatsApp + Call Jammu team"],
         ["Internal linking", "Service links → 6 service pages, Other location pages (cross-link), Contact page"],
-        ["Schema markup", "LocalBusiness schema with Srinagar geo-coordinates, BreadcrumbList, FAQPage"],
-        ["Unique content rule", "Must be 100% unique — no copy-paste from other location pages. Local landmarks and neighborhood names must be specific to Srinagar."],
+        ["Schema markup", "LocalBusiness schema with Jammu City geo-coordinates, BreadcrumbList, FAQPage"],
+        ["Unique content rule", "Must be 100% unique — no copy-paste from other location pages. Local landmarks and neighborhood names must be specific to Jammu City."],
     ],
     col_ratios=[0.25, 0.75]
 ))
@@ -709,7 +709,7 @@ story.append(PageBreak())
 # ============== SECTION 7: TECH STACK ==============
 story.append(h1("Phase 4.1 — Technology Stack Recommendation"))
 story.append(p(
-    "The choice of technology stack determines the long-term cost, ease of content updates, SEO flexibility, and the available pool of developers who can maintain the site. For WeCare Home Solutions — a growing local service business with non-technical owners — the recommended stack is WordPress with the GeneratePress theme and the Rank Math SEO plugin. This combination offers the best balance of SEO capability, content management ease, and total cost of ownership."
+    "The choice of technology stack determines the long-term cost, ease of content updates, SEO flexibility, and the available pool of developers who can maintain the site. For FixCare Service Center — a growing local service business with non-technical owners — the recommended stack is WordPress with the GeneratePress theme and the Rank Math SEO plugin. This combination offers the best balance of SEO capability, content management ease, and total cost of ownership."
 ))
 
 story.append(h2("Stack Comparison"))
@@ -724,7 +724,7 @@ story.append(std_table(
         ["Booking system integration", "Mature plugins (WPForms, Amelia, BirchPress)", "Limited — Zapier-based", "Custom build required"],
         ["Performance (Core Web Vitals)", "Good with caching plugins", "Excellent", "Excellent"],
         ["Multi-page local SEO scale", "Excellent — easy to clone page templates", "Good", "Excellent but requires code"],
-        ["Recommendation for WeCare", "RECOMMENDED — best balance", "Alternative for design-led teams", "Overkill for current scope"],
+        ["Recommendation for FixCare", "RECOMMENDED — best balance", "Alternative for design-led teams", "Overkill for current scope"],
     ],
     col_ratios=[0.22, 0.26, 0.26, 0.26]
 ))
@@ -753,7 +753,7 @@ story.append(PageBreak())
 # ============== SECTION 8: TECHNICAL SEO ==============
 story.append(h1("Phase 4.2 — Technical SEO Configuration"))
 story.append(p(
-    "Technical SEO is the foundation that allows content to rank. Even the best-written page will fail to rank if search engines cannot crawl it, understand it, or render it properly. This section provides the complete technical SEO configuration for the new WeCare Home Solutions website, including on-page rules, schema markup, sitemap and robots.txt templates, redirect strategy, and performance optimization. All code samples referenced here are provided as separate files in the /code-samples/ folder of this deliverable."
+    "Technical SEO is the foundation that allows content to rank. Even the best-written page will fail to rank if search engines cannot crawl it, understand it, or render it properly. This section provides the complete technical SEO configuration for the new FixCare Service Center website, including on-page rules, schema markup, sitemap and robots.txt templates, redirect strategy, and performance optimization. All code samples referenced here are provided as separate files in the /code-samples/ folder of this deliverable."
 ))
 
 story.append(h2("On-Page SEO Rules"))
@@ -763,11 +763,11 @@ story.append(p(
 story.append(std_table(
     [
         ["Element", "Rule", "Example"],
-        ["Title tag length", "50-60 characters", "\"Washing Machine Repair in Kashmir — Same-Day Service | WeCare\" (54 chars)"],
+        ["Title tag length", "50-60 characters", "\"Washing Machine Repair in the Jammu region — Same-Day Service | FixCare\" (54 chars)"],
         ["Meta description length", "140-160 characters", "See content brief examples"],
-        ["H1 per page", "Exactly one H1, contains primary keyword", "H1: \"Washing Machine Repair in Kashmir...\""],
+        ["H1 per page", "Exactly one H1, contains primary keyword", "H1: \"Washing Machine Repair in the Jammu region...\""],
         ["H2-H3 hierarchy", "Logical nesting; H2 for sections, H3 for sub-sections", "Never skip levels (H2 → H4 is forbidden)"],
-        ["Image alt text", "Descriptive, contains keyword where natural", "alt=\"Samsung washing machine drum repair by WeCare technician\""],
+        ["Image alt text", "Descriptive, contains keyword where natural", "alt=\"Samsung washing machine drum repair by FixCare technician\""],
         ["Image file naming", "kebab-case, descriptive", "samsung-washing-machine-drum-repair.jpg (NOT IMG_4032.jpg)"],
         ["Image format", "WebP for photos, SVG for icons", "Auto-convert via ShortPixel"],
         ["Internal linking", "Minimum 3 internal links per page to related content", "Service page → 3 location pages + 1 related service page + 1 blog article"],
@@ -849,7 +849,7 @@ story.append(p(
 
 story.append(h2("A. Online Booking System"))
 story.append(p(
-    "The booking system is the primary conversion tool of the new website. It must be a multi-step form that progressively qualifies the lead without overwhelming the user. Each step should ask one question, show progress, and allow back navigation. On submission, the lead should be saved to a CRM (HubSpot Free recommended), trigger an automated confirmation SMS and email to the customer, and notify the WeCare team via WhatsApp and email."
+    "The booking system is the primary conversion tool of the new website. It must be a multi-step form that progressively qualifies the lead without overwhelming the user. Each step should ask one question, show progress, and allow back navigation. On submission, the lead should be saved to a CRM (HubSpot Free recommended), trigger an automated confirmation SMS and email to the customer, and notify the FixCare team via WhatsApp and email."
 ))
 story.append(std_table(
     [
@@ -869,15 +869,15 @@ story.append(p(
 
 story.append(h2("B. WhatsApp Live Chat Integration"))
 story.append(p(
-    "WhatsApp is the dominant communication channel in Kashmir. A floating WhatsApp button should appear on every page (sticky bottom-right on mobile, bottom-right on desktop). Clicking it opens WhatsApp with a pre-filled message that includes the page URL the user was on, allowing the WeCare team to understand context immediately."
+    "WhatsApp is the dominant communication channel in the Jammu region. A floating WhatsApp button should appear on every page (sticky bottom-right on mobile, bottom-right on desktop). Clicking it opens WhatsApp with a pre-filled message that includes the page URL the user was on, allowing the FixCare team to understand context immediately."
 ))
 story.append(p(
-    "Implementation: Use the \"Click to Chat\" WordPress plugin (free) for the basic floating button. For the pre-filled message with page URL, add a small JS snippet that updates the wa.me link href on page load. The message template should be: \"Hi WeCare team, I'm on the [page name] page on your website and need help with [appliance/service].\" The complete code snippet is provided in /code-samples/whatsapp-widget.html."
+    "Implementation: Use the \"Click to Chat\" WordPress plugin (free) for the basic floating button. For the pre-filled message with page URL, add a small JS snippet that updates the wa.me link href on page load. The message template should be: \"Hi FixCare team, I'm on the [page name] page on your website and need help with [appliance/service].\" The complete code snippet is provided in /code-samples/whatsapp-widget.html."
 ))
 
 story.append(h2("C. Pincode / Service Area Checker"))
 story.append(p(
-    "A lightweight tool on the homepage and contact page that lets users enter their pincode and instantly see whether WeCare serves their area, plus a direct link to their location page if applicable. This reduces friction for out-of-area users (clear \"not served\" message) and creates an internal-linking signal for in-area users."
+    "A lightweight tool on the homepage and contact page that lets users enter their pincode and instantly see whether FixCare serves their area, plus a direct link to their location page if applicable. This reduces friction for out-of-area users (clear \"not served\" message) and creates an internal-linking signal for in-area users."
 ))
 story.append(p(
     "Implementation: Maintain a JSON array of serviceable pincodes mapped to location pages. On submit, check the user's pincode against the array; if matched, show a success message with a CTA to the location page; if not, show a polite out-of-area message with a phone number for confirmation. The complete code (HTML + JS + sample pincode JSON) is provided in /code-samples/area-checker.html and /code-samples/serviceable-pincodes.json."
@@ -971,7 +971,7 @@ story.append(h2("Annual Recurring Costs"))
 story.append(std_table(
     [
         ["Category", "Detail", "INR/yr", "USD/yr"],
-        ["Domain", "wecarehomesolutions.in renewal", "₹1,000 - ₹1,500", "$12 - $18"],
+        ["Domain", "fixcareservicecenter.in renewal", "₹1,000 - ₹1,500", "$12 - $18"],
         ["Hosting", "Managed WordPress hosting (Hostinger / Cloudways / BigRock)", "₹5,000 - ₹15,000", "$60 - $180"],
         ["Premium plugins", "WP Rocket + WPForms Pro + ShortPixel (yearly renewals)", "₹8,000 - ₹15,000", "$96 - $180"],
         ["CDN", "Cloudflare free tier (sufficient for traffic level)", "₹0", "$0"],
@@ -1007,7 +1007,7 @@ story.append(std_table(
          "Submit sitemap to GSC, monitor indexing, fix 404s, optimize Google Business Profile (categories, photos, services, Q&A, posts), set up review request workflow",
          "All 25 pages indexed; GBP completeness score ≥ 95%; first 10 new Google reviews"],
         ["Days 31-60", "Content Cadence & Local Citations",
-         "Publish 2 blog articles/month, build local citations on JustDial, IndiaMART, Sulekha, JustDial Kashmir, Yellow Pages, local business directories; respond to all reviews",
+         "Publish 2 blog articles/month, build local citations on JustDial, IndiaMART, Sulekha, JustDial Jammu, Yellow Pages, local business directories; respond to all reviews",
          "8-12 published citations; 4 blog articles published; review response rate 100%"],
         ["Days 61-90", "Conversion Optimization & First Audit",
          "Run full technical SEO audit (Ahrefs/Semrush free trial or Screaming Frog), analyze GA4 user flow, A/B test CTA button copy and placement, add exit-intent popup",
@@ -1025,17 +1025,17 @@ story.append(p(
 
 story.append(h3("2. Customer Review Generation"))
 story.append(p(
-    "Reviews are a flywheel: more reviews → higher ranking → more customers → more reviews. The workflow is: (1) after every completed service, the technician enters the customer into HubSpot CRM with phone and email, (2) 24 hours later an automated SMS sends a personalized review request with the GBP review link, (3) 3 days later a follow-up email is sent if no review has been left, (4) all reviews — positive and negative — are responded to within 24 hours. Target: 4-6 new reviews per month. Reply template: \"Thank you [customer name] for trusting WeCare with your [appliance]. We're glad our technician [name] could help. Please consider leaving a Google review — it takes 30 seconds and helps other Kashmir families find reliable service. [link]\""
+    "Reviews are a flywheel: more reviews → higher ranking → more customers → more reviews. The workflow is: (1) after every completed service, the technician enters the customer into HubSpot CRM with phone and email, (2) 24 hours later an automated SMS sends a personalized review request with the GBP review link, (3) 3 days later a follow-up email is sent if no review has been left, (4) all reviews — positive and negative — are responded to within 24 hours. Target: 4-6 new reviews per month. Reply template: \"Thank you [customer name] for trusting FixCare with your [appliance]. We're glad our technician [name] could help. Please consider leaving a Google review — it takes 30 seconds and helps other Jammu families find reliable service. [link]\""
 ))
 
 story.append(h3("3. Content Marketing Cadence"))
 story.append(p(
-    "Publish 2 blog articles per month, each answering a real customer question identified from Google Search Console (Queries report), customer calls, or FAQs. Article structure: 700-1,200 words, H2 sections, FAQ section with FAQ schema, 1 featured image + 2 in-content images, internal links to relevant service and location pages. Promote each article via GBP post, WhatsApp status, and the WeCare Facebook page (if active). Repurpose top-performing articles into short reels or carousels for Instagram."
+    "Publish 2 blog articles per month, each answering a real customer question identified from Google Search Console (Queries report), customer calls, or FAQs. Article structure: 700-1,200 words, H2 sections, FAQ section with FAQ schema, 1 featured image + 2 in-content images, internal links to relevant service and location pages. Promote each article via GBP post, WhatsApp status, and the FixCare Facebook page (if active). Repurpose top-performing articles into short reels or carousels for Instagram."
 ))
 
 story.append(h3("4. Local Citations & Link Building"))
 story.append(p(
-    "Submit WeCare to all major Indian business directories: JustDial, IndiaMART, Sulekha, TradeIndia, Yellow Pages India, and Kashmir-specific portals (Kashmiri portals, Kashmir Horizon business directory). Ensure NAP (Name, Address, Phone) is 100% consistent across all citations — even small variations (\"Srinagar, J&K\" vs \"Srinagar, Kashmir\") damage local SEO. Seek partnerships with local real estate agents, interior designers, and appliance retailers for mutual link building. Sponsor a local event or sports team for a high-quality backlink."
+    "Submit FixCare to all major Indian business directories: JustDial, IndiaMART, Sulekha, TradeIndia, Yellow Pages India, and Jammu-specific portals (Jammu portals, Jammu Horizon business directory). Ensure NAP (Name, Address, Phone) is 100% consistent across all citations — even small variations (\"Jammu city, J&K\" vs \"Jammu, Jammu region\") damage local SEO. Seek partnerships with local real estate agents, interior designers, and appliance retailers for mutual link building. Sponsor a local event or sports team for a high-quality backlink."
 ))
 
 story.append(h3("5. Quarterly SEO Audit"))
@@ -1060,7 +1060,7 @@ story.append(h2("Strategy Report (this document)"))
 story.append(std_table(
     [
         ["File", "Description"],
-        ["WeCare-Home-Solutions-Website-Overhaul-Strategy.pdf", "This complete strategy report — Phases 1, 2, 4, 5 + Appendix"],
+        ["FixCare-Home-Solutions-Website-Overhaul-Strategy.pdf", "This complete strategy report — Phases 1, 2, 4, 5 + Appendix"],
     ],
     col_ratios=[0.40, 0.60]
 ))
@@ -1076,7 +1076,7 @@ story.append(std_table(
         ["/content/service-pages/microwave-repair.md", "Full microwave repair service page"],
         ["/content/service-pages/water-dispenser-repair.md", "Full water dispenser repair service page"],
         ["/content/service-pages/dishwasher-repair.md", "Full dishwasher repair service page"],
-        ["/content/location-pages/srinagar.md", "Srinagar location page (unique content)"],
+        ["/content/location-pages/jammu.md", "Jammu City location page (unique content)"],
         ["/content/location-pages/anantnag.md", "Anantnag location page (unique)"],
         ["/content/location-pages/baramulla.md", "Baramulla location page (unique)"],
         ["/content/location-pages/budgam.md", "Budgam location page (unique)"],
@@ -1124,14 +1124,14 @@ story.append(std_table(
 story.append(Spacer(1, 14))
 story.append(h2("How to Use This Package"))
 story.append(p(
-    "Hand this entire package to your developer with the following instruction: \"Build the new WeCare Home Solutions website using the Strategy PDF as the master brief, populate each page with the content from the matching .md file in /content/, and deploy the technical configurations from the /code-samples/ files. The 30-day timeline in Section 10 of the PDF is the project schedule.\""
+    "Hand this entire package to your developer with the following instruction: \"Build the new FixCare Service Center website using the Strategy PDF as the master brief, populate each page with the content from the matching .md file in /content/, and deploy the technical configurations from the /code-samples/ files. The 30-day timeline in Section 10 of the PDF is the project schedule.\""
 ))
 story.append(p(
     "For the business owner: read the Executive Summary (Section 1) and Phase 5.3 Post-Launch Strategy (Section 12) carefully — these two sections explain what you are buying and what you need to do after launch to make the investment pay off. The technical sections can be skimmed or delegated to your developer."
 ))
 
 # Build the PDF
-output_path = '/home/z/my-project/download/wecare-website-overhaul/WeCare-Home-Solutions-Website-Overhaul-Strategy.pdf'
+output_path = '/home/z/my-project/download/wecare-website-overhaul/FixCare-Service-Center-Website-Overhaul-Strategy.pdf'
 doc = TocDocTemplate(
     output_path,
     pagesize=A4,
@@ -1139,9 +1139,9 @@ doc = TocDocTemplate(
     rightMargin=0.75*inch,
     topMargin=0.75*inch,
     bottomMargin=0.85*inch,
-    title="WeCare Home Solutions — Website Overhaul Strategy",
+    title="FixCare Service Center — Website Overhaul Strategy",
     author="Z.ai Digital Strategy Advisory",
-    subject="Complete website overhaul strategy for WeCare Home Solutions Kashmir",
+    subject="Complete website overhaul strategy for FixCare Service Center Jammu region",
     creator="Z.ai"
 )
 

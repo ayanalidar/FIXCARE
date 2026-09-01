@@ -24,15 +24,15 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Same-Day Appliance Repair Across Kashmir — Certified Technicians You Can Trust",
+  title: "Same-Day Appliance Repair Across Jammu Region — Certified Technicians You Can Trust",
   description:
-    "Kashmir's trusted multi-brand appliance repair service. Same-day washing machine, fridge, AC, microwave, dishwasher & water dispenser repair across 10+ cities. Certified technicians, genuine parts, warranty. Call now.",
+    "Jammu region's trusted multi-brand appliance repair service. Same-day washing machine, fridge, AC, microwave, dishwasher & water dispenser repair across 8 cities. Certified technicians, genuine parts, warranty. Call now.",
   keywords: [
-    "appliance repair Kashmir",
+    "appliance repair Jammu",
     "same-day appliance repair",
-    "certified technician Kashmir",
+    "certified technician Jammu",
     "multi-brand repair service",
-    "WeCare Home Solutions",
+    "FixCare Service Center",
   ],
   alternates: { canonical: "/" },
 };
@@ -49,7 +49,7 @@ const PROMISES = [
   {
     icon: "Clock",
     title: "Same-day service",
-    desc: "In Srinagar and next-day across all other served cities.",
+    desc: "In Jammu city and next-day across the rest of the Jammu region.",
   },
   {
     icon: "Phone",
@@ -87,7 +87,7 @@ const STEPS = [
   {
     icon: "Wrench",
     title: "2. Technician Arrives & Diagnoses",
-    desc: "Our certified technician arrives at the scheduled time slot in a WeCare-branded service van carrying common spare parts. After a thorough diagnosis, you receive a transparent quote with the cost of parts and labor broken down separately. No work begins until you approve the quote.",
+    desc: "Our certified technician arrives at the scheduled time slot in a FixCare-branded service van carrying common spare parts. After a thorough diagnosis, you receive a transparent quote with the cost of parts and labor broken down separately. No work begins until you approve the quote.",
   },
   {
     icon: "ShieldCheck",
@@ -98,9 +98,9 @@ const STEPS = [
 
 const HOMEPAGE_FAQS = [
   {
-    question: "How quickly can a technician reach my home in Srinagar?",
+    question: "How quickly can a technician reach my home in Jammu city?",
     answer:
-      "For Srinagar city, our standard response time is same-day — usually within 2-4 hours of booking during business hours. For other cities, we typically reach next-day. Emergency visits within 1 hour are available for an additional charge in Srinagar.",
+      "For Jammu city, our standard response time is same-day — usually within 2-4 hours of booking during business hours. For other Jammu region cities, we typically reach next-day, with 2-day service for remote areas like Rajouri, Poonch and Doda. Emergency visits within 1 hour are available for an additional charge in Jammu city.",
   },
   {
     question: "Do you charge a visit/diagnostic fee?",
@@ -110,7 +110,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "Are your technicians certified?",
     answer:
-      "Yes. Every WeCare technician is formally trained on the appliance categories they service, carries an ID card, and is background-verified. For high-end brands like Bosch and Samsung, we have brand-specific trained specialists on the team.",
+      "Yes. Every FixCare technician is formally trained on the appliance categories they service, carries an ID card, and is background-verified. For high-end brands like Bosch and Samsung, we have brand-specific trained specialists on the team.",
   },
   {
     question: "Do you use genuine spare parts?",
@@ -132,21 +132,21 @@ const HOMEPAGE_FAQS = [
 const TESTIMONIALS = [
   {
     quote:
-      "My Samsung washing machine stopped mid-cycle on a Sunday afternoon. I called WeCare at 2pm and a technician arrived by 5pm the same day. He diagnosed a motorbrush issue, replaced the part from his van, and had it running by 6pm. Genuine parts, fair price, polite technician. Highly recommend.",
-    name: "Imran B.",
-    location: "Rajbagh, Srinagar",
+      "My Samsung washing machine stopped mid-cycle on a Sunday afternoon. I called FixCare at 2pm and a technician arrived by 5pm the same day. He diagnosed a motorbrush issue, replaced the part from his van, and had it running by 6pm. Genuine parts, fair price, polite technician. Highly recommend.",
+    name: "Arjun S.",
+    location: "Gandhinagar, Jammu",
   },
   {
     quote:
-      "We had three different repair guys look at our LG fridge before WeCare. They were the first ones to actually diagnose the real problem (a faulty freezer thermostat) instead of just refilling gas every few months. Fridge has been running perfectly for 8 months since. Honest and competent.",
-    name: "Shameem A.",
-    location: "Hyderpora, Srinagar",
+      "We had three different repair guys look at our LG fridge before FixCare. They were the first ones to actually diagnose the real problem (a faulty freezer thermostat) instead of just refilling gas every few months. Fridge has been running perfectly for 8 months since. Honest and competent.",
+    name: "Meena D.",
+    location: "Nanak Nagar, Jammu",
   },
   {
     quote:
-      "Booked an AC gas refill through their online form on a Tuesday morning. Got a confirmation SMS in 2 minutes, technician arrived the next day from Srinagar to Anantnag, refilled genuine R32 gas, and the AC is cooling better than when it was new. Will use again.",
-    name: "Zahid M.",
-    location: "Anantnag",
+      "Booked an AC gas refill through their online form on a Tuesday morning. Got a confirmation SMS in 2 minutes, technician arrived the next day from Jammu to Kathua, refilled genuine R32 gas, and the AC is cooling better than when it was new. Will use again.",
+    name: "Rajesh K.",
+    location: "Kathua",
   },
 ];
 
@@ -164,9 +164,9 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ApplianceRepair",
   "@id": `${SITE.domain}/#business`,
-  name: "WeCare Home Solutions",
+  name: "FixCare Service Center",
   description:
-    "Same-day appliance repair service across Kashmir. Certified technicians for washing machine, refrigerator, AC, microwave, water dispenser, and dishwasher repair. Genuine parts, written warranty, 24/7 service.",
+    "Same-day appliance repair service across the Jammu region. Certified technicians for washing machine, refrigerator, AC, microwave, water dispenser, and dishwasher repair. Genuine parts, written warranty, 24/7 service.",
   url: SITE.domain,
   telephone: "+91-9XXXXXXXXX",
   email: SITE.email,
@@ -175,12 +175,12 @@ const localBusinessSchema = {
   paymentAccepted: "Cash, UPI, Credit Card, Debit Card, Bank Transfer",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Srinagar",
+    addressLocality: "Jammu",
     addressRegion: "Jammu & Kashmir",
-    postalCode: "190001",
+    postalCode: "180001",
     addressCountry: "IN",
   },
-  geo: { "@type": "GeoCoordinates", latitude: "34.0837", longitude: "74.7973" },
+  geo: { "@type": "GeoCoordinates", latitude: "32.7266", longitude: "74.8570" },
   areaServed: LOCATIONS.map((l) => ({ "@type": "City", name: l.name })),
   openingHoursSpecification: [
     {
@@ -210,9 +210,9 @@ const localBusinessSchema = {
     worstRating: "1",
   },
   sameAs: [
-    "https://www.facebook.com/wecarehomesolutions",
-    "https://www.instagram.com/wecarehomesolutions",
-    "https://twitter.com/wecarehomesoln",
+    "https://www.facebook.com/fixcareservicecenter",
+    "https://www.instagram.com/fixcareservicecenter",
+    "https://twitter.com/fixcaresvc",
   ],
 };
 
@@ -221,9 +221,9 @@ export default function HomePage() {
     <div>
       {/* 1. Hero */}
       <PageHero
-        eyebrow="Locally owned in Kashmir · 24/7 service"
-        title="Same-Day Appliance Repair Across Kashmir — Certified Technicians You Can Trust"
-        subtitle="When your washing machine stops mid-cycle, your refrigerator stops cooling, or your AC gives up on a humid Srinagar afternoon, you need a repair service that arrives the same day, fixes the problem with genuine parts, and stands behind their work with a written warranty."
+        eyebrow="Locally owned in the Jammu region · 24/7 service"
+        title="Same-Day Appliance Repair Across Jammu Region — Certified Technicians You Can Trust"
+        subtitle="When your washing machine stops mid-cycle, your refrigerator stops cooling, or your AC gives up on a humid Jammu afternoon, you need a repair service that arrives the same day, fixes the problem with genuine parts, and stands behind their work with a written warranty."
       >
         <div className="flex flex-wrap gap-3">
           <Button
@@ -243,7 +243,7 @@ export default function HomePage() {
             className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
           >
             <a
-              href={SITE.whatsappLink("Hi WeCare, I need appliance repair")}
+              href={SITE.whatsappLink("Hi FixCare, I need appliance repair")}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -265,16 +265,16 @@ export default function HomePage() {
       {/* 2. Trust stats */}
       <TrustStats />
 
-      {/* 3. Intro / Why WeCare */}
+      {/* 3. Intro / Why FixCare */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-              Why Kashmir Trusts WeCare Home Solutions
+              Why the Jammu Region Trusts FixCare Service Center
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              WeCare is not a national call-center that dispatches the nearest
-              freelancer — we are a locally operated Kashmir business with a team
+              FixCare is not a national call-center that dispatches the nearest
+              freelancer — we are a locally operated Jammu business with a team
               of certified, trained, and background-verified technicians who carry
               genuine spare parts in their service vans so most repairs are
               completed in a single visit.
@@ -296,7 +296,7 @@ export default function HomePage() {
           </div>
           <Card className="bg-card">
             <CardContent className="space-y-4 p-6">
-              <h3 className="text-lg font-semibold text-primary">Our promise to every Kashmir household</h3>
+              <h3 className="text-lg font-semibold text-primary">Our promise to every Jammu household</h3>
               <ul className="space-y-3">
                 {PROMISES.map((p) => (
                   <li key={p.title} className="flex gap-3">
@@ -385,10 +385,10 @@ export default function HomePage() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-accent">
-                Service Areas Across Kashmir
+                Service Areas Across Jammu Region
               </p>
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-                Same-day in Srinagar, next-day across the Valley
+                Same-day in Jammu city, next-day across the region
               </h2>
             </div>
             <Link
@@ -399,8 +399,9 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-            WeCare Home Solutions serves the entire Kashmir Valley with same-day
-            service in Srinagar and next-day service in surrounding districts.
+            FixCare Service Center serves the entire Jammu region with same-day
+            service in Jammu city, next-day service in nearby districts, and
+            2-day service to remote areas.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {LOCATIONS.map((l) => (
@@ -422,7 +423,7 @@ export default function HomePage() {
           What Our Customers Say
         </p>
         <h2 className="mt-1 text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-          Real reviews from Kashmir households
+          Real reviews from Jammu households
         </h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t) => (
@@ -488,14 +489,14 @@ export default function HomePage() {
                 Check your pincode for service availability
               </h2>
               <p className="mt-3 text-sm text-muted-foreground">
-                Same-day service in Srinagar. Next-day across the rest of the
-                Kashmir Valley. If your area isn&apos;t listed, call us — we
+                Same-day service in Jammu city. Next-day across the rest of the
+                Jammu region. If your area isn&apos;t listed, call us — we
                 frequently travel beyond our standard routes.
               </p>
               <div className="mt-4 flex flex-wrap gap-3 text-xs text-muted-foreground">
                 <span className="inline-flex items-center gap-1">
                   <CheckCircle2 className="size-3.5 text-accent" aria-hidden="true" />
-                  40+ pincodes mapped
+                  50+ pincodes mapped
                 </span>
                 <span className="inline-flex items-center gap-1">
                   <Phone className="size-3.5 text-accent" aria-hidden="true" />
@@ -511,7 +512,7 @@ export default function HomePage() {
       {/* 11. CTA */}
       <CTASection
         title="Ready to Get Your Appliance Fixed?"
-        subtitle="Don't let a broken appliance disrupt your home. Book a repair now and a certified WeCare technician will be at your door the same day in Srinagar, or the next day across the rest of Kashmir."
+        subtitle="Don't let a broken appliance disrupt your home. Book a repair now and a certified FixCare technician will be at your door the same day in Jammu city, the next day across the rest of the Jammu region."
       />
 
       <script

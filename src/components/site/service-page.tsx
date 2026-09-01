@@ -90,7 +90,7 @@ export function ServicePage({ slug, icon, shortName }: ServicePageInput) {
     description: frontmatter.meta_description,
     provider: {
       "@type": "ApplianceRepair",
-      name: "WeCare Home Solutions",
+      name: "FixCare Service Center",
       telephone: "+91-9XXXXXXXXX",
       areaServed: LOCATIONS.map((l) => ({ "@type": "City", name: l.name })),
     },
@@ -114,7 +114,7 @@ export function ServicePage({ slug, icon, shortName }: ServicePageInput) {
   return (
     <div>
       <PageHero
-        eyebrow={`WeCare Services · ${shortName}`}
+        eyebrow={`FixCare Services · ${shortName}`}
         title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
@@ -130,7 +130,7 @@ export function ServicePage({ slug, icon, shortName }: ServicePageInput) {
                 <TestimonialCard
                   quote={testimonial.quote}
                   name={testimonial.name}
-                  location="Verified WeCare customer"
+                  location="Verified FixCare customer"
                 />
               </div>
             )}
@@ -162,8 +162,8 @@ export function ServicePage({ slug, icon, shortName }: ServicePageInput) {
                     Book {shortName} repair
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Same-day service in Srinagar. Next-day across the rest of the
-                    Valley. Genuine parts. Written warranty.
+                    Same-day service in Jammu city. Next-day across the rest of
+                    the Jammu region. Genuine parts. Written warranty.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -172,7 +172,7 @@ export function ServicePage({ slug, icon, shortName }: ServicePageInput) {
                   </Button>
                   <Button asChild variant="outline">
                     <a
-                      href={SITE.whatsappLink(`Hi WeCare, I need ${shortName} repair`)}
+                      href={SITE.whatsappLink(`Hi FixCare, I need ${shortName} repair`)}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -239,7 +239,7 @@ export function ServicePage({ slug, icon, shortName }: ServicePageInput) {
 
       <CTASection
         title={`Ready to Get Your ${shortName} Fixed?`}
-        subtitle="Don't let a pile of laundry sit for a week waiting on the brand service center. Book a repair now and a certified WeCare technician will be at your door the same day in Srinagar, or the next day across the rest of Kashmir."
+        subtitle="Don't let a pile of laundry sit for a week waiting on the brand service center. Book a repair now and a certified FixCare technician will be at your door the same day in Jammu city, or the next day across the rest of the Jammu region."
       />
 
       <script

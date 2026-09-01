@@ -1,4 +1,4 @@
-# robots.txt for WeCare Home Solutions (wecarehomesolutions.in)
+# robots.txt for FixCare Service Center (fixcareservicecenter.in)
 # Last updated: September 2026
 
 # Allow all crawlers access to all content by default
@@ -45,8 +45,8 @@ Allow: /sitemap.xml
 Allow: /sitemap_index.xml
 
 # XML sitemap reference (Rank Math auto-generates /sitemap_index.xml)
-Sitemap: https://www.wecarehomesolutions.in/sitemap_index.xml
-Sitemap: https://www.wecarehomesolutions.in/sitemap.xml
+Sitemap: https://www.fixcareservicecenter.in/sitemap_index.xml
+Sitemap: https://www.fixcareservicecenter.in/sitemap.xml
 
 # Block specific low-value crawlers (optional, saves bandwidth)
 User-agent: AhrefsBot

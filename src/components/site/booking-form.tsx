@@ -178,7 +178,7 @@ export function BookingForm() {
           </p>
           <div className="mt-2 flex flex-wrap justify-center gap-2">
             <Button asChild variant="outline">
-              <a href={SITE.whatsappLink(`Hi WeCare, my booking reference is ${reference}`)}>
+              <a href={SITE.whatsappLink(`Hi FixCare, my booking reference is ${reference}`)}>
                 Share on WhatsApp
               </a>
             </Button>
@@ -330,8 +330,8 @@ export function BookingForm() {
               )}
             </div>
             <p className="text-xs text-muted-foreground">
-              Same-day service is typical in Srinagar; next-day across the rest of
-              the Valley. Our team will confirm the exact slot by SMS.
+              Same-day service is typical in Jammu city; next-day across the rest
+              of the Jammu region. Our team will confirm the exact slot by SMS.
             </p>
           </div>
         )}
@@ -432,7 +432,7 @@ export function BookingForm() {
                   onChange={(e) =>
                     update("pincode", e.target.value.replace(/\D/g, ""))
                   }
-                  placeholder="190001"
+                  placeholder="180001"
                 />
                 {errors.pincode && (
                   <p className="mt-1 text-xs text-destructive">{errors.pincode}</p>
@@ -447,7 +447,7 @@ export function BookingForm() {
                   className="mt-0.5"
                 />
                 <span className="text-muted-foreground">
-                  I agree to be contacted by WeCare Home Solutions regarding this
+                  I agree to be contacted by FixCare Service Center regarding this
                   booking and accept the{" "}
                   <a
                     href="/terms"

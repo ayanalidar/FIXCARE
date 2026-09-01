@@ -1,14 +1,14 @@
 {
   "@context": "https://schema.org",
   "@type": "ApplianceRepair",
-  "@id": "https://www.wecarehomesolutions.in/#business",
-  "name": "WeCare Home Solutions",
+  "@id": "https://www.fixcareservicecenter.in/#business",
+  "name": "FixCare Service Center",
   "description": "Same-day appliance repair service across Kashmir. Certified technicians for washing machine, refrigerator, AC, microwave, water dispenser, and dishwasher repair. Genuine parts, written warranty, 24/7 service.",
-  "url": "https://www.wecarehomesolutions.in/",
+  "url": "https://www.fixcareservicecenter.in/",
   "telephone": "+91-9XXXXXXXXX",
-  "email": "care@wecarehomesolutions.in",
-  "image": "https://www.wecarehomesolutions.in/wp-content/uploads/2026/wecare-logo.png",
-  "logo": "https://www.wecarehomesolutions.in/wp-content/uploads/2026/wecare-logo.png",
+  "email": "care@fixcareservicecenter.in",
+  "image": "https://www.fixcareservicecenter.in/wp-content/uploads/2026/fixcare-logo.png",
+  "logo": "https://www.fixcareservicecenter.in/wp-content/uploads/2026/fixcare-logo.png",
   "priceRange": "₹₹",
   "currenciesAccepted": "INR",
   "paymentAccepted": "Cash, UPI, Credit Card, Debit Card, Bank Transfer",
@@ -54,7 +54,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Washing Machine Repair",
-          "url": "https://www.wecarehomesolutions.in/services/washing-machine-repair/"
+          "url": "https://www.fixcareservicecenter.in/services/washing-machine-repair/"
         }
       },
       {
@@ -62,7 +62,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Refrigerator Repair",
-          "url": "https://www.wecarehomesolutions.in/services/refrigerator-repair/"
+          "url": "https://www.fixcareservicecenter.in/services/refrigerator-repair/"
         }
       },
       {
@@ -70,7 +70,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Air Conditioner Repair",
-          "url": "https://www.wecarehomesolutions.in/services/air-conditioner-repair/"
+          "url": "https://www.fixcareservicecenter.in/services/air-conditioner-repair/"
         }
       },
       {
@@ -78,7 +78,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Microwave Repair",
-          "url": "https://www.wecarehomesolutions.in/services/microwave-repair/"
+          "url": "https://www.fixcareservicecenter.in/services/microwave-repair/"
         }
       },
       {
@@ -86,7 +86,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Water Dispenser Repair",
-          "url": "https://www.wecarehomesolutions.in/services/water-dispenser-repair/"
+          "url": "https://www.fixcareservicecenter.in/services/water-dispenser-repair/"
         }
       },
       {
@@ -94,7 +94,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Dishwasher Repair",
-          "url": "https://www.wecarehomesolutions.in/services/dishwasher-repair/"
+          "url": "https://www.fixcareservicecenter.in/services/dishwasher-repair/"
         }
       }
     ]
@@ -107,8 +107,8 @@
     "worstRating": "1"
   },
   "sameAs": [
-    "https://www.facebook.com/wecarehomesolutions",
-    "https://www.instagram.com/wecarehomesolutions",
-    "https://twitter.com/wecarehomesoln"
+    "https://www.facebook.com/fixcareservicecenter",
+    "https://www.instagram.com/fixcareservicecenter",
+    "https://twitter.com/fixcareservicecentern"
   ]
 }

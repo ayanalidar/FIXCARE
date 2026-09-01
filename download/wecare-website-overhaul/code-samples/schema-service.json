@@ -4,13 +4,13 @@
   "serviceType": "Washing Machine Repair",
   "name": "Washing Machine Repair in Kashmir — Same-Day Service for All Brands",
   "description": "Expert same-day washing machine repair across Kashmir. Certified technicians for Samsung, LG, Whirlpool, IFB, Bosch, Godrej, Haier washing machines. Fixes for not spinning, not draining, error codes, leaking, drum issues, motor replacement. Genuine parts, written warranty.",
-  "url": "https://www.wecarehomesolutions.in/services/washing-machine-repair/",
-  "image": "https://www.wecarehomesolutions.in/wp-content/uploads/2026/washing-machine-repair.jpg",
+  "url": "https://www.fixcareservicecenter.in/services/washing-machine-repair/",
+  "image": "https://www.fixcareservicecenter.in/wp-content/uploads/2026/washing-machine-repair.jpg",
   "provider": {
     "@type": "ApplianceRepair",
-    "name": "WeCare Home Solutions",
+    "name": "FixCare Service Center",
     "telephone": "+91-9XXXXXXXXX",
-    "url": "https://www.wecarehomesolutions.in/",
+    "url": "https://www.fixcareservicecenter.in/",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Srinagar",
@@ -48,6 +48,6 @@
     "priceValidUntil": "2027-12-31",
     "description": "Starting visit + diagnostic fee — adjusted against repair cost if you proceed",
     "availability": "https://schema.org/InStock",
-    "url": "https://www.wecarehomesolutions.in/services/washing-machine-repair/#book-repair"
+    "url": "https://www.fixcareservicecenter.in/services/washing-machine-repair/#book-repair"
   }
 }

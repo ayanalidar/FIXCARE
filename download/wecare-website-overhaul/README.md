@@ -1,7 +1,7 @@
-# WeCare Home Solutions — Website Overhaul Deliverable Package
+# FixCare Service Center — Website Overhaul Deliverable Package
 
 This package contains the complete strategy, content, and technical specifications
-required to overhaul wecarehomesolutions.in from a single-page brochure into a
+required to overhaul fixcareservicecenter.in from a single-page brochure into a
 multi-page, SEO-optimized lead generation platform for the Kashmir appliance
 repair market.
 
@@ -10,7 +10,7 @@ repair market.
 ```
 wecare-website-overhaul/
 │
-├── WeCare-Home-Solutions-Website-Overhaul-Strategy.pdf   ← MASTER STRATEGY REPORT (read first)
+├── FixCare-Home-Solutions-Website-Overhaul-Strategy.pdf   ← MASTER STRATEGY REPORT (read first)
 │
 ├── content/                                              ← All website copy ready to paste into WordPress
 │   ├── homepage/
@@ -105,7 +105,7 @@ wecare-website-overhaul/
 - **Photography** — technician at work, before/after repair shots, team photos, service van. Real photos dramatically outperform stock images for local trust.
 - **Google Business Profile setup** — claim or update the GBP listing using the NAP (name/address/phone) shown in `/content/brand-pages/contact-us.md`.
 - **WordPress hosting, theme license, plugin licenses** — see budget in Section 11 of the PDF.
-- **Real customer phone number and email** — currently shown as `+91 9XXXXXXXXX` and `care@wecarehomesolutions.in` placeholders throughout the content; replace before launch.
+- **Real customer phone number and email** — currently shown as `+91 9XXXXXXXXX` and `care@fixcareservicecenter.in` placeholders throughout the content; replace before launch.
 - **Real Google Business Profile Place ID** — needed for the "Leave a Review" link in `reviews.md` and the review-request SMS template.
 
 ## Contact for Strategy Questions

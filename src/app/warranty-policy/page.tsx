@@ -14,7 +14,7 @@ export default function Page() {
       section="legal-pages"
       slug={slug}
       urlSlug="warranty-policy"
-      eyebrow="WeCare · Legal"
+      eyebrow="FixCare · Legal"
       withCta={true}
       ctaTitle="Need to Make a Warranty Claim?"
       ctaSubtitle="If a problem we repaired has recurred within the warranty period, call or WhatsApp us with your warranty reference number and we'll schedule a priority visit — no visit fee, no labour charge, and no charge for the same replacement part."

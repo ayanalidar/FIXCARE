@@ -2,7 +2,7 @@ import { LocationPage, buildLocationMetadata } from "@/components/site/location-
 import { readContentBySlug } from "@/lib/content";
 import { LOCATIONS } from "@/lib/site";
 
-const slug = "kupwara";
+const slug = "kathua";
 
 export async function generateMetadata() {
   const { frontmatter } = readContentBySlug("location-pages", slug);

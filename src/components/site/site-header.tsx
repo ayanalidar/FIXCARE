@@ -42,15 +42,15 @@ export function SiteHeader() {
         <Link
           href="/"
           className="flex items-center gap-2 text-primary font-bold tracking-tight"
-          aria-label="WeCare Home Solutions — home"
+          aria-label="FixCare Service Center — home"
         >
           <span className="flex size-9 items-center justify-center rounded-lg bg-accent text-accent-foreground">
             <Wrench className="size-5" aria-hidden="true" />
           </span>
           <span className="flex flex-col leading-tight">
-            <span className="text-base sm:text-lg">WeCare</span>
+            <span className="text-base sm:text-lg">FixCare</span>
             <span className="text-[10px] sm:text-xs font-medium text-muted-foreground">
-              Home Solutions
+              Service Center
             </span>
           </span>
         </Link>
@@ -171,7 +171,7 @@ export function SiteHeader() {
                   <span className="flex size-8 items-center justify-center rounded-lg bg-accent text-accent-foreground">
                     <Wrench className="size-4" aria-hidden="true" />
                   </span>
-                  WeCare Home Solutions
+                  FixCare Service Center
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 p-4">

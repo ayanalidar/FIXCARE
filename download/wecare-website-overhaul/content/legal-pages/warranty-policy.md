@@ -1,6 +1,6 @@
 ---
-title: "Warranty & Service Policy — WeCare Home Solutions"
-meta_description: "Warranty policy for appliance repairs completed by WeCare Home Solutions across Kashmir. Warranty periods, what is covered, exclusions, claim process, and refund terms."
+title: "Warranty & Service Policy — FixCare Service Center"
+meta_description: "Warranty policy for appliance repairs completed by FixCare Service Center across Jammu region. Warranty periods, what is covered, exclusions, claim process, and refund terms."
 slug: /warranty-policy/
 schema: []
 ---
@@ -9,11 +9,11 @@ schema: []
 
 **Last updated:** September 2026
 
-Every appliance repair completed by WeCare Home Solutions ("WeCare", "we", "our", or "us") is backed by a written warranty. This Warranty & Service Policy explains the warranty periods that apply, what is covered, what is excluded, how to make a claim, and the refund terms if a repair fails within the warranty period. By accepting a repair quote and proceeding with the repair, you ("you", "your") agree to the terms set out in this Policy.
+Every appliance repair completed by FixCare Service Center ("FixCare", "we", "our", or "us") is backed by a written warranty. This Warranty & Service Policy explains the warranty periods that apply, what is covered, what is excluded, how to make a claim, and the refund terms if a repair fails within the warranty period. By accepting a repair quote and proceeding with the repair, you ("you", "your") agree to the terms set out in this Policy.
 
 ## 1. Warranty Overview
 
-WeCare issues a written warranty card at the time of repair completion, which records the appliance serviced, the parts replaced, the warranty period applicable to each part, and your unique warranty reference number. The warranty is valid for the specified period from the date of repair shown on the warranty card. If the same fault recurs within the warranty period, we will return and re-repair the appliance free of charge, including both labor and the same replacement part. The warranty applies only to the specific part replaced and the specific fault addressed during the original repair.
+FixCare issues a written warranty card at the time of repair completion, which records the appliance serviced, the parts replaced, the warranty period applicable to each part, and your unique warranty reference number. The warranty is valid for the specified period from the date of repair shown on the warranty card. If the same fault recurs within the warranty period, we will return and re-repair the appliance free of charge, including both labor and the same replacement part. The warranty applies only to the specific part replaced and the specific fault addressed during the original repair.
 
 ## 2. Warranty Periods
 
@@ -29,11 +29,11 @@ The exact warranty period applicable to your repair will be clearly printed on y
 
 ## 3. What Is Covered
 
-This warranty covers: the replacement of a part that fails due to a manufacturing or material defect within the warranty period; the labor required to remove and reinstall the failed part; any consumables required to complete the re-repair (such as refrigerant gas top-up where applicable); and the visit fee, which is waived for valid warranty claims. Coverage applies only to the part that was originally replaced by WeCare and only to the original fault that was the subject of the original repair.
+This warranty covers: the replacement of a part that fails due to a manufacturing or material defect within the warranty period; the labor required to remove and reinstall the failed part; any consumables required to complete the re-repair (such as refrigerant gas top-up where applicable); and the visit fee, which is waived for valid warranty claims. Coverage applies only to the part that was originally replaced by FixCare and only to the original fault that was the subject of the original repair.
 
 ## 4. What Is NOT Covered
 
-This warranty does not cover: any physical damage to the appliance or the replaced part caused by mishandling, dropping, or impact; damage caused by misuse, including use of the appliance for purposes other than those intended by the manufacturer; damage caused by power surges, voltage fluctuations, lightning, or electrical faults in your home wiring; damage caused by poor water quality, hard water scaling, or improper drainage; damage caused by acts of nature including floods, earthquakes, fire, or extreme weather; any service or repair performed on the same appliance by a third party after the original WeCare repair; consumable items such as filters, batteries, or light bulbs unless explicitly listed on the warranty card; and any cosmetic damage to the appliance exterior.
+This warranty does not cover: any physical damage to the appliance or the replaced part caused by mishandling, dropping, or impact; damage caused by misuse, including use of the appliance for purposes other than those intended by the manufacturer; damage caused by power surges, voltage fluctuations, lightning, or electrical faults in your home wiring; damage caused by poor water quality, hard water scaling, or improper drainage; damage caused by acts of nature including floods, earthquakes, fire, or extreme weather; any service or repair performed on the same appliance by a third party after the original FixCare repair; consumable items such as filters, batteries, or light bulbs unless explicitly listed on the warranty card; and any cosmetic damage to the appliance exterior.
 
 ## 5. How to Claim Warranty
 
@@ -45,7 +45,7 @@ Once your warranty claim is verified, our technician will visit your home at no 
 
 ## 7. Refund Policy
 
-If the same fault recurs after two re-repair attempts by WeCare within the warranty period, you are entitled to a full refund of the original repair cost (parts and labor), excluding the original visit fee. Refunds are processed to your original payment method within 10 working days of approval. If the original repair was paid in cash, the refund will be issued via bank transfer to an account you specify. Refunds are not available for cosmetic issues, for faults that fall under the exclusions in Section 4, or for any fault different from the one originally repaired.
+If the same fault recurs after two re-repair attempts by FixCare within the warranty period, you are entitled to a full refund of the original repair cost (parts and labor), excluding the original visit fee. Refunds are processed to your original payment method within 10 working days of approval. If the original repair was paid in cash, the refund will be issued via bank transfer to an account you specify. Refunds are not available for cosmetic issues, for faults that fall under the exclusions in Section 4, or for any fault different from the one originally repaired.
 
 ## 8. Out-of-Warranty Repairs
 
@@ -55,11 +55,11 @@ If the warranty period on your original repair has expired, or if the recurring 
 
 For warranty claims, questions about this policy, or any post-repair concern, please contact us:
 
-- **WeCare Home Solutions**
-- **Email:** [care@wecarehomesolutions.in](mailto:care@wecarehomesolutions.in)
+- **FixCare Service Center**
+- **Email:** [care@fixcareservicecenter.in](mailto:care@fixcareservicecenter.in)
 - **Phone:** +91 9XXXXXXXXX
-- **WhatsApp:** [+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20WeCare%2C%20I%20want%20to%20claim%20warranty)
-- **Address:** Srinagar, Kashmir, Jammu & Kashmir, India
+- **WhatsApp:** [+91 9XXXXXXXXX](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20want%20to%20claim%20warranty)
+- **Address:** Jammu city, Jammu region, Jammu & Jammu region, India
 
 ---
 

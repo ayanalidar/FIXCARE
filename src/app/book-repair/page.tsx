@@ -7,19 +7,19 @@ import { Phone, MessageCircle, Clock, ShieldCheck, Wrench, CheckCircle2 } from "
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a Repair Online — Same-Day Appliance Repair in Kashmir",
+  title: "Book a Repair Online — Same-Day Appliance Repair in Jammu",
   description:
-    "Book a certified WeCare appliance repair in under 60 seconds. Choose your appliance, describe the issue, pick a time slot and get an instant SMS confirmation with your booking reference.",
+    "Book a certified FixCare appliance repair in under 60 seconds. Choose your appliance, describe the issue, pick a time slot and get an instant SMS confirmation with your booking reference.",
   keywords: [
     "book appliance repair",
-    "same-day repair booking Kashmir",
+    "same-day repair booking Jammu",
     "online appliance repair form",
   ],
   alternates: { canonical: "/book-repair" },
   openGraph: {
-    title: "Book a Repair Online — WeCare Home Solutions",
+    title: "Book a Repair Online — FixCare Service Center",
     description:
-      "Same-day appliance repair in Srinagar, next-day across the Valley. Certified technicians, genuine parts, written warranty.",
+      "Same-day appliance repair in Jammu city, next-day across the Jammu region. Certified technicians, genuine parts, written warranty.",
     url: `${SITE.domain}/book-repair`,
     type: "website",
   },
@@ -34,7 +34,7 @@ const WHAT_HAPPENS_NEXT = [
   {
     icon: "Wrench",
     title: "Technician arrives prepared",
-    desc: "Our certified technician arrives in a WeCare-branded van with common spare parts on board.",
+    desc: "Our certified technician arrives in a FixCare-branded van with common spare parts on board.",
   },
   {
     icon: "ShieldCheck",
@@ -49,7 +49,7 @@ export default function BookRepairPage() {
       <PageHero
         eyebrow="Book a Repair"
         title="Book a Repair Online in Under 60 Seconds"
-        subtitle="Choose your appliance, describe the issue, pick a convenient time slot and get an instant SMS confirmation. Same-day service in Srinagar, next-day across the rest of the Kashmir Valley."
+        subtitle="Choose your appliance, describe the issue, pick a convenient time slot and get an instant SMS confirmation. Same-day service in Jammu city, next-day across the rest of the Jammu region."
       />
 
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
@@ -106,7 +106,7 @@ export default function BookRepairPage() {
                   <Button asChild variant="outline">
                     <a
                       href={SITE.whatsappLink(
-                        "Hi WeCare, I need to book an appliance repair"
+                        "Hi FixCare, I need to book an appliance repair"
                       )}
                       target="_blank"
                       rel="noopener noreferrer"

@@ -1,6 +1,6 @@
 ---
-title: "Privacy Policy — WeCare Home Solutions"
-meta_description: "How WeCare Home Solutions collects, uses, and protects your personal information when you book an appliance repair. Aligned with India's IT Act 2000 and IT Rules 2011, with GDPR principles."
+title: "Privacy Policy — FixCare Service Center"
+meta_description: "How FixCare Service Center collects, uses, and protects your personal information when you book an appliance repair. Aligned with India's IT Act 2000 and IT Rules 2011, with GDPR principles."
 slug: /privacy-policy/
 schema: []
 ---
@@ -9,15 +9,15 @@ schema: []
 
 **Last updated:** September 2026
 
-WeCare Home Solutions ("WeCare", "we", "our", or "us") respects your privacy and is committed to protecting the personal information you share with us when you book an appliance repair, contact our team, or browse our website. This Privacy Policy explains what information we collect, how we use it, who we share it with, how long we retain it, and the rights you have over your own data. Our practices align with the Information Technology Act, 2000 and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 issued by the Government of India, and we also follow the principles of the European Union's General Data Protection Regulation (GDPR) where they apply to your interaction with us.
+FixCare Service Center ("FixCare", "we", "our", or "us") respects your privacy and is committed to protecting the personal information you share with us when you book an appliance repair, contact our team, or browse our website. This Privacy Policy explains what information we collect, how we use it, who we share it with, how long we retain it, and the rights you have over your own data. Our practices align with the Information Technology Act, 2000 and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 issued by the Government of India, and we also follow the principles of the European Union's General Data Protection Regulation (GDPR) where they apply to your interaction with us.
 
 ## 1. Introduction
 
-This Privacy Policy applies to all visitors to our website and to all customers who book an appliance repair with WeCare Home Solutions, whether by phone, WhatsApp, our online booking form, or our contact form. By using our website or booking a service, you consent to the collection, storage, use, and disclosure of your personal information as described in this Policy. If you do not agree with any part of this Policy, please do not use our website or book our services.
+This Privacy Policy applies to all visitors to our website and to all customers who book an appliance repair with FixCare Service Center, whether by phone, WhatsApp, our online booking form, or our contact form. By using our website or booking a service, you consent to the collection, storage, use, and disclosure of your personal information as described in this Policy. If you do not agree with any part of this Policy, please do not use our website or book our services.
 
 ## 2. Information We Collect
 
-When you interact with WeCare, we may collect the following categories of personal information:
+When you interact with FixCare, we may collect the following categories of personal information:
 
 - **Contact information:** your name, phone number, email address, and residential address.
 - **Booking details:** the appliance brand, model, and serial number; the description of the fault you report; the preferred service time slot; and the assigned technician's name.
@@ -43,7 +43,7 @@ We do not use your personal information for any purpose that is incompatible wit
 
 ## 4. Information Sharing
 
-WeCare does not sell, rent, or trade your personal information to any third party for marketing or commercial purposes. We share your information only in the following limited circumstances:
+FixCare does not sell, rent, or trade your personal information to any third party for marketing or commercial purposes. We share your information only in the following limited circumstances:
 
 - **Service technicians:** your name, phone number, address, and appliance details are shared with the assigned technician to enable the repair visit.
 - **Payment gateways:** transaction details are shared with our payment service providers (such as UPI gateways) strictly for processing the payment you authorize.
@@ -62,7 +62,7 @@ Our website uses cookies and similar technologies to remember your preferences a
 
 ## 7. Your Rights
 
-You have the following rights regarding your personal information held by WeCare:
+You have the following rights regarding your personal information held by FixCare:
 
 - **Access:** you can request a copy of the personal information we hold about you.
 - **Correction:** you can ask us to correct any inaccurate or incomplete information.
@@ -70,11 +70,11 @@ You have the following rights regarding your personal information held by WeCare
 - **Withdrawal of consent:** you can withdraw consent for marketing communications at any time.
 - **Grievance redressal:** you can raise a complaint about how your data has been handled.
 
-To exercise any of these rights, email us at care@wecarehomesolutions.in. We will respond to your request within 30 working days of receipt.
+To exercise any of these rights, email us at care@fixcareservicecenter.in. We will respond to your request within 30 working days of receipt.
 
 ## 8. Children's Privacy
 
-WeCare Home Solutions does not provide services to individuals under the age of 18, and we do not knowingly collect personal information from children. If you believe a minor has provided personal information to us, please contact us and we will promptly delete that information.
+FixCare Service Center does not provide services to individuals under the age of 18, and we do not knowingly collect personal information from children. If you believe a minor has provided personal information to us, please contact us and we will promptly delete that information.
 
 ## 9. Retention of Information
 
@@ -88,10 +88,10 @@ We may update this Privacy Policy from time to time to reflect changes in our pr
 
 If you have any questions, concerns, or requests regarding this Privacy Policy or the way we handle your personal information, please contact us:
 
-- **WeCare Home Solutions**
-- **Email:** [care@wecarehomesolutions.in](mailto:care@wecarehomesolutions.in)
+- **FixCare Service Center**
+- **Email:** [care@fixcareservicecenter.in](mailto:care@fixcareservicecenter.in)
 - **Phone:** +91 9XXXXXXXXX
-- **Address:** Srinagar, Kashmir, Jammu & Kashmir, India
+- **Address:** Jammu city, Jammu region, Jammu & Jammu region, India
 
 ---
 

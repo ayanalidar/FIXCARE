@@ -14,7 +14,7 @@ export default function Page() {
       section="legal-pages"
       slug={slug}
       urlSlug="privacy-policy"
-      eyebrow="WeCare · Legal"
+      eyebrow="FixCare · Legal"
       withCta={false}
     />
   );

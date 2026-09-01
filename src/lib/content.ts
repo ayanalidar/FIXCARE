@@ -25,7 +25,7 @@ export interface ParsedContent {
 }
 
 /**
- * Reads a markdown file from the WeCare content directory and parses its
+ * Reads a markdown file from the FixCare content directory and parses its
  * frontmatter + body. Always runs on the server (build time or request time).
  */
 export function readContent(

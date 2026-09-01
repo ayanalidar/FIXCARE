@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 
 export function CTASection({
   title = "Ready to Get Your Appliance Fixed?",
-  subtitle = "Don't let a broken appliance disrupt your home. Book a repair now and a certified WeCare technician will be at your door the same day in Srinagar, or the next day across the rest of Kashmir.",
+  subtitle = "Don't let a broken appliance disrupt your home. Book a repair now and a certified FixCare technician will be at your door the same day in Jammu city, the next day across the rest of the Jammu region.",
   variant = "default",
 }: {
   title?: string;
@@ -48,7 +48,7 @@ export function CTASection({
             >
               <a
                 href={SITE.whatsappLink(
-                  "Hi WeCare, I need appliance repair"
+                  "Hi FixCare, I need appliance repair"
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -94,8 +94,8 @@ export function PincodeChecker() {
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
-                A certified WeCare technician can be at your door the same day in
-                Srinagar, or next-day across the rest of the valley.
+                A certified FixCare technician can be at your door the same day in
+                Jammu city, or next-day across the rest of the Jammu region.
               </p>
               {result.url && (
                 <a

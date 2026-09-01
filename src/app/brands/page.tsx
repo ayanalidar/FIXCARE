@@ -10,21 +10,21 @@ import { SITE, BRANDS } from "@/lib/site";
 const slug = "brands-we-service";
 
 export const metadata: Metadata = {
-  title: "Brands We Service — Certified Repair for All Major Appliance Brands | WeCare",
+  title: "Brands We Service — Certified Repair for All Major Appliance Brands | FixCare",
   description:
-    "WeCare Home Solutions services Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, and Panasonic appliances across Kashmir. Brand-trained technicians, genuine parts, written warranty.",
+    "FixCare Service Center services Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, and Panasonic appliances across the Jammu region. Brand-trained technicians, genuine parts, written warranty.",
   keywords: [
-    "Samsung repair Kashmir",
-    "LG repair Kashmir",
-    "Whirlpool repair Kashmir",
-    "Bosch repair Kashmir",
+    "Samsung repair Jammu",
+    "LG repair Jammu",
+    "Whirlpool repair Jammu",
+    "Bosch repair Jammu",
     "appliance brands serviced",
   ],
   alternates: { canonical: "/brands" },
   openGraph: {
-    title: "Brands We Service — WeCare Home Solutions",
+    title: "Brands We Service — FixCare Service Center",
     description:
-      "Certified repair for Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, and Panasonic appliances across Kashmir.",
+      "Certified repair for Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, and Panasonic appliances across the Jammu region.",
     url: `${SITE.domain}/brands`,
     type: "website",
   },
@@ -81,7 +81,7 @@ export default function BrandsPage() {
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "WeCare Home Solutions",
+    name: "FixCare Service Center",
     url: SITE.domain,
     description: frontmatter.meta_description,
     brand: BRANDS.map((b) => ({ "@type": "Brand", name: b })),
@@ -90,7 +90,7 @@ export default function BrandsPage() {
   return (
     <div>
       <PageHero
-        eyebrow="WeCare · Brand Expertise"
+        eyebrow="FixCare · Brand Expertise"
         title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
@@ -199,15 +199,15 @@ export default function BrandsPage() {
             We service all 9 major brands across all 8 cities we cover
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
-            Same-day in Srinagar, next-day across Anantnag, Baramulla, Budgam,
-            Pulwama, Ganderbal, Bandipora and Kupwara.
+            Same-day in Jammu city, next-day across Kathua, Samba, Udhampur and
+            Reasi, 2-day service to Rajouri, Poonch and Doda.
           </p>
         </div>
       </section>
 
       <CTASection
         title="Book a Repair for Any Brand"
-        subtitle="Whatever brand of appliance has stopped working in your home, our team is ready to help — usually the same day in Srinagar, and next-day across the rest of the Valley."
+        subtitle="Whatever brand of appliance has stopped working in your home, our team is ready to help — usually the same day in Jammu city, and next-day across the rest of the Jammu region."
       />
 
       <script

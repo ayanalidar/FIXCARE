@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book a Repair — WeCare Home Solutions (Multi-Step Form Prototype)</title>
+<title>Book a Repair — FixCare Service Center (Multi-Step Form Prototype)</title>
 <style>
   /* ── Multi-step booking form prototype (UX reference for WPForms / Gravity Forms implementation) ── */
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -216,7 +216,7 @@
       <div class="check">✓</div>
       <h2>Booking Received!</h2>
       <p>Your reference: <strong id="ref-num">WC-XXXXXX</strong></p>
-      <p style="margin-top:12px;color:#4a5560;font-size:14px">A confirmation SMS has been sent to your phone. A WeCare team member will WhatsApp you shortly to confirm the technician assignment.</p>
+      <p style="margin-top:12px;color:#4a5560;font-size:14px">A confirmation SMS has been sent to your phone. A FixCare team member will WhatsApp you shortly to confirm the technician assignment.</p>
     </div>
 
   </form>
@@ -325,7 +325,7 @@
     // The endpoint should:
     //   1. Save lead to HubSpot CRM (Free tier) via HubSpot Forms API
     //   2. Trigger HubSpot workflow: SMS confirmation via Twilio + email confirmation
-    //   3. Notify WeCare team via WhatsApp Business API + email alert
+    //   3. Notify FixCare team via WhatsApp Business API + email alert
     //   4. Return booking reference number
     return false;
   }

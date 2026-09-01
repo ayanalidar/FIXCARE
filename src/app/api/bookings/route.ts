@@ -20,7 +20,7 @@ const BookingSchema = z.object({
 
 function generateReference(): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let out = "WC-";
+  let out = "FC-";
   for (let i = 0; i < 6; i += 1) {
     out += chars[Math.floor(Math.random() * chars.length)];
   }

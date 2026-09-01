@@ -4,7 +4,7 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How quickly can a WeCare technician reach my home in Srinagar?",
+      "name": "How quickly can a FixCare technician reach my home in Srinagar?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "For Srinagar city, our standard response time is same-day — usually within 2-4 hours of booking during business hours. For other Kashmir cities, we typically reach next-day. Emergency visits within 1 hour are available for an additional charge in Srinagar."
@@ -23,7 +23,7 @@
       "name": "Are your technicians certified?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Every WeCare technician is formally trained on the appliance categories they service, carries an ID card, and is background-verified. For high-end brands like Bosch and Samsung, we have brand-specific trained specialists on the team."
+        "text": "Yes. Every FixCare technician is formally trained on the appliance categories they service, carries an ID card, and is background-verified. For high-end brands like Bosch and Samsung, we have brand-specific trained specialists on the team."
       }
     },
     {

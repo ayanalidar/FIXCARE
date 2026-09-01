@@ -76,7 +76,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ApplianceRepair",
-    name: `WeCare Home Solutions — ${location.name}`,
+    name: `FixCare Service Center — ${location.name}`,
     description: frontmatter.meta_description,
     url: `${SITE.domain}/locations/${slug}`,
     telephone: "+91-9XXXXXXXXX",
@@ -122,7 +122,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
   return (
     <div>
       <PageHero
-        eyebrow={`WeCare Locations · ${location.name}`}
+        eyebrow={`FixCare Locations · ${location.name}`}
         title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
@@ -163,7 +163,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
                 />
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
-                Our base of operations is in Srinagar, with technicians dispatched
+                Our base of operations is in Jammu city, with technicians dispatched
                 daily to {location.name} and surrounding areas.
               </p>
             </div>
@@ -190,7 +190,9 @@ export function LocationPage({ location }: { location: LocationMeta }) {
                   <p className="mt-1 text-sm text-muted-foreground">
                     {location.serviceType === "same-day"
                       ? "Same-day service available."
-                      : "Next-day service from our Srinagar base."}{" "}
+                      : location.serviceType === "2-day"
+                      ? "2-day service from our Jammu city base for remote areas."
+                      : "Next-day service from our Jammu city base."}{" "}
                     Certified technicians, genuine parts, written warranty.
                   </p>
                 </div>
@@ -204,7 +206,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
                   <Button asChild variant="outline">
                     <a
                       href={SITE.whatsappLink(
-                        `Hi WeCare, I need appliance repair in ${location.name}`
+                        `Hi FixCare, I need appliance repair in ${location.name}`
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -275,7 +277,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
           <p className="mt-2 text-sm text-muted-foreground">
             We repair every major home appliance in {location.name} with the same
             certified specialists and genuine parts we use across the rest of
-            Kashmir.
+            the Jammu region.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => (
@@ -293,8 +295,8 @@ export function LocationPage({ location }: { location: LocationMeta }) {
 
       <CTASection
         title={`Book a Repair in ${location.name}`}
-        subtitle={`Don't let a broken appliance disrupt your home. A certified WeCare technician can be at your door in ${location.name} the ${
-          location.serviceType === "same-day" ? "same" : "next"
+        subtitle={`Don't let a broken appliance disrupt your home. A certified FixCare technician can be at your door in ${location.name} the ${
+          location.serviceType === "same-day" ? "same" : location.serviceType === "2-day" ? "next 2" : "next"
         } day with genuine parts and a written warranty.`}
       />
 

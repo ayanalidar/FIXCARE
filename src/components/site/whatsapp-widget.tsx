@@ -20,7 +20,7 @@ export function WhatsAppWidget() {
     };
   }, []);
 
-  const message = `Hi WeCare, I'm on ${
+  const message = `Hi FixCare, I'm on ${
     pathname === "/" ? "the homepage" : pathname
   } and I need appliance repair.`;
   const href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
@@ -29,7 +29,7 @@ export function WhatsAppWidget() {
     <div className="fixed bottom-5 right-5 z-50 flex items-end gap-2">
       {showTooltip && (
         <div className="hidden sm:block bg-card border border-border rounded-lg px-3 py-2 text-xs text-foreground shadow-md max-w-[200px] animate-in fade-in slide-in-from-right-2 duration-300">
-          <p className="font-semibold text-primary">Chat with WeCare</p>
+          <p className="font-semibold text-primary">Chat with FixCare</p>
           <p className="text-muted-foreground">
             We typically reply within a few minutes.
           </p>
@@ -39,7 +39,7 @@ export function WhatsAppWidget() {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with WeCare on WhatsApp"
+        aria-label="Chat with FixCare on WhatsApp"
         className={`flex size-14 items-center justify-center rounded-full bg-accent text-white shadow-lg transition-transform hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
           pulsing ? "wecare-pulse" : ""
         }`}

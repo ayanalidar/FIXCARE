@@ -1,20 +1,20 @@
 ---
-title: "Frequently Asked Questions — WeCare Home Solutions"
-meta_description: "Answers to 15+ common questions about appliance repair in Kashmir — service timing, visit fees, certified technicians, genuine parts, warranty, pricing, and booking with WeCare Home Solutions."
+title: "Frequently Asked Questions — FixCare Service Center"
+meta_description: "Answers to 15+ common questions about appliance repair in the Jammu region — service timing, visit fees, certified technicians, genuine parts, warranty, pricing, and booking with FixCare Service Center."
 slug: /faq/
-target_keywords: ["appliance repair FAQ Kashmir", "washing machine repair questions", "AC service cost"]
+target_keywords: ["appliance repair FAQ Jammu", "washing machine repair questions", "AC service cost"]
 schema: ["FAQPage"]
 ---
 
-# Frequently Asked Questions — Appliance Repair in Kashmir
+# Frequently Asked Questions — Appliance Repair in the Jammu Region
 
-We have answered the questions our customers across Kashmir ask us most often — about how fast we reach, what we charge, the parts we use, our warranty, and how to book a repair. If your question is not covered below, just call or WhatsApp us and we will answer it directly. We believe a well-informed customer makes better decisions, so we keep our answers specific rather than vague.
+We have answered the questions our customers across the Jammu region ask us most often — about how fast we reach, what we charge, the parts we use, our warranty, and how to book a repair. If your question is not covered below, just call or WhatsApp us and we will answer it directly. We believe a well-informed customer makes better decisions, so we keep our answers specific rather than vague.
 
 ## General Service
 
-### How fast can a WeCare technician reach my home?
+### How fast can a FixCare technician reach my home?
 
-For Srinagar city, our standard response time is same-day — usually within 2 to 4 hours of booking during business hours. For other cities across the Kashmir Valley (Anantnag, Baramulla, Budgam, Pulwama, Ganderbal, Bandipora, Kupwara), we typically reach next-day. Emergency visits within 1 hour are available in Srinagar for an additional charge. When you book, we will give you an honest expected arrival window, not a vague "sometime tomorrow."
+For Jammu city, our standard response time is same-day — usually within 2 to 4 hours of booking during business hours. For nearby districts (Kathua, Samba, Udhampur, Reasi) we typically reach next-day. For remote areas like Rajouri, Poonch and Doda we typically reach in 2 days. Emergency visits within 1 hour are available in Jammu city for an additional charge. When you book, we will give you an honest expected arrival window, not a vague "sometime tomorrow."
 
 ### Do you charge a visit or diagnostic fee?
 
@@ -22,15 +22,15 @@ We charge a nominal ₹200 to ₹300 visit fee depending on your location, which
 
 ### Are your technicians certified and trained?
 
-Yes. Every WeCare technician is formally certified in the appliance categories they service, carries a WeCare ID card, and is background-verified. For premium brands like Bosch, Samsung, and LG, we have brand-specific trained specialists on the team. We also conduct internal refresher training every quarter to keep the team updated on new models, revised error codes, and changing part specifications.
+Yes. Every FixCare technician is formally certified in the appliance categories they service, carries a FixCare ID card, and is background-verified. For premium brands like Bosch, Samsung, and LG, we have brand-specific trained specialists on the team. We also conduct internal refresher training every quarter to keep the team updated on new models, revised error codes, and changing part specifications.
 
-### What areas of Kashmir do you cover?
+### What areas of the Jammu region do you cover?
 
-We currently serve eight cities across the Kashmir Valley: Srinagar (same-day), Anantnag, Baramulla, Budgam, Pulwama, Ganderbal, Bandipora, and Kupwara (next-day). For Srinagar we cover all major neighborhoods including Lal Chowk, Hyderpora, Rajbagh, Karan Nagar, Sonwar, and Bemina. If your area is not on this list, call us anyway — we frequently serve nearby locations and may be able to help.
+We currently serve eight cities across the Jammu region: Jammu city (same-day), Kathua, Samba, Udhampur, Reasi (next-day), and Rajouri, Poonch, Doda (2-day). For Jammu city we cover all major neighborhoods including Gandhinagar, Talab Tillo, Janipur, Nanak Nagar, Trikuta Nagar, Gangyal and Bari Brahmana. If your area is not on this list, call us anyway — we frequently serve nearby locations and may be able to help.
 
 ### Do you offer emergency or out-of-hours service?
 
-Yes. We operate 24/7 including weekends and public holidays. For genuine emergencies — a fridge full of food at risk, an AC failure during a heatwave, a washing machine flooding — we can dispatch a technician within 1 hour in Srinagar for an additional emergency charge. Outside Srinagar, emergency response depends on technician availability in your area; call us and we will do our best.
+Yes. We operate 24/7 including weekends and public holidays. For genuine emergencies — a fridge full of food at risk, an AC failure during a heatwave, a washing machine flooding — we can dispatch a technician within 1 hour in Jammu city for an additional emergency charge. Outside Jammu city, emergency response depends on technician availability in your area; call us and we will do our best.
 
 ## Repair & Warranty
 
@@ -56,7 +56,7 @@ For the majority of repairs, yes — our technicians carry common spare parts in
 
 ## Pricing & Booking
 
-### How do I book a repair with WeCare?
+### How do I book a repair with FixCare?
 
 You can book in three ways: call us at +91 9XXXXXXXXX (24/7), WhatsApp us at the same number for the fastest text response, or fill out our 60-second online booking form on the homepage. After booking, you immediately receive an SMS confirmation with your booking reference number and the assigned technician's name. There is no need to repeat your details to multiple people.
 
@@ -68,7 +68,7 @@ We accept cash, UPI (Google Pay, PhonePe, Paytm), bank transfer, and for repair 
 
 Yes. We provide a formal GST invoice for every repair on request. The invoice includes the parts replaced, labor charge, GST breakdown, our GST registration number, and your warranty reference number. If you need a GST invoice, please mention it at the time of booking or before the technician leaves so we can issue it correctly the same day.
 
-### How much does a typical appliance repair cost in Kashmir?
+### How much does a typical appliance repair cost in the Jammu region?
 
 Costs vary by appliance and fault. Indicative ranges: washing machine repair ₹600 to ₹3,500, refrigerator repair ₹800 to ₹4,500, AC gas refill and service ₹1,500 to ₹3,500, microwave repair ₹500 to ₹2,500, dishwasher repair ₹700 to ₹4,000. These are estimates only — you will receive an exact written quote after diagnosis and before any work begins. There are no hidden charges.
 
@@ -80,7 +80,7 @@ You can get a broad indicative range by phone or WhatsApp based on the appliance
 
 If your question is not covered here, our team is happy to answer it directly.
 
-**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20WeCare%2C%20I%20have%20a%20question)** — fastest response
+**[WhatsApp Us](https://wa.me/919XXXXXXXXX?text=Hi%20FixCare%2C%20I%20have%20a%20question)** — fastest response
 **[Call Now](tel:+919XXXXXXXXX)** — 24/7, including holidays
 **[Book a Repair](/#book-repair)** — 60 seconds, instant confirmation
 

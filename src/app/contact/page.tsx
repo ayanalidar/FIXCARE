@@ -11,19 +11,19 @@ import Link from "next/link";
 const slug = "contact-us";
 
 export const metadata: Metadata = {
-  title: "Contact WeCare Home Solutions — Kashmir Appliance Repair",
+  title: "Contact FixCare Service Center — Jammu Appliance Repair",
   description:
-    "Contact WeCare Home Solutions for same-day appliance repair across Kashmir. Call +91 9XXXXXXXXX, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty.",
+    "Contact FixCare Service Center for same-day appliance repair across the Jammu region. Call +91 9XXXXXXXXX, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty.",
   keywords: [
-    "contact WeCare Home Solutions",
-    "appliance repair phone Kashmir",
+    "contact FixCare Service Center",
+    "appliance repair phone Jammu",
     "book repair",
   ],
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact WeCare Home Solutions",
+    title: "Contact FixCare Service Center",
     description:
-      "Same-day appliance repair across Kashmir. Call, WhatsApp, or book online — 24/7.",
+      "Same-day appliance repair across the Jammu region. Call, WhatsApp, or book online — 24/7.",
     url: `${SITE.domain}/contact`,
     type: "website",
   },
@@ -46,21 +46,21 @@ export default function ContactPage() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ApplianceRepair",
-    name: "WeCare Home Solutions",
+    name: "FixCare Service Center",
     description: frontmatter.meta_description,
     url: `${SITE.domain}/contact`,
     telephone: "+91-9XXXXXXXXX",
     email: SITE.email,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Srinagar",
+      addressLocality: "Jammu",
       addressRegion: "Jammu & Kashmir",
       addressCountry: "IN",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "34.0837",
-      longitude: "74.7973",
+      latitude: "32.7266",
+      longitude: "74.8570",
     },
     openingHoursSpecification: [
       {
@@ -82,13 +82,13 @@ export default function ContactPage() {
   };
 
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-    "Srinagar, Jammu & Kashmir, India"
+    "Jammu, Jammu & Kashmir, India"
   )}&z=12&output=embed`;
 
   return (
     <div>
       <PageHero
-        eyebrow="WeCare · Contact"
+        eyebrow="FixCare · Contact"
         title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
@@ -108,7 +108,7 @@ export default function ContactPage() {
                       <MapPin className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
                       <span className="text-muted-foreground">
                         <strong className="text-primary">Address:</strong>{" "}
-                        Srinagar, Kashmir, Jammu &amp; Kashmir, India
+                        Jammu, Jammu &amp; Kashmir, India
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -130,7 +130,7 @@ export default function ContactPage() {
                         <strong className="text-primary">WhatsApp:</strong>{" "}
                         <a
                           href={SITE.whatsappLink(
-                            "Hi WeCare, I need appliance repair"
+                            "Hi FixCare, I need appliance repair"
                           )}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -224,7 +224,7 @@ export default function ContactPage() {
                     <Button asChild variant="outline" size="sm">
                       <a
                         href={SITE.whatsappLink(
-                          "Hi WeCare, I need appliance repair"
+                          "Hi FixCare, I need appliance repair"
                         )}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -262,7 +262,7 @@ export default function ContactPage() {
               </h2>
               <div className="mt-4 overflow-hidden rounded-lg border border-border">
                 <iframe
-                  title="Map of Srinagar, Jammu & Kashmir"
+                  title="Map of Jammu, Jammu & Kashmir"
                   src={mapSrc}
                   width="100%"
                   height="360"
@@ -272,9 +272,9 @@ export default function ContactPage() {
                 />
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
-                Our base of operations is in Srinagar, with technicians
-                dispatched daily to surrounding districts across the Kashmir
-                Valley.
+                Our base of operations is in Jammu city, with technicians
+                dispatched daily to surrounding districts across the Jammu
+                region.
               </p>
             </div>
 
@@ -284,9 +284,9 @@ export default function ContactPage() {
                 Service Area
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                WeCare Home Solutions serves eight cities across the Kashmir
-                Valley: Srinagar (same-day), Anantnag, Baramulla, Budgam,
-                Pulwama, Ganderbal, Bandipora, and Kupwara (next-day). Visit our{" "}
+                FixCare Service Center serves eight cities across the Jammu
+                region: Jammu city (same-day), Kathua, Samba, Udhampur, Reasi
+                (next-day), and Rajouri, Poonch, Doda (2-day). Visit our{" "}
                 <Link
                   href="/locations"
                   className="font-semibold text-accent hover:text-primary"
@@ -317,7 +317,7 @@ export default function ContactPage() {
             <Card className="bg-card sticky top-24">
               <CardContent className="space-y-4 p-6">
                 <h3 className="text-base font-semibold text-primary">
-                  Reach WeCare Now
+                  Reach FixCare Now
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Appliance failures don&apos;t wait for business hours — neither
@@ -332,7 +332,7 @@ export default function ContactPage() {
                   </Button>
                   <Button asChild variant="outline">
                     <a
-                      href={SITE.whatsappLink("Hi WeCare, I need appliance repair")}
+                      href={SITE.whatsappLink("Hi FixCare, I need appliance repair")}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -361,7 +361,7 @@ export default function ContactPage() {
 
       <CTASection
         title="Pick the Channel That Works for You"
-        subtitle="Whether you prefer to call, text, email, or fill an online form, our team is ready to help. Same-day service in Srinagar, next-day across the rest of the Valley."
+        subtitle="Whether you prefer to call, text, email, or fill an online form, our team is ready to help. Same-day service in Jammu city, next-day across the rest of the Jammu region."
       />
 
       <script

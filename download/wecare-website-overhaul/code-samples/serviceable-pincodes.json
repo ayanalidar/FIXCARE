@@ -1,5 +1,5 @@
 {
-  "_comment": "Pincode to location-page mapping for the WeCare Home Solutions service-area checker. Add new pincodes as the service area expands. Format: \"PINCODE\": { city, url (relative to site root), locality (human-readable area name) }",
+  "_comment": "Pincode to location-page mapping for the FixCare Service Center service-area checker. Add new pincodes as the service area expands. Format: \"PINCODE\": { city, url (relative to site root), locality (human-readable area name) }",
   "_last_updated": "September 2026",
   "190001": { "city": "Srinagar",      "url": "/locations/srinagar/",   "locality": "Lal Chowk" },
   "190002": { "city": "Srinagar",      "url": "/locations/srinagar/",   "locality": "Maharaja Bazar" },

@@ -9,20 +9,20 @@ import { Icon } from "@/components/site/icon";
 import { ArrowRight, Lightbulb } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Appliance Repair Blog — Tips for Kashmir Households | WeCare",
+  title: "Appliance Repair Blog — Tips for Jammu Households | FixCare",
   description:
-    "Practical, Kashmir-focused appliance repair and maintenance tips from WeCare Home Solutions. Drainage, cooling, AC error codes, microwave care and more — written for everyday homes.",
+    "Practical, Jammu-focused appliance repair and maintenance tips from FixCare Service Center. Drainage, cooling, AC error codes, microwave care and more — written for everyday homes.",
   keywords: [
-    "appliance repair blog Kashmir",
+    "appliance repair blog Jammu",
     "washing machine tips",
     "AC maintenance",
     "fridge troubleshooting",
   ],
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "WeCare Blog — Appliance Repair Tips for Kashmir Households",
+    title: "FixCare Blog — Appliance Repair Tips for Jammu Households",
     description:
-      "Practical, Kashmir-focused appliance repair and maintenance tips.",
+      "Practical, Jammu-focused appliance repair and maintenance tips.",
     url: `${SITE.domain}/blog`,
     type: "website",
   },
@@ -41,9 +41,9 @@ export default function BlogHub() {
   return (
     <div>
       <PageHero
-        eyebrow="WeCare · Blog"
-        title="Appliance Repair Tips for Kashmir Households"
-        subtitle="Plain-English guides on keeping your washing machine, refrigerator, AC, microwave and more running smoothly through Kashmir's winters, summers and wazwan seasons — written by the WeCare team."
+        eyebrow="FixCare · Blog"
+        title="Appliance Repair Tips for Jammu Households"
+        subtitle="Plain-English guides on keeping your washing machine, refrigerator, AC, microwave and more running smoothly through Jammu's long, hot summers and festive seasons — written by the FixCare team."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -52,8 +52,8 @@ export default function BlogHub() {
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
           We publish fresh articles every few weeks. Each one is written
-          specifically for Kashmiri homes — covering the appliances, water
-          conditions, and seasonal patterns unique to the Valley.
+          specifically for homes in the Jammu region — covering the appliances,
+          water conditions, and seasonal patterns unique to the area.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -126,7 +126,7 @@ export default function BlogHub() {
 
       <CTASection
         title="Have a Specific Appliance Question?"
-        subtitle="If you'd rather skip the reading and just get your appliance fixed, our certified technicians are ready — same-day in Srinagar, next-day across the rest of the Valley."
+        subtitle="If you'd rather skip the reading and just get your appliance fixed, our certified technicians are ready — same-day in Jammu city, next-day across the rest of the Jammu region."
       />
     </div>
   );
