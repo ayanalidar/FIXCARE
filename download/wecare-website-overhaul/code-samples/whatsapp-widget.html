@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Widget — WeCare Home Solutions</title>
+<!--
+  ──────────────────────────────────────────────────────────────────────
+  WhatsApp floating chat widget — drop-in snippet for WeCare Home Solutions.
+  Deploy: paste this entire block just before </body> on every page
+  (or use the "Click to Chat" WordPress plugin and configure with the same
+  message template below).
+  Replace PHONE_NUMBER with the actual WhatsApp Business number in international
+  format without + or spaces (e.g. 919XXXXXXXXX for India).
+  ──────────────────────────────────────────────────────────────────────
+-->
+<style>
+  /* Floating WhatsApp button — bottom-right on desktop, sticky bottom-right on mobile */
+  .wa-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+  }
+  .wa-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+  .wa-float svg { width: 32px; height: 32px; fill: #fff; }
+
+  /* Pulse ring — draws attention on first page view */
+  .wa-float::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #25D366;
+    opacity: 0.5;
+    animation: wa-pulse 2s ease-out infinite;
+    z-index: -1;
+  }
+  @keyframes wa-pulse {
+    0%   { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  /* Tooltip / label that appears after 3s on desktop */
+  .wa-label {
+    position: fixed;
+    bottom: 28px;
+    right: 90px;
+    z-index: 9999;
+    background: #fff;
+    color: #0F2540;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    max-width: 240px;
+  }
+  .wa-label.visible { opacity: 1; transform: translateX(0); }
+  .wa-label::after {
+    content: '';
+    position: absolute;
+    right: -7px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 7px solid transparent;
+    border-left-color: #fff;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .wa-float { width: 54px; height: 54px; bottom: 16px; right: 16px; }
+    .wa-float svg { width: 28px; height: 28px; }
+    .wa-label { display: none; } /* hide tooltip on mobile — button is enough */
+  }
+</style>
+</head>
+<body>
+
+  <!-- ────────────────────────────────────────────────────────────────────
+       WHATSAPP FLOATING BUTTON
+       Replace PHONE_NUMBER below with your actual WhatsApp Business number
+       (international format, no + or spaces — e.g. 919XXXXXXXXX)
+  ──────────────────────────────────────────────────────────────────── -->
+  <a id="wa-float" class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.83-1.32-1.27-2.85-1.27-4.39 0-4.54 3.7-8.24 8.24-8.24s8.24 3.7 8.24 8.24-3.7 8.25-8.22 8.25zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/>
+    </svg>
+  </a>
+
+  <!-- Tooltip label (desktop only) -->
+  <div id="wa-label" class="wa-label">
+    <strong>Need help with an appliance?</strong><br>
+    Chat with us on WhatsApp — usually replies in 5 mins.
+  </div>
+
+<script>
+(function() {
+  const PHONE = '919XXXXXXXXX'; // ← REPLACE with actual WhatsApp Business number
+
+  // ── Build the pre-filled WhatsApp message including the current page URL ──
+  function buildWaLink() {
+    const pageUrl = window.location.href;
+    const pagePath = window.location.pathname;
+    let pageName = 'homepage';
+
+    // Try to derive a friendly page name from the URL path
+    if (pagePath && pagePath !== '/') {
+      const parts = pagePath.split('/').filter(Boolean);
+      if (parts.length >= 2) {
+        // e.g. /services/washing-machine-repair/  →  "washing machine repair service page"
+        pageName = parts.map(p => p.replace(/-/g, ' ')).join(' / ');
+      } else if (parts.length === 1) {
+        pageName = parts[0].replace(/-/g, ' ');
+      }
+    }
+
+    const msg = "Hi WeCare team, I'm on the " + pageName + " page on your website and need help with an appliance. (Page URL: " + pageUrl + ")";
+
+    return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+  }
+
+  // Set the href on load and update on SPA-style navigation if needed
+  function updateWaLink() {
+    const link = document.getElementById('wa-float');
+    if (link) link.href = buildWaLink();
+  }
+  updateWaLink();
+
+  // Show tooltip after 3 seconds on desktop, hide after 8 seconds
+  if (window.innerWidth > 768) {
+    const label = document.getElementById('wa-label');
+    setTimeout(() => label?.classList.add('visible'), 3000);
+    setTimeout(() => label?.classList.remove('visible'), 11000);
+  }
+
+  // Re-run on URL change (for SPA-style page transitions, if any)
+  window.addEventListener('popstate', updateWaLink);
+})();
+</script>
+</body>
+</html>

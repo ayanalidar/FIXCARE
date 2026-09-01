@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Area Checker — WeCare Home Solutions</title>
+<!--
+  ──────────────────────────────────────────────────────────────────────
+  Pincode / Service Area Checker
+  Drop-in component: place on the homepage (hero or footer) and on the
+  Contact page. User enters their 6-digit pincode, the tool checks against
+  the serviceable-pincodes.json list and shows whether WeCare serves that
+  area plus a deep link to the relevant location page.
+
+  Two implementation options:
+    Option A (recommended for static sites):  fetch serviceable-pincodes.json
+                                              at page load (this implementation).
+    Option B (for WordPress):                 define the pincode array inline as
+                                              a JS const to avoid the extra HTTP
+                                              request. See the inline comment
+                                              inside the <script> tag below.
+  ──────────────────────────────────────────────────────────────────────
+-->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { background: #f0f4f7; padding: 30px 16px; color: #151617; }
+  .checker-card { max-width: 480px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 28px 24px; box-shadow: 0 4px 16px rgba(15,37,64,0.08); }
+  h2 { font-size: 18px; color: #0F2540; margin-bottom: 6px; }
+  .sub { font-size: 13px; color: #80878a; margin-bottom: 18px; }
+
+  .checker-input { display: flex; gap: 10px; }
+  .checker-input input {
+    flex: 1; padding: 12px 14px; border: 1.5px solid #c3d0d8; border-radius: 8px;
+    font-size: 15px; letter-spacing: 1.5px;
+  }
+  .checker-input input:focus { outline: none; border-color: #0E7C66; box-shadow: 0 0 0 3px rgba(14,124,102,0.12); }
+  .checker-input button {
+    background: #0E7C66; color: #fff; border: none; padding: 0 22px;
+    border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;
+    transition: background 0.15s;
+  }
+  .checker-input button:hover { background: #0b654f; }
+  .checker-input button:disabled { background: #c9d1d6; cursor: not-allowed; }
+
+  .result { margin-top: 18px; padding: 14px 16px; border-radius: 8px; font-size: 14px; display: none; line-height: 1.5; }
+  .result.show { display: block; }
+  .result.success { background: #ecfdf5; border: 1px solid #bbf7d0; color: #065f46; }
+  .result.error { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+  .result a { color: #0E7C66; font-weight: 600; text-decoration: underline; }
+  .result .cta-link {
+    display: inline-block; margin-top: 8px;
+    padding: 6px 14px; background: #0E7C66; color: #fff;
+    text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 600;
+  }
+  .result .cta-link:hover { background: #0b654f; }
+
+  .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid #c9d1d6; border-top: 2px solid #0E7C66; border-radius: 50%; animation: spin 0.7s linear infinite; vertical-align: middle; margin-right: 6px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div class="checker-card">
+  <h2>Are We in Your Area?</h2>
+  <p class="sub">Enter your 6-digit pincode to check if WeCare serves your locality in Kashmir.</p>
+
+  <div class="checker-input">
+    <input type="text" id="pincode" placeholder="190001" maxlength="6" pattern="[0-9]{6}" inputmode="numeric" aria-label="Enter your pincode">
+    <button id="check-btn" onclick="checkPincode()">Check</button>
+  </div>
+
+  <div id="result" class="result"></div>
+</div>
+
+<script>
+  // ───────────────────────────────────────────────────────────────────
+  // OPTION A — fetch pincode map at runtime (used here).
+  // OPTION B — for WordPress, inline the JSON inside this script tag to
+  //            avoid the extra HTTP request. See serviceable-pincodes.json
+  //            for the structure. Example:
+  //              const PINCODE_MAP = {
+  //                "190001": { city: "Srinagar", url: "/locations/srinagar/" },
+  //                "192101": { city: "Anantnag", url: "/locations/anantnag/" },
+  //                ...
+  //              };
+  // ───────────────────────────────────────────────────────────────────
+  let PINCODE_MAP = null;
+
+  async function loadPincodeMap() {
+    try {
+      const res = await fetch('/wp-content/themes/wecare/data/serviceable-pincodes.json');
+      PINCODE_MAP = await res.json();
+    } catch (err) {
+      console.warn('Could not load serviceable-pincodes.json. Falling back to inline map.');
+      // Inline fallback for the demo — replace with the full map from serviceable-pincodes.json
+      PINCODE_MAP = {
+        "190001": { city: "Srinagar", url: "/locations/srinagar/", locality: "Lal Chowk" },
+        "190002": { city: "Srinagar", url: "/locations/srinagar/", locality: "Maharaja Bazar" },
+        "190003": { city: "Srinagar", url: "/locations/srinagar/", locality: "Rajbagh" },
+        "190008": { city: "Srinagar", url: "/locations/srinagar/", locality: "Hyderpora" },
+        "190015": { city: "Srinagar", url: "/locations/srinagar/", locality: "Bemina" },
+        "192101": { city: "Anantnag", url: "/locations/anantnag/", locality: "Anantnag City" },
+        "192102": { city: "Anantnag", url: "/locations/anantnag/", locality: "Khanabal" },
+        "193101": { city: "Baramulla", url: "/locations/baramulla/", locality: "Baramulla City" },
+        "193201": { city: "Baramulla", url: "/locations/baramulla/", locality: "Sopore" },
+        "191111": { city: "Budgam", url: "/locations/budgam/", locality: "Budgam City" },
+        "191113": { city: "Budgam", url: "/locations/budgam/", locality: "Beerwah" },
+        "192301": { city: "Pulwama", url: "/locations/pulwama/", locality: "Pulwama City" },
+        "192302": { city: "Pulwama", url: "/locations/pulwama/", locality: "Pampore" },
+        "191131": { city: "Ganderbal", url: "/locations/ganderbal/", locality: "Ganderbal City" },
+        "193501": { city: "Bandipora", url: "/locations/bandipora/", locality: "Bandipora City" },
+        "193222": { city: "Kupwara", url: "/locations/kupwara/", locality: "Kupwara City" },
+        "193221": { city: "Kupwara", url: "/locations/kupwara/", locality: "Handwara" }
+      };
+    }
+  }
+
+  function checkPincode() {
+    const input = document.getElementById('pincode');
+    const resultDiv = document.getElementById('result');
+    const btn = document.getElementById('check-btn');
+    const pincode = input.value.trim();
+
+    // Validate pincode format
+    if (!/^[0-9]{6}$/.test(pincode)) {
+      resultDiv.className = 'result show error';
+      resultDiv.innerHTML = 'Please enter a valid 6-digit pincode.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Checking...';
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = 'Check';
+
+      const match = PINCODE_MAP && PINCODE_MAP[pincode];
+      if (match) {
+        resultDiv.className = 'result show success';
+        resultDiv.innerHTML =
+          '<strong>Great news — we serve ' + match.locality + ' in ' + match.city + '!</strong><br>' +
+          'Same-day service available in Srinagar, next-day in other Kashmir cities.<br>' +
+          '<a href="' + match.url + '" class="cta-link">View ' + match.city + ' service details →</a>';
+      } else {
+        resultDiv.className = 'result show error';
+        resultDiv.innerHTML =
+          '<strong>Hmm — that pincode isn\'t in our standard service area.</strong><br>' +
+          'We may still be able to help. Please call us at <a href="tel:+919XXXXXXXXX">+91 9XXXXXXXXX</a> to confirm availability and pricing for your location.';
+      }
+    }, 400); // small delay for UX feel
+  }
+
+  // Allow Enter key to submit
+  document.getElementById('pincode').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') checkPincode();
+  });
+
+  // Preload pincode map on page load
+  loadPincodeMap();
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+# robots.txt for WeCare Home Solutions (wecarehomesolutions.in)
+# Last updated: September 2026
+
+# Allow all crawlers access to all content by default
+User-agent: *
+
+# Block WordPress admin and login
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-content/uploads/wc-logs/
+Disallow: /wp-content/uploads/woocommerce_uploads/
+
+# Block internal search results (avoid index bloat)
+Disallow: /?s=
+Disallow: /search/
+
+# Block trackback and comment endpoints
+Disallow: /trackback/
+Disallow: /comments/feed/
+Disallow: /*/feed/$
+Disallow: /*/feed/rss/$
+Disallow: /*/attachment/
+
+# Block pagination duplicates from being indexed individually
+Allow: /*/page/*?$
+Disallow: /*/page/*/
+
+# Block query-string variants of static pages
+Disallow: /*?
+
+# Allow crawling of CSS, JS, and image files (needed for rendering)
+Allow: /wp-content/*.css
+Allow: /wp-content/*.js
+Allow: /wp-content/*.png
+Allow: /wp-content/*.jpg
+Allow: /wp-content/*.jpeg
+Allow: /wp-content/*.gif
+Allow: /wp-content/*.webp
+Allow: /wp-content/*.svg
+Allow: /wp-includes/*.css
+Allow: /wp-includes/*.js
+
+# Explicitly allow sitemap discovery
+Allow: /sitemap.xml
+Allow: /sitemap_index.xml
+
+# XML sitemap reference (Rank Math auto-generates /sitemap_index.xml)
+Sitemap: https://www.wecarehomesolutions.in/sitemap_index.xml
+Sitemap: https://www.wecarehomesolutions.in/sitemap.xml
+
+# Block specific low-value crawlers (optional, saves bandwidth)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Crawl-delay: 5

@@ -1,0 +1,114 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ApplianceRepair",
+  "@id": "https://www.wecarehomesolutions.in/#business",
+  "name": "WeCare Home Solutions",
+  "description": "Same-day appliance repair service across Kashmir. Certified technicians for washing machine, refrigerator, AC, microwave, water dispenser, and dishwasher repair. Genuine parts, written warranty, 24/7 service.",
+  "url": "https://www.wecarehomesolutions.in/",
+  "telephone": "+91-9XXXXXXXXX",
+  "email": "care@wecarehomesolutions.in",
+  "image": "https://www.wecarehomesolutions.in/wp-content/uploads/2026/wecare-logo.png",
+  "logo": "https://www.wecarehomesolutions.in/wp-content/uploads/2026/wecare-logo.png",
+  "priceRange": "₹₹",
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Cash, UPI, Credit Card, Debit Card, Bank Transfer",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Street Address — fill in]",
+    "addressLocality": "Srinagar",
+    "addressRegion": "Jammu & Kashmir",
+    "postalCode": "190001",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "34.0837",
+    "longitude": "74.7973"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Srinagar" },
+    { "@type": "City", "name": "Anantnag" },
+    { "@type": "City", "name": "Baramulla" },
+    { "@type": "City", "name": "Budgam" },
+    { "@type": "City", "name": "Pulwama" },
+    { "@type": "City", "name": "Ganderbal" },
+    { "@type": "City", "name": "Bandipora" },
+    { "@type": "City", "name": "Kupwara" }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Appliance Repair Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Washing Machine Repair",
+          "url": "https://www.wecarehomesolutions.in/services/washing-machine-repair/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Refrigerator Repair",
+          "url": "https://www.wecarehomesolutions.in/services/refrigerator-repair/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Air Conditioner Repair",
+          "url": "https://www.wecarehomesolutions.in/services/air-conditioner-repair/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Microwave Repair",
+          "url": "https://www.wecarehomesolutions.in/services/microwave-repair/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Water Dispenser Repair",
+          "url": "https://www.wecarehomesolutions.in/services/water-dispenser-repair/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Dishwasher Repair",
+          "url": "https://www.wecarehomesolutions.in/services/dishwasher-repair/"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "9",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "sameAs": [
+    "https://www.facebook.com/wecarehomesolutions",
+    "https://www.instagram.com/wecarehomesolutions",
+    "https://twitter.com/wecarehomesoln"
+  ]
+}

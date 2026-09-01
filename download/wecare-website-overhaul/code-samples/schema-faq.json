@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can a WeCare technician reach my home in Srinagar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For Srinagar city, our standard response time is same-day — usually within 2-4 hours of booking during business hours. For other Kashmir cities, we typically reach next-day. Emergency visits within 1 hour are available for an additional charge in Srinagar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you charge a visit or diagnostic fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We charge a nominal ₹200-300 visit fee which is fully adjusted against the repair cost if you proceed with the repair. The diagnostic itself is free — you receive a transparent quote before any work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your technicians certified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every WeCare technician is formally trained on the appliance categories they service, carries an ID card, and is background-verified. For high-end brands like Bosch and Samsung, we have brand-specific trained specialists on the team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you use genuine spare parts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Always. We source spare parts directly from brand-authorized distributors in J&K. Every part we install comes with the manufacturer's warranty plus our own written warranty on top. We never use duplicate or refurbished parts without your explicit consent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your warranty period?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Warranty ranges from 3 months for minor parts (belts, switches) to 12 months for major parts (compressors, motors). The exact warranty is mentioned on your written warranty card at the time of repair. If the same problem recurs within the warranty period, we return and fix it free of charge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pay for the repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept cash, UPI (Google Pay, PhonePe, Paytm), and bank transfer. For larger repairs above ₹5,000 we also accept card payments. A GST invoice is provided on request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you repair appliances under brand warranty without voiding it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We follow the manufacturer's repair guidelines and use only genuine parts, which preserves your brand warranty. However, if your appliance is still under the brand's free warranty period, we recommend contacting the brand's authorized service center first. We step in when the brand warranty has expired or when you need faster service."
+      }
+    }
+  ]
+}

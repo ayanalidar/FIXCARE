@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Washing Machine Repair",
+  "name": "Washing Machine Repair in Kashmir — Same-Day Service for All Brands",
+  "description": "Expert same-day washing machine repair across Kashmir. Certified technicians for Samsung, LG, Whirlpool, IFB, Bosch, Godrej, Haier washing machines. Fixes for not spinning, not draining, error codes, leaking, drum issues, motor replacement. Genuine parts, written warranty.",
+  "url": "https://www.wecarehomesolutions.in/services/washing-machine-repair/",
+  "image": "https://www.wecarehomesolutions.in/wp-content/uploads/2026/washing-machine-repair.jpg",
+  "provider": {
+    "@type": "ApplianceRepair",
+    "name": "WeCare Home Solutions",
+    "telephone": "+91-9XXXXXXXXX",
+    "url": "https://www.wecarehomesolutions.in/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Srinagar",
+      "addressRegion": "Jammu & Kashmir",
+      "addressCountry": "IN"
+    }
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Srinagar" },
+    { "@type": "City", "name": "Anantnag" },
+    { "@type": "City", "name": "Baramulla" },
+    { "@type": "City", "name": "Budgam" },
+    { "@type": "City", "name": "Pulwama" },
+    { "@type": "City", "name": "Ganderbal" },
+    { "@type": "City", "name": "Bandipora" },
+    { "@type": "City", "name": "Kupwara" }
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Homeowners in Kashmir"
+  },
+  "brand": [
+    { "@type": "Brand", "name": "Samsung" },
+    { "@type": "Brand", "name": "LG" },
+    { "@type": "Brand", "name": "Whirlpool" },
+    { "@type": "Brand", "name": "IFB" },
+    { "@type": "Brand", "name": "Bosch" },
+    { "@type": "Brand", "name": "Godrej" },
+    { "@type": "Brand", "name": "Haier" }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "299",
+    "priceValidUntil": "2027-12-31",
+    "description": "Starting visit + diagnostic fee — adjusted against repair cost if you proceed",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.wecarehomesolutions.in/services/washing-machine-repair/#book-repair"
+  }
+}

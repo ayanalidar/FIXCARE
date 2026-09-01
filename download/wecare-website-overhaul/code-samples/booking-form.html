@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Repair — WeCare Home Solutions (Multi-Step Form Prototype)</title>
+<style>
+  /* ── Multi-step booking form prototype (UX reference for WPForms / Gravity Forms implementation) ── */
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { background: #f0f4f7; color: #151617; padding: 20px; }
+  .form-card { max-width: 640px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 32px; box-shadow: 0 6px 24px rgba(15,37,64,0.08); }
+  h1 { font-size: 22px; color: #0F2540; margin-bottom: 8px; }
+  .sub { color: #80878a; margin-bottom: 24px; font-size: 14px; }
+
+  /* Progress indicator */
+  .progress { display: flex; gap: 8px; margin-bottom: 28px; }
+  .progress .step { flex: 1; height: 6px; background: #e0e6ea; border-radius: 3px; transition: background 0.3s; }
+  .progress .step.active { background: #0E7C66; }
+  .progress .step.done { background: #0E7C66; opacity: 0.6; }
+  .step-label { font-size: 11px; color: #80878a; margin-top: 6px; text-align: center; }
+  .step-labels { display: flex; gap: 8px; margin-bottom: 24px; }
+  .step-labels span { flex: 1; text-align: center; }
+
+  .step-panel { display: none; }
+  .step-panel.active { display: block; animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Appliance selector cards */
+  .appliance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .appliance-card { border: 2px solid #e0e6ea; border-radius: 10px; padding: 16px; text-align: center; cursor: pointer; transition: all 0.15s; font-size: 14px; }
+  .appliance-card:hover { border-color: #0E7C66; }
+  .appliance-card.selected { border-color: #0E7C66; background: #f0f9f6; }
+  .appliance-card .icon { font-size: 26px; display: block; margin-bottom: 6px; }
+  .appliance-card input[type=radio] { display: none; }
+
+  label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px; color: #0F2540; }
+  input[type=text], input[type=tel], input[type=email], input[type=date], textarea, select {
+    width: 100%; padding: 10px 12px; border: 1px solid #c3d0d8; border-radius: 8px;
+    font-size: 14px; font-family: inherit; background: #fff;
+  }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: #0E7C66; box-shadow: 0 0 0 3px rgba(14,124,102,0.12); }
+  textarea { min-height: 100px; resize: vertical; }
+  .form-group { margin-bottom: 18px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .slot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .slot-radio { display: block; border: 1.5px solid #c3d0d8; border-radius: 8px; padding: 12px; cursor: pointer; font-size: 13px; text-align: center; }
+  .slot-radio input { display: none; }
+  .slot-radio.selected { border-color: #0E7C66; background: #f0f9f6; }
+
+  /* Review summary */
+  .review-block { background: #f6f9fb; border-radius: 8px; padding: 16px; margin-bottom: 12px; font-size: 14px; }
+  .review-block strong { color: #0F2540; display: block; margin-bottom: 4px; }
+  .review-block span { color: #4a5560; }
+
+  /* Buttons */
+  .btn-row { display: flex; justify-content: space-between; margin-top: 28px; }
+  .btn { padding: 12px 24px; border-radius: 8px; border: none; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+  .btn-primary { background: #0E7C66; color: #fff; }
+  .btn-primary:hover { background: #0b654f; }
+  .btn-secondary { background: #e0e6ea; color: #0F2540; }
+  .btn-secondary:hover { background: #c9d1d6; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* Consent checkbox */
+  .consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: #4a5560; margin: 20px 0; }
+  .consent input { margin-top: 2px; }
+
+  .success-msg { display: none; text-align: center; padding: 40px 20px; }
+  .success-msg .check { font-size: 48px; color: #0E7C66; margin-bottom: 12px; }
+  .success-msg h2 { color: #0F2540; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="form-card">
+  <h1>Book a Repair</h1>
+  <p class="sub">Same-day service in Srinagar, next-day across Kashmir. 60-second form, instant SMS confirmation.</p>
+
+  <div class="progress">
+    <div class="step active" id="bar-1"></div>
+    <div class="step" id="bar-2"></div>
+    <div class="step" id="bar-3"></div>
+    <div class="step" id="bar-4"></div>
+    <div class="step" id="bar-5"></div>
+  </div>
+  <div class="step-labels">
+    <span>Appliance</span><span>Issue</span><span>Schedule</span><span>Address</span><span>Confirm</span>
+  </div>
+
+  <form id="booking-form" onsubmit="return submitForm(event)">
+
+    <!-- STEP 1: Select Appliance -->
+    <div class="step-panel active" id="step-1">
+      <label>Which appliance needs repair?</label>
+      <div class="appliance-grid">
+        <label class="appliance-card"><input type="radio" name="appliance" value="Washing Machine" required><span class="icon">🧺</span>Washing Machine</label>
+        <label class="appliance-card"><input type="radio" name="appliance" value="Refrigerator"><span class="icon">🧊</span>Refrigerator</label>
+        <label class="appliance-card"><input type="radio" name="appliance" value="Air Conditioner"><span class="icon">❄️</span>Air Conditioner</label>
+        <label class="appliance-card"><input type="radio" name="appliance" value="Microwave"><span class="icon">🔥</span>Microwave</label>
+        <label class="appliance-card"><input type="radio" name="appliance" value="Water Dispenser"><span class="icon">💧</span>Water Dispenser</label>
+        <label class="appliance-card"><input type="radio" name="appliance" value="Dishwasher"><span class="icon">🍽️</span>Dishwasher</label>
+        <label class="appliance-card"><input type="radio" name="appliance" value="Other"><span class="icon">🔧</span>Other</label>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-secondary" disabled>← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(1)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Describe Issue -->
+    <div class="step-panel" id="step-2">
+      <div class="form-group">
+        <label for="brand">Brand (if known)</label>
+        <select id="brand" name="brand">
+          <option value="">Select brand...</option>
+          <option>Samsung</option><option>LG</option><option>Whirlpool</option>
+          <option>Bosch</option><option>IFB</option><option>Godrej</option>
+          <option>Haier</option><option>Voltas</option><option>Panasonic</option>
+          <option>Other / Not sure</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="model">Model (optional)</label>
+        <input type="text" id="model" name="model" placeholder="e.g. WA62H3H1">
+      </div>
+      <div class="form-group">
+        <label for="issue">Describe the problem *</label>
+        <textarea id="issue" name="issue" required placeholder="e.g. Machine fills with water but drum doesn't rotate; shows error code LE"></textarea>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(2)">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Date & Time -->
+    <div class="step-panel" id="step-3">
+      <div class="form-group">
+        <label for="date">Preferred date *</label>
+        <input type="date" id="date" name="date" required min="">
+      </div>
+      <div class="form-group">
+        <label>Preferred time slot *</label>
+        <div class="slot-grid">
+          <label class="slot-radio"><input type="radio" name="slot" value="Morning (9 AM - 12 PM)" required>Morning (9 AM - 12 PM)</label>
+          <label class="slot-radio"><input type="radio" name="slot" value="Afternoon (12 - 4 PM)">Afternoon (12 - 4 PM)</label>
+          <label class="slot-radio"><input type="radio" name="slot" value="Evening (4 - 7 PM)">Evening (4 - 7 PM)</label>
+          <label class="slot-radio"><input type="radio" name="slot" value="Emergency (within 1 hr, Srinagar only, extra fee)">Emergency (within 1 hr — Srinagar only, extra fee)</label>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(3)">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(3)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Address & Contact -->
+    <div class="step-panel" id="step-4">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone (10 digits) *</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="9XXXXXXXXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address line 1 *</label>
+        <input type="text" id="address" name="address" required placeholder="House no, street, locality">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="city">City *</label>
+          <select id="city" name="city" required>
+            <option value="">Select city...</option>
+            <option>Srinagar</option><option>Anantnag</option><option>Baramulla</option>
+            <option>Budgam</option><option>Pulwama</option><option>Ganderbal</option>
+            <option>Bandipora</option><option>Kupwara</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode (6 digits) *</label>
+          <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required maxlength="6">
+        </div>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(4)">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(4)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Confirm & Submit -->
+    <div class="step-panel" id="step-5">
+      <label>Please review your booking:</label>
+      <div class="review-block"><strong>Appliance:</strong><span id="rv-appliance"></span></div>
+      <div class="review-block"><strong>Brand & Model:</strong><span id="rv-brand"></span></div>
+      <div class="review-block"><strong>Issue:</strong><span id="rv-issue"></span></div>
+      <div class="review-block"><strong>Preferred slot:</strong><span id="rv-slot"></span></div>
+      <div class="review-block"><strong>Contact:</strong><span id="rv-contact"></span></div>
+      <div class="review-block"><strong>Address:</strong><span id="rv-address"></span></div>
+
+      <label class="consent">
+        <input type="checkbox" id="consent" required>
+        I consent to receive SMS and WhatsApp confirmations about my booking. I understand the ₹200-300 visit fee is adjusted against the repair cost if I proceed.
+      </label>
+
+      <div class="btn-row">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(5)">← Back</button>
+        <button type="submit" class="btn btn-primary">Submit Booking ✓</button>
+      </div>
+    </div>
+
+    <!-- SUCCESS MESSAGE -->
+    <div class="success-msg" id="success">
+      <div class="check">✓</div>
+      <h2>Booking Received!</h2>
+      <p>Your reference: <strong id="ref-num">WC-XXXXXX</strong></p>
+      <p style="margin-top:12px;color:#4a5560;font-size:14px">A confirmation SMS has been sent to your phone. A WeCare team member will WhatsApp you shortly to confirm the technician assignment.</p>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 5;
+
+  // Set min date to today
+  document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+  function updateProgress() {
+    for (let i = 1; i <= totalSteps; i++) {
+      const bar = document.getElementById('bar-' + i);
+      bar.classList.remove('active', 'done');
+      if (i < currentStep) bar.classList.add('done');
+      else if (i === currentStep) bar.classList.add('active');
+    }
+  }
+
+  function showStep(n) {
+    for (let i = 1; i <= totalSteps; i++) {
+      document.getElementById('step-' + i).classList.toggle('active', i === n);
+    }
+  }
+
+  function nextStep(from) {
+    // Validate current step
+    if (!validateStep(from)) return;
+    if (from < totalSteps) {
+      currentStep = from + 1;
+      showStep(currentStep);
+      updateProgress();
+      if (currentStep === 5) populateReview();
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function prevStep(from) {
+    if (from > 1) {
+      currentStep = from - 1;
+      showStep(currentStep);
+      updateProgress();
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function validateStep(step) {
+    const panel = document.getElementById('step-' + step);
+    const requiredFields = panel.querySelectorAll('[required]');
+    for (const field of requiredFields) {
+      if (field.type === 'radio') {
+        // check radio group
+        const name = field.name;
+        const checked = panel.querySelector('input[name="' + name + '"]:checked');
+        if (!checked) {
+          alert('Please select an option to continue.');
+          return false;
+        }
+      } else if (!field.value.trim()) {
+        alert('Please fill in: ' + (field.labels[0]?.innerText || field.name).replace('*', '').trim());
+        field.focus();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function populateReview() {
+    const f = document.getElementById('booking-form');
+    document.getElementById('rv-appliance').textContent = f.appliance.value;
+    document.getElementById('rv-brand').textContent = (f.brand.value || '—') + ' ' + (f.model.value || '');
+    document.getElementById('rv-issue').textContent = f.issue.value;
+    document.getElementById('rv-slot').textContent = f.date.value + ' ' + (document.querySelector('input[name=slot]:checked')?.value || '');
+    document.getElementById('rv-contact').textContent = f.name.value + ', ' + f.phone.value;
+    document.getElementById('rv-address').textContent = f.address.value + ', ' + f.city.value + ' - ' + f.pincode.value;
+  }
+
+  function submitForm(event) {
+    event.preventDefault();
+    if (!document.getElementById('consent').checked) {
+      alert('Please consent to SMS confirmation to proceed.');
+      return false;
+    }
+    // Generate reference number
+    const ref = 'WC-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+    document.getElementById('ref-num').textContent = ref;
+
+    // Hide form steps, show success
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.querySelector('.progress').style.display = 'none';
+    document.querySelector('.step-labels').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+
+    // ── INTEGRATION POINT ──
+    // Replace the below with WPForms / Gravity Forms submission OR
+    // a fetch() POST to the WordPress REST endpoint that pipes into HubSpot CRM:
+    //
+    // fetch('/wp-json/wecare/v1/booking', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(Object.fromEntries(new FormData(f)))
+    // }).then(r => r.json()).then(data => { ... });
+    //
+    // The endpoint should:
+    //   1. Save lead to HubSpot CRM (Free tier) via HubSpot Forms API
+    //   2. Trigger HubSpot workflow: SMS confirmation via Twilio + email confirmation
+    //   3. Notify WeCare team via WhatsApp Business API + email alert
+    //   4. Return booking reference number
+    return false;
+  }
+
+  // Appliance card selection highlight
+  document.querySelectorAll('.appliance-card input').forEach(input => {
+    input.addEventListener('change', function() {
+      document.querySelectorAll('.appliance-card').forEach(c => c.classList.remove('selected'));
+      this.closest('.appliance-card').classList.add('selected');
+    });
+  });
+  // Slot radio selection
+  document.querySelectorAll('.slot-radio input').forEach(input => {
+    input.addEventListener('change', function() {
+      document.querySelectorAll('.slot-radio').forEach(c => c.classList.remove('selected'));
+      this.closest('.slot-radio').classList.add('selected');
+    });
+  });
+</script>
+</body>
+</html>
