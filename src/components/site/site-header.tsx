@@ -137,20 +137,23 @@ export function SiteHeader() {
         </NavigationMenu>
 
         {/* Right cluster: phone + book CTA + mobile menu */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
+          {/* Phone link — full number visible on xl+, icon-only on sm..xl, icon button on xs */}
           <a
             href={SITE.phoneHref}
-            className="hidden xl:inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent"
             aria-label={`Call us at ${SITE.phone}`}
           >
-            <Phone className="size-4" aria-hidden="true" />
-            <span>{SITE.phone}</span>
+            <span className="flex size-9 items-center justify-center rounded-full bg-accent/10 text-accent sm:bg-transparent sm:text-primary sm:rounded-none sm:size-auto">
+              <Phone className="size-4 sm:size-[1.1rem]" aria-hidden="true" />
+              <span className="hidden xl:inline">{SITE.phone}</span>
+            </span>
           </a>
           <Button asChild size="sm" className="hidden sm:inline-flex">
             <Link href="/book-repair">Book a Repair</Link>
           </Button>
 
-          {/* Mobile */}
+          {/* Mobile menu trigger — visible below lg */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button

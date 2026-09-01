@@ -309,7 +309,7 @@ export function BookingForm() {
               <RadioGroup
                 value={data.preferredSlot}
                 onValueChange={(v) => update("preferredSlot", v)}
-                className="grid gap-2 sm:grid-cols-2"
+                className="grid grid-cols-2 gap-2"
               >
                 {TIME_SLOTS.map((slot) => (
                   <Label

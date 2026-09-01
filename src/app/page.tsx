@@ -340,7 +340,7 @@ export default function HomePage() {
             problems we fix, the brands we service, and the typical repair
             process.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
             {SERVICES.map((s) => (
               <ServiceCard
                 key={s.slug}
@@ -403,7 +403,7 @@ export default function HomePage() {
             service in Jammu city, next-day service in nearby districts, and
             2-day service to remote areas.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {LOCATIONS.map((l) => (
               <LocationCard
                 key={l.slug}
