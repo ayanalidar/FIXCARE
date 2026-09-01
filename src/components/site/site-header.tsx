@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,7 +20,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu, Phone, Wrench } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { SERVICES, LOCATIONS, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -44,15 +45,14 @@ export function SiteHeader() {
           className="flex items-center gap-2 text-primary font-bold tracking-tight"
           aria-label="FixCare Service Center - home"
         >
-          <span className="flex size-9 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-            <Wrench className="size-5" aria-hidden="true" />
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="text-base sm:text-lg">FixCare</span>
-            <span className="text-[10px] sm:text-xs font-medium text-muted-foreground">
-              Service Center
-            </span>
-          </span>
+          <Image
+            src="/fixcare-logo-particles.png"
+            alt="FixCare Service Center"
+            width={140}
+            height={55}
+            className="h-8 w-auto sm:h-9"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -170,11 +170,16 @@ export function SiteHeader() {
               className="w-[320px] overflow-y-auto bg-background p-0"
             >
               <SheetHeader className="border-b p-4 text-left">
-                <SheetTitle className="flex items-center gap-2 text-primary">
-                  <span className="flex size-8 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                    <Wrench className="size-4" aria-hidden="true" />
-                  </span>
-                  FixCare Service Center
+                <SheetTitle asChild>
+                  <Link href="/" className="flex items-center gap-2 text-primary" onClick={() => setOpen(false)}>
+                    <Image
+                      src="/fixcare-logo-particles.png"
+                      alt="FixCare Service Center"
+                      width={140}
+                      height={55}
+                      className="h-8 w-auto sm:h-9"
+                    />
+                  </Link>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 p-4">

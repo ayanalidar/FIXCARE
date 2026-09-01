@@ -262,3 +262,199 @@ Stage Summary:
   - blog/common-ac-error-codes-explained.md
   - blog/blog-topic-ideas.md
 
+
+---
+Task ID: W-3
+Agent: full-stack-developer
+Task: Logo in header/footer + migrate to Supabase + build admin backend
+
+Work Log:
+- Replaced Wrench icon with transparent logo PNG (140×55) in SiteHeader
+  desktop logo block (next/image with priority)
+- Replaced Wrench icon with transparent logo PNG in SiteHeader mobile
+  Sheet header (SheetTitle asChild > Link > Image)
+- Replaced Wrench icon with transparent logo PNG (160×63) in SiteFooter
+  company block (next/image)
+- Removed now-unused `Wrench` import from both site-header.tsx and
+  site-footer.tsx; added `Image` import from "next/image"
+- Verified homepage page.tsx has no ParticleLogo import and no
+  `header=` prop on PageHero (already done in earlier commit per brief)
+- Updated prisma/schema.prisma: switched datasource from `sqlite` to
+  `postgresql`, added `notes String?` field to Booking model, removed
+  unused `User` and `Post` models
+- Ran `bun run db:generate` to regenerate Prisma client types with the
+  new schema (notes field included)
+- Updated .env: replaced `DATABASE_URL=file:/home/z/my-project/db/custom.db`
+  with placeholder Supabase Postgres URL
+  (`postgresql://postgres.PLEASE_FILL_IN:PLEASE_FILL_IN@aws-0-PLEASE_FILL_IN.pooler.supabase.com:6543/postgres`)
+  and added `ADMIN_PASSWORD=fixcare-admin-2026` and
+  `ADMIN_SESSION_SECRET=please-change-this-to-a-random-32-char-string`
+- Tried `bun run db:push` — fails as expected (placeholder host
+  unreachable). Schema file is valid; will work once user fills in real
+  Supabase credentials.
+- Created src/lib/auth.ts — signed-cookie auth using node:crypto HMAC
+  SHA-256: createSession(), clearSession(), isAdmin(), verifyPassword()
+- Created src/middleware.ts — protects all /admin/* routes except
+  /admin/login; validates signed cookie + expiry; redirects to
+  /admin/login?redirect=... on failure. Config: runtime "nodejs",
+  matcher ["/admin/:path*"]
+- Created src/app/api/auth/login/route.ts — POST handler, verifies
+  password via verifyPassword, calls createSession on success
+- Created src/app/api/auth/logout/route.ts — POST handler, calls
+  clearSession
+- Created src/lib/admin.ts — shared admin types/helpers: BOOKING_STATUSES,
+  STATUS_LABELS, STATUS_BADGE_CLASSES, STATUS_DOT_CLASSES,
+  formatPreferredDate, formatTimestamp, BookingRow type
+- Created src/components/admin/admin-shell.tsx — client component with
+  desktop sidebar (lg+), mobile Sheet nav (collapsible), logout button,
+  NavList with 3 nav items (Dashboard, Bookings, Calendar) + "View
+  public site" external link
+- Created src/app/admin/layout.tsx — server component, calls isAdmin();
+  renders children inside AdminShell only if authed (login page
+  renders without shell when not authed)
+- Created src/app/admin/login/page.tsx — client component, simple
+  password form using shadcn Card/Input/Button/Label, POSTs to
+  /api/auth/login, redirects to ?redirect param on success
+- Created src/app/admin/page.tsx — server component dashboard, 4 stat
+  cards (New today, Pending, Completed 7d, Total), recent 5 bookings
+  table; try/catch around all DB queries shows "Database not
+  configured" banner when DB unreachable
+- Created src/app/admin/bookings/page.tsx — server component, reads
+  searchParams (status, q, date), builds Prisma where clause, lists
+  bookings (max 50) in table; shows "database offline" in header when
+  DB unreachable
+- Created src/components/admin/bookings-filters.tsx — client component,
+  status filter pills (All/New/Confirmed/Assigned/Completed/Cancelled),
+  search input, date filter select (Any/Today/Tomorrow/This week);
+  updates URL search params via router.push
+- Created src/app/admin/bookings/[id]/page.tsx — server component,
+  fetches booking by id, calls notFound() if missing; renders customer
+  card, appliance+issue card, schedule card, optional admin notes card;
+  sticky sidebar with BookingActions component; try/catch shows DB
+  not configured message
+- Created src/components/admin/booking-actions.tsx — client component,
+  status selector (5 buttons), technician input, notes textarea, Save
+  + Mark as completed buttons (PATCH /api/admin/bookings/[id]), call
+  + WhatsApp quick links (tel: and wa.me URLs), router.refresh() after
+  save to reflect updates
+- Created src/app/admin/calendar/page.tsx — server component, reads
+  ?month=YYYY-MM (defaults to current month), queries bookings for that
+  month (preferredDate startsWith YYYY-MM), renders month grid (7-col
+  with weekday header, leading/trailing blanks, day cells with
+  per-status colored dot counts and total), prev/next month nav,
+  legend at bottom; each day cell links to
+  /admin/bookings?date=YYYY-MM-DD; try/catch shows DB not configured
+  banner
+- Created src/app/api/admin/bookings/route.ts — GET handler, checks
+  isAdmin first (401 if not), supports ?status, ?q, ?date, ?take query
+  params; returns 503 with "Database query failed" on DB error
+- Created src/app/api/admin/bookings/[id]/route.ts — GET, PATCH, DELETE
+  handlers, all check isAdmin first; PATCH accepts {status, notes,
+  technician}; DELETE soft-deletes (marks cancelled); all return 503
+  on DB error
+- Ran `bun run lint` — passed with zero errors (exit code 0)
+- Started dev server via `nohup setsid bash -c 'exec bun run dev'`
+  in background (system supervisor's auto-run was idle at time of work)
+- Verified all admin routes:
+  * /admin/login → HTTP 200 (no auth), renders login form with
+    "FixCare Admin" / "Password" / "Sign in" / "Enter admin password"
+  * /admin (no cookie) → HTTP 307 redirect to /admin/login?redirect=/admin
+  * /admin/bookings (no cookie) → HTTP 307 redirect to
+    /admin/login?redirect=/admin/bookings
+  * /admin/calendar (no cookie) → HTTP 307 redirect to
+    /admin/login?redirect=/admin/calendar
+  * POST /api/auth/login with `{"password":"fixcare-admin-2026"}` →
+    HTTP 200 + sets HttpOnly signed cookie `fixcare_admin_session`
+    (HMAC SHA-256, max-age 24h, SameSite=Lax)
+  * POST /api/auth/login with wrong password → HTTP 401 + error JSON
+  * POST /api/auth/logout → HTTP 200 + success JSON
+  * /admin (with cookie) → HTTP 200 + dashboard renders with all
+    stat cards, "Database not configured" banner, "No bookings yet"
+    empty state
+  * /admin/bookings (with cookie) → HTTP 200 + bookings list renders
+    with status filter pills, search box, date select, "database
+    offline" indicator
+  * /admin/bookings/1 (with cookie) → HTTP 200 + detail page renders
+    "Database not configured" message (DB unreachable)
+  * /admin/bookings/999 (with cookie) → HTTP 200 + notFound page
+  * /admin/calendar (with cookie) → HTTP 200 + calendar grid renders
+    with month name, prev/next nav, legend, "Database not
+    configured" banner
+  * GET /api/admin/bookings (no cookie) → HTTP 401
+  * GET /api/admin/bookings (with cookie) → HTTP 503 (DB not
+    configured, expected)
+- Verified 36 public routes return HTTP 200 (homepage, all 7 service
+  pages, 9 location pages, 5 brand pages, 3 legal pages, 6 blog
+  pages, book-repair, sitemap.xml, robots.txt, /api/check-pincode,
+  /offline)
+- Verified POST /api/bookings returns 500 with Prisma error
+  (`the URL must start with the protocol postgresql://`) — expected
+  until user fills in real Supabase URL
+- Verified logo PNG renders in site header (1 image per render) and
+  footer (1 image per render) on every page; mobile Sheet header also
+  uses the logo image
+- Verified no residual "Wrench" references in site-header.tsx or
+  site-footer.tsx (only intentional uses in homepage page.tsx for
+  trust badges/promises/steps icons remain)
+
+Stage Summary:
+- 2 files modified (site-header.tsx, site-footer.tsx) + 1 file modified
+  (prisma/schema.prisma) + 1 file modified (.env) = 4 files modified
+- 14 new files created:
+  * src/lib/auth.ts
+  * src/lib/admin.ts
+  * src/middleware.ts
+  * src/components/admin/admin-shell.tsx
+  * src/components/admin/bookings-filters.tsx
+  * src/components/admin/booking-actions.tsx
+  * src/app/admin/layout.tsx
+  * src/app/admin/page.tsx (dashboard)
+  * src/app/admin/login/page.tsx
+  * src/app/admin/bookings/page.tsx (list)
+  * src/app/admin/bookings/[id]/page.tsx (detail)
+  * src/app/admin/calendar/page.tsx
+  * src/app/api/auth/login/route.ts
+  * src/app/api/auth/logout/route.ts
+  * src/app/api/admin/bookings/route.ts
+  * src/app/api/admin/bookings/[id]/route.ts
+- Total: 4 modified + 16 created = 20 files touched
+- Lint: passes with zero errors (eslint exit 0)
+- All 36 testable public routes return HTTP 200
+- All admin routes return HTTP 200 (after login) or 307 redirect to
+  login (when not authed)
+- All admin API routes enforce isAdmin() (401 when not authed)
+- Login API works with password "fixcare-admin-2026"
+- Auth: signed HTTP-only cookies (HMAC SHA-256, 24h max-age) — simple
+  and secure for single-admin use
+- Middleware (proxy.ts in Next.js 16 terminology) protects all
+  /admin/* routes except /admin/login
+- Admin UI: shadcn components throughout (Card, Input, Button, Label,
+  Textarea, Sheet), mobile responsive (sidebar collapses to Sheet on
+  mobile, table hides columns at sm/md/lg breakpoints)
+- Booking detail page has click-to-call (tel:) and click-to-WhatsApp
+  (wa.me) quick links, status selector, technician assignment,
+  admin notes textarea, Save + Mark as completed buttons
+- Calendar: month grid with colored status dots (blue=new,
+  yellow=confirmed, green=completed, red=cancelled, purple=assigned),
+  clickable day cells that link to bookings filtered by that date
+- Database: schema is set for Postgres (Supabase ready). All DB-touching
+  code is wrapped in try/catch so the admin UI renders gracefully
+  ("Database not configured" banner) when DATABASE_URL is invalid or
+  the DB is unreachable. Public site pages don't touch DB and render
+  fine regardless. The booking form POST API will return 500 until
+  user fills in real Supabase credentials.
+- Note: dev server was started via `setsid nohup` to verify the new
+  routes; it may be killed by the container's process-reaper when no
+  shell session is active. The system's auto-runner will pick the
+  project up next time it polls, and the user can also restart with
+  `bun run dev` from the preview panel.
+
+To activate Supabase:
+1. Create a project at https://supabase.com
+2. Get the connection string from Project Settings → Database →
+   Connection string (URI) — format:
+   postgresql://postgres.[PROJECT_ID]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:6543/postgres
+3. Replace DATABASE_URL in .env with that string
+4. Run `bun run db:push` to create the Booking table in Supabase
+5. (Optional, recommended) Change ADMIN_PASSWORD to a strong value
+   and ADMIN_SESSION_SECRET to a random 32-char string

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Wrench, Phone, Mail, Facebook, Instagram, Twitter } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, Facebook, Instagram, Twitter } from "lucide-react";
 import { SERVICES, LOCATIONS, SITE } from "@/lib/site";
 
 export function SiteFooter() {
@@ -15,10 +16,13 @@ export function SiteFooter() {
               className="flex items-center gap-2 text-primary font-bold tracking-tight"
               aria-label="FixCare Service Center - home"
             >
-              <span className="flex size-8 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                <Wrench className="size-4" aria-hidden="true" />
-              </span>
-              <span className="text-base">FixCare Service Center</span>
+              <Image
+                src="/fixcare-logo-particles.png"
+                alt="FixCare Service Center"
+                width={160}
+                height={63}
+                className="h-9 w-auto sm:h-10"
+              />
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
               Locally owned appliance repair business serving the Jammu region.
