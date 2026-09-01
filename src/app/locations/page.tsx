@@ -34,7 +34,7 @@ export default function LocationsHub() {
         </div>
         <div className="mt-10 rounded-lg border border-accent/30 bg-accent/5 p-6">
           <p className="text-sm text-muted-foreground">
-            Don&apos;t see your area listed? Call us — we frequently travel to
+            Don&apos;t see your area listed? Call us - we frequently travel to
             areas beyond this list and may be able to help. Use the pincode
             checker on our{" "}
             <Link href="/" className="font-semibold text-accent hover:text-primary">

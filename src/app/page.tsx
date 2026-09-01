@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Same-Day Appliance Repair Across Jammu Region — Certified Technicians You Can Trust",
+  title: "Same-Day Appliance Repair Across Jammu Region - Certified Technicians You Can Trust",
   description:
     "Jammu region's trusted multi-brand appliance repair service. Same-day washing machine, fridge, AC, microwave, dishwasher & water dispenser repair across 8 cities. Certified technicians, genuine parts, warranty. Call now.",
   keywords: [
@@ -100,12 +100,12 @@ const HOMEPAGE_FAQS = [
   {
     question: "How quickly can a technician reach my home in Jammu city?",
     answer:
-      "For Jammu city, our standard response time is same-day — usually within 2-4 hours of booking during business hours. For other Jammu region cities, we typically reach next-day, with 2-day service for remote areas like Rajouri, Poonch and Doda. Emergency visits within 1 hour are available for an additional charge in Jammu city.",
+      "For Jammu city, our standard response time is same-day - usually within 2-4 hours of booking during business hours. For other Jammu region cities, we typically reach next-day, with 2-day service for remote areas like Rajouri, Poonch and Doda. Emergency visits within 1 hour are available for an additional charge in Jammu city.",
   },
   {
     question: "Do you charge a visit/diagnostic fee?",
     answer:
-      "We charge a nominal ₹200-300 visit fee which is fully adjusted against the repair cost if you proceed with the repair. The diagnostic itself is free — you receive a transparent quote before any work begins.",
+      "We charge a nominal ₹200-300 visit fee which is fully adjusted against the repair cost if you proceed with the repair. The diagnostic itself is free - you receive a transparent quote before any work begins.",
   },
   {
     question: "Are your technicians certified?",
@@ -222,7 +222,7 @@ export default function HomePage() {
       {/* 1. Hero */}
       <PageHero
         eyebrow="Locally owned in the Jammu region · 24/7 service"
-        title="Same-Day Appliance Repair Across Jammu Region — Certified Technicians You Can Trust"
+        title="Same-Day Appliance Repair Across Jammu Region - Certified Technicians You Can Trust"
         subtitle="When your washing machine stops mid-cycle, your refrigerator stops cooling, or your AC gives up on a humid Jammu afternoon, you need a repair service that arrives the same day, fixes the problem with genuine parts, and stands behind their work with a written warranty."
       >
         <div className="flex flex-wrap gap-3">
@@ -274,14 +274,14 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               FixCare is not a national call-center that dispatches the nearest
-              freelancer — we are a locally operated Jammu business with a team
+              freelancer - we are a locally operated Jammu business with a team
               of certified, trained, and background-verified technicians who carry
               genuine spare parts in their service vans so most repairs are
               completed in a single visit.
             </p>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              We work on all major brands — Samsung, LG, Whirlpool, Bosch, IFB,
-              Godrej, Haier, Voltas, Panasonic, and more — and offer a written
+              We work on all major brands - Samsung, LG, Whirlpool, Bosch, IFB,
+              Godrej, Haier, Voltas, Panasonic, and more - and offer a written
               warranty on every repair. If a problem recurs within the warranty
               period, we return and fix it free of charge.
             </p>
@@ -357,7 +357,7 @@ export default function HomePage() {
       {/* 6. How We Work */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent">
-          How We Work — Three Simple Steps
+          How We Work - Three Simple Steps
         </p>
         <h2 className="mt-1 text-2xl font-bold tracking-tight text-primary sm:text-3xl">
           A frictionless repair experience refined over hundreds of jobs
@@ -490,7 +490,7 @@ export default function HomePage() {
               </h2>
               <p className="mt-3 text-sm text-muted-foreground">
                 Same-day service in Jammu city. Next-day across the rest of the
-                Jammu region. If your area isn&apos;t listed, call us — we
+                Jammu region. If your area isn&apos;t listed, call us - we
                 frequently travel beyond our standard routes.
               </p>
               <div className="mt-4 flex flex-wrap gap-3 text-xs text-muted-foreground">

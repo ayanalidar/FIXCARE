@@ -13,7 +13,7 @@ export function SiteFooter() {
             <Link
               href="/"
               className="flex items-center gap-2 text-primary font-bold tracking-tight"
-              aria-label="FixCare Service Center — home"
+              aria-label="FixCare Service Center - home"
             >
               <span className="flex size-8 items-center justify-center rounded-lg bg-accent text-accent-foreground">
                 <Wrench className="size-4" aria-hidden="true" />

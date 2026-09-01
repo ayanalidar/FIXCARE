@@ -11,7 +11,7 @@ import Link from "next/link";
 const slug = "contact-us";
 
 export const metadata: Metadata = {
-  title: "Contact FixCare Service Center — Jammu Appliance Repair",
+  title: "Contact FixCare Service Center - Jammu Appliance Repair",
   description:
     "Contact FixCare Service Center for same-day appliance repair across the Jammu region. Call +91-70515-87802, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty.",
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact FixCare Service Center",
     description:
-      "Same-day appliance repair across the Jammu region. Call, WhatsApp, or book online — 24/7.",
+      "Same-day appliance repair across the Jammu region. Call, WhatsApp, or book online - 24/7.",
     url: `${SITE.domain}/contact`,
     type: "website",
   },
@@ -89,7 +89,7 @@ export default function ContactPage() {
     <div>
       <PageHero
         eyebrow="FixCare · Contact"
-        title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
+        title={frontmatter.title.replace(/\s+-\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
 
@@ -202,7 +202,7 @@ export default function ContactPage() {
                       <Phone className="size-5" aria-hidden="true" />
                     </div>
                     <h3 className="text-base font-semibold text-primary">
-                      1. Call Us — 24/7
+                      1. Call Us - 24/7
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       For the fastest spoken response, call us any time of day or
@@ -221,11 +221,11 @@ export default function ContactPage() {
                       <MessageCircle className="size-5" aria-hidden="true" />
                     </div>
                     <h3 className="text-base font-semibold text-primary">
-                      2. WhatsApp Us — Instant Chat
+                      2. WhatsApp Us - Instant Chat
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       Send photos or a short video of the appliance, the error
-                      code displayed, or the fault symptom — this helps our
+                      code displayed, or the fault symptom - this helps our
                       technician arrive prepared with the right spare parts and
                       tools.
                     </p>
@@ -248,7 +248,7 @@ export default function ContactPage() {
                       <CalendarCheck className="size-5" aria-hidden="true" />
                     </div>
                     <h3 className="text-base font-semibold text-primary">
-                      3. Book Online — 60-Second Form
+                      3. Book Online - 60-Second Form
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       Use our online booking form to book a repair in under a
@@ -303,7 +303,7 @@ export default function ContactPage() {
                 </Link>{" "}
                 for area-specific contact details, neighborhoods covered, and
                 local notes for each city. If your area isn&apos;t listed, call us
-                — we may still be able to help.
+                - we may still be able to help.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {LOCATIONS.map((l) => (
@@ -320,7 +320,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Sidebar — quick actions */}
+          {/* Sidebar - quick actions */}
           <aside className="space-y-6">
             <Card className="bg-card sticky top-24">
               <CardContent className="space-y-4 p-6">
@@ -328,7 +328,7 @@ export default function ContactPage() {
                   Reach FixCare Now
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Appliance failures don&apos;t wait for business hours — neither
+                  Appliance failures don&apos;t wait for business hours - neither
                   do we. Pick the channel that works for you.
                 </p>
                 <div className="flex flex-col gap-2">

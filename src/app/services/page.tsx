@@ -7,7 +7,7 @@ import { LOCATIONS, SERVICES, SITE } from "@/lib/site";
 import { Wrench, MapPin, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Appliance Repair Services in Jammu Region — All Major Home Appliances",
+  title: "Appliance Repair Services in Jammu Region - All Major Home Appliances",
   description:
     "FixCare Service Center repairs washing machines, refrigerators, ACs, microwaves, water dispensers and dishwashers across the Jammu region. Same-day in Jammu city, next-day across the region.",
   alternates: { canonical: "/services" },

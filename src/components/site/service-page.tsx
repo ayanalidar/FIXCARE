@@ -65,7 +65,7 @@ function extractTestimonial(
   markdown: string
 ): { quote: string; name: string } | null {
   const m = markdown.match(
-    />\s*"([^"]+)"\s*\n>\s*—\s*\*\*([^*]+)\*\*/
+    />\s*"([^"]+)"\s*\n>\s*-\s*\*\*([^*]+)\*\*/
   );
   if (!m) return null;
   return { quote: m[1].trim(), name: m[2].trim() };
@@ -115,7 +115,7 @@ export function ServicePage({ slug, icon, shortName }: ServicePageInput) {
     <div>
       <PageHero
         eyebrow={`FixCare Services · ${shortName}`}
-        title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
+        title={frontmatter.title.replace(/\s+-\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
 

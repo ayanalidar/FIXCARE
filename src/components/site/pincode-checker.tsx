@@ -90,7 +90,7 @@ export function PincodeChecker() {
               <div className="flex items-center gap-2 text-accent">
                 <CheckCircle2 className="size-5" aria-hidden="true" />
                 <p className="font-semibold">
-                  Yes — we serve {result.city} ({result.locality})
+                  Yes - we serve {result.city} ({result.locality})
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -116,7 +116,7 @@ export function PincodeChecker() {
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
-                We frequently travel to areas beyond this list — call us at{" "}
+                We frequently travel to areas beyond this list - call us at{" "}
                 <a
                   href="tel:+917051587802"
                   className="font-semibold text-accent hover:text-primary"

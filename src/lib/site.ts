@@ -207,7 +207,7 @@ export const BLOG_POSTS: BlogMeta[] = [
   },
   {
     slug: "signs-your-refrigerator-needs-repair",
-    title: "Signs Your Refrigerator Needs Repair — Don't Ignore These 8 Red Flags",
+    title: "Signs Your Refrigerator Needs Repair - Don't Ignore These 8 Red Flags",
     excerpt:
       "A plain-English checklist of the eight most common warning signs that your fridge is failing, with Jammu-specific context around festive prep, rajma-chawal storage and Eid week.",
     date: "September 2026",
@@ -216,7 +216,7 @@ export const BLOG_POSTS: BlogMeta[] = [
   },
   {
     slug: "summer-ac-maintenance-tips",
-    title: "Summer AC Maintenance Tips for Jammu Homes — Beat the Heat Smartly",
+    title: "Summer AC Maintenance Tips for Jammu Homes - Beat the Heat Smartly",
     excerpt:
       "Jammu air conditioners run for a long, hot season from April through September. Pre-season and in-season maintenance tips that actually help.",
     date: "August 2026",
@@ -225,7 +225,7 @@ export const BLOG_POSTS: BlogMeta[] = [
   },
   {
     slug: "how-to-extend-the-life-of-your-microwave",
-    title: "How to Extend the Life of Your Microwave — 10 Tips That Actually Work",
+    title: "How to Extend the Life of Your Microwave - 10 Tips That Actually Work",
     excerpt:
       "Ten everyday habits that protect a microwave from the most common failures, written for Jammu households that use microwaves for reheating rajma-chawal and leftovers.",
     date: "August 2026",
@@ -234,7 +234,7 @@ export const BLOG_POSTS: BlogMeta[] = [
   },
   {
     slug: "common-ac-error-codes-explained",
-    title: "Common AC Error Codes Explained — What Those Flashing Lights Mean",
+    title: "Common AC Error Codes Explained - What Those Flashing Lights Mean",
     excerpt:
       "A reference guide to the most common AC error codes (E1 through H1) across Voltas, LG, Samsung and Daikin, with what each code means and what to do next.",
     date: "July 2026",
@@ -243,7 +243,7 @@ export const BLOG_POSTS: BlogMeta[] = [
   },
 ];
 
-/** Star renderer helper — used by testimonials, reviews and aggregate ratings. */
+/** Star renderer helper - used by testimonials, reviews and aggregate ratings. */
 export function renderStars(rating: number): string {
   return "★".repeat(Math.floor(rating)) + "☆".repeat(5 - Math.floor(rating));
 }

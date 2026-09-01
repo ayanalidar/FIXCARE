@@ -1,5 +1,5 @@
 ---
-title: "Privacy Policy — FixCare Service Center"
+title: "Privacy Policy - FixCare Service Center"
 meta_description: "How FixCare Service Center collects, uses, and protects your personal information when you book an appliance repair. Aligned with India's IT Act 2000 and IT Rules 2011, with GDPR principles."
 slug: /privacy-policy/
 schema: []

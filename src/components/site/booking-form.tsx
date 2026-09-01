@@ -196,12 +196,12 @@ export function BookingForm() {
       <CardHeader>
         <CardTitle className="text-xl text-primary">Book a Repair</CardTitle>
         <CardDescription>
-          Step {step + 1} of {TOTAL_STEPS} — {STEP_LABELS[step]}
+          Step {step + 1} of {TOTAL_STEPS} - {STEP_LABELS[step]}
         </CardDescription>
         <Progress value={((step + 1) / TOTAL_STEPS) * 100} className="mt-2 h-2" />
       </CardHeader>
       <CardContent className="flex flex-col gap-6">
-        {/* Step 0 — appliance */}
+        {/* Step 0 - appliance */}
         {step === 0 && (
           <div className="space-y-4">
             <div>
@@ -260,7 +260,7 @@ export function BookingForm() {
           </div>
         )}
 
-        {/* Step 1 — issue */}
+        {/* Step 1 - issue */}
         {step === 1 && (
           <div className="space-y-4">
             <div>
@@ -286,7 +286,7 @@ export function BookingForm() {
           </div>
         )}
 
-        {/* Step 2 — date & time */}
+        {/* Step 2 - date & time */}
         {step === 2 && (
           <div className="space-y-4">
             <div>
@@ -336,7 +336,7 @@ export function BookingForm() {
           </div>
         )}
 
-        {/* Step 3 — address & contact */}
+        {/* Step 3 - address & contact */}
         {step === 3 && (
           <div className="space-y-4">
             <div className="grid gap-3 sm:grid-cols-2">
@@ -472,23 +472,23 @@ export function BookingForm() {
           </div>
         )}
 
-        {/* Step 4 — confirm */}
+        {/* Step 4 - confirm */}
         {step === 4 && (
           <div className="space-y-4">
             <div className="rounded-lg border border-border bg-background p-4">
               <h3 className="text-sm font-semibold text-primary">Appliance</h3>
               <p className="text-sm text-muted-foreground">
-                {data.appliance || "—"}
+                {data.appliance || "-"}
                 {data.brand && ` · ${data.brand}`}
                 {data.model && ` · Model ${data.model}`}
               </p>
               <h3 className="mt-3 text-sm font-semibold text-primary">Issue</h3>
-              <p className="text-sm text-muted-foreground">{data.issue || "—"}</p>
+              <p className="text-sm text-muted-foreground">{data.issue || "-"}</p>
               <h3 className="mt-3 text-sm font-semibold text-primary">Schedule</h3>
               <p className="text-sm text-muted-foreground">
-                {data.preferredDate || "—"} ·{" "}
+                {data.preferredDate || "-"} ·{" "}
                 {TIME_SLOTS.find((s) => s.value === data.preferredSlot)?.label ??
-                  "—"}
+                  "-"}
               </p>
               <h3 className="mt-3 text-sm font-semibold text-primary">
                 Contact & Address
@@ -497,7 +497,7 @@ export function BookingForm() {
                 {data.name} · {data.phone} {data.email && `· ${data.email}`}
               </p>
               <p className="text-sm text-muted-foreground">
-                {data.address}, {data.city} — {data.pincode}
+                {data.address}, {data.city} - {data.pincode}
               </p>
             </div>
             <div className="rounded-lg border border-accent/30 bg-accent/5 p-3 text-xs text-muted-foreground">

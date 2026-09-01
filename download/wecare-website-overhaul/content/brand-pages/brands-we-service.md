@@ -1,12 +1,12 @@
 ---
-title: "Brands We Service — Certified Repair for All Major Appliance Brands | FixCare"
+title: "Brands We Service - Certified Repair for All Major Appliance Brands | FixCare"
 meta_description: "FixCare Service Center services Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, and Panasonic appliances across the Jammu region. Brand-trained technicians, genuine parts, written warranty."
 slug: /brands/
 target_keywords: ["Samsung repair Jammu", "LG repair Jammu", "Whirlpool repair Jammu", "Bosch repair Jammu", "appliance brands serviced"]
 schema: ["Organization"]
 ---
 
-# Brands We Service — Certified Repair for All Major Appliance Brands
+# Brands We Service - Certified Repair for All Major Appliance Brands
 
 At FixCare Service Center, we have deliberately invested in building brand-specific expertise across the appliance brands most commonly found in homes across the Jammu region. Instead of being a single-brand service center, our technicians are cross-trained on Korean, American, European, Indian, Chinese, and Japanese brands so you only need one phone call no matter what is in your kitchen, laundry, or living room. Every brand we service is supported by a genuine spare parts supply chain, brand-specific diagnostic procedures, and a written warranty on the work we complete.
 
@@ -30,7 +30,7 @@ Bosch is a German premium brand favored for high-end dishwashers, front-load was
 
 ### IFB
 
-IFB is an Indian brand specializing in front-load washing machines, dishwashers, and microwaves — commonly chosen for apartment living across Jammu city. Our technicians are trained on IFB's aqua-energie, 3D wash, and steam programs, and we stock common IFB spares including drain pumps, heating elements, and door seals. We also service IFB microwaves and dishwashers across all served cities.
+IFB is an Indian brand specializing in front-load washing machines, dishwashers, and microwaves - commonly chosen for apartment living across Jammu city. Our technicians are trained on IFB's aqua-energie, 3D wash, and steam programs, and we stock common IFB spares including drain pumps, heating elements, and door seals. We also service IFB microwaves and dishwashers across all served cities.
 
 ### Godrej
 
@@ -54,11 +54,11 @@ Each appliance brand uses unique error codes, part numbers, software diagnostics
 
 ## Book a Repair for Any Brand
 
-Whatever brand of appliance has stopped working in your home, our team is ready to help — usually the same day in Jammu city, and next-day across the rest of the Jammu region.
+Whatever brand of appliance has stopped working in your home, our team is ready to help - usually the same day in Jammu city, and next-day across the rest of the Jammu region.
 
-**[Book a Repair Online](/#book-repair)** — 60 seconds, instant confirmation
-**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)** — fastest response
-**[Call Now](tel:+917051587802)** — 24/7, including holidays
+**[Book a Repair Online](/#book-repair)** - 60 seconds, instant confirmation
+**[WhatsApp Us](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)** - fastest response
+**[Call Now](tel:+917051587802)** - 24/7, including holidays
 
 ---
 

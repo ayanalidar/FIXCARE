@@ -7,7 +7,7 @@ import { Phone, MessageCircle, Clock, ShieldCheck, Wrench, CheckCircle2 } from "
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a Repair Online — Same-Day Appliance Repair in Jammu",
+  title: "Book a Repair Online - Same-Day Appliance Repair in Jammu",
   description:
     "Book a certified FixCare appliance repair in under 60 seconds. Choose your appliance, describe the issue, pick a time slot and get an instant SMS confirmation with your booking reference.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/book-repair" },
   openGraph: {
-    title: "Book a Repair Online — FixCare Service Center",
+    title: "Book a Repair Online - FixCare Service Center",
     description:
       "Same-day appliance repair in Jammu city, next-day across the Jammu region. Certified technicians, genuine parts, written warranty.",
     url: `${SITE.domain}/book-repair`,

@@ -29,7 +29,7 @@ interface ContentPageOptions {
   section: string;
   /** file slug (no .md) */
   slug: string;
-  /** Route slug used for canonical URL, e.g. "about" — defaults to slug */
+  /** Route slug used for canonical URL, e.g. "about" - defaults to slug */
   urlSlug?: string;
   /** Page hero eyebrow text */
   eyebrow?: string;
@@ -65,7 +65,7 @@ export function ContentPage({
     <div>
       <PageHero
         eyebrow={eyebrow}
-        title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
+        title={frontmatter.title.replace(/\s+-\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
       {topChildren}

@@ -1,5 +1,5 @@
 ---
-title: "Contact FixCare Service Center — Jammu Appliance Repair"
+title: "Contact FixCare Service Center - Jammu Appliance Repair"
 meta_description: "Contact FixCare Service Center for same-day appliance repair across the Jammu region. Call +91-70515-87802, WhatsApp 24/7, or book online. Certified technicians, genuine parts, written warranty."
 slug: /contact/
 target_keywords: ["contact FixCare Service Center", "appliance repair phone Jammu", "book repair"]
@@ -8,7 +8,7 @@ schema: ["LocalBusiness"]
 
 # Contact FixCare Service Center
 
-Reaching FixCare is simple — pick whichever channel works best for you and our team will respond promptly. We operate 24 hours a day, 7 days a week, including public holidays, because appliance failures rarely wait for business hours. Below you will find our name, address, and phone details followed by three ways to reach us, our service hours, and a note on the cities we cover.
+Reaching FixCare is simple - pick whichever channel works best for you and our team will respond promptly. We operate 24 hours a day, 7 days a week, including public holidays, because appliance failures rarely wait for business hours. Below you will find our name, address, and phone details followed by three ways to reach us, our service hours, and a note on the cities we cover.
 
 ## Our Details
 
@@ -20,15 +20,15 @@ Reaching FixCare is simple — pick whichever channel works best for you and our
 
 ## Three Ways to Reach Us
 
-### 1. Call Us — 24/7
+### 1. Call Us - 24/7
 
 For the fastest spoken response, call **[+91-70515-87802](tel:+917051587802)** any time of day or night. Our team will ask for the appliance type, the brand, and a brief description of the problem, then schedule a technician for the earliest available slot in your area. You will receive a booking reference number by SMS within two minutes of hanging up.
 
-### 2. WhatsApp Us — Instant Chat
+### 2. WhatsApp Us - Instant Chat
 
 If you prefer to message, send us a WhatsApp chat at **[+91-70515-87802](https://wa.me/917051587802?text=Hi%20FixCare%2C%20I%20need%20appliance%20repair)**. You can send photos or a short video of the appliance, the error code displayed, or the fault symptom, which helps our technician arrive prepared with the right spare parts and tools. WhatsApp is also the best way to share feedback or ask follow-up questions after a repair.
 
-### 3. Book Online — 60-Second Form
+### 3. Book Online - 60-Second Form
 
 Use our **[online booking form](/#book-repair)** on the homepage to book a repair in under a minute. Fill in your name, phone, city, appliance, and a convenient time slot, and you will immediately receive an SMS confirmation with your booking reference and the assigned technician's name. Online booking is ideal when you prefer not to call or when you are booking outside business hours.
 
@@ -54,7 +54,7 @@ Our base of operations is in Jammu city, with technicians dispatched daily to su
 
 ## Service Area
 
-FixCare Service Center serves eight cities across the Jammu region: Jammu city (same-day), Kathua, Samba, Udhampur, Reasi (next-day), and Rajouri, Poonch, Doda (2-day). Visit our **[Locations page](/locations/)** for area-specific contact details, neighborhoods covered, and local notes for each city. If your area is not listed, call us — we may still be able to help.
+FixCare Service Center serves eight cities across the Jammu region: Jammu city (same-day), Kathua, Samba, Udhampur, Reasi (next-day), and Rajouri, Poonch, Doda (2-day). Visit our **[Locations page](/locations/)** for area-specific contact details, neighborhoods covered, and local notes for each city. If your area is not listed, call us - we may still be able to help.
 
 ## Send Us a Message
 

@@ -252,7 +252,7 @@
   font-weight: 600;
 }
 
-/* Responsive prose typography — scale up at sm and md breakpoints */
+/* Responsive prose typography - scale up at sm and md breakpoints */
 @media (min-width: 640px) {
   .prose-wecare h1 { font-size: 1.875rem; }
   .prose-wecare h2 { font-size: 1.5rem; }

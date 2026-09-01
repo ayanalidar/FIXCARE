@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Service Area Checker — FixCare Service Center</title>
+<title>Service Area Checker - FixCare Service Center</title>
 <!--
   ──────────────────────────────────────────────────────────────────────
   Pincode / Service Area Checker
@@ -73,8 +73,8 @@
 
 <script>
   // ───────────────────────────────────────────────────────────────────
-  // OPTION A — fetch pincode map at runtime (used here).
-  // OPTION B — for WordPress, inline the JSON inside this script tag to
+  // OPTION A - fetch pincode map at runtime (used here).
+  // OPTION B - for WordPress, inline the JSON inside this script tag to
   //            avoid the extra HTTP request. See serviceable-pincodes.json
   //            for the structure. Example:
   //              const PINCODE_MAP = {
@@ -91,7 +91,7 @@
       PINCODE_MAP = await res.json();
     } catch (err) {
       console.warn('Could not load serviceable-pincodes.json. Falling back to inline map.');
-      // Inline fallback for the demo — replace with the full map from serviceable-pincodes.json
+      // Inline fallback for the demo - replace with the full map from serviceable-pincodes.json
       PINCODE_MAP = {
         "190001": { city: "Srinagar", url: "/locations/srinagar/", locality: "Lal Chowk" },
         "190002": { city: "Srinagar", url: "/locations/srinagar/", locality: "Maharaja Bazar" },
@@ -138,13 +138,13 @@
       if (match) {
         resultDiv.className = 'result show success';
         resultDiv.innerHTML =
-          '<strong>Great news — we serve ' + match.locality + ' in ' + match.city + '!</strong><br>' +
+          '<strong>Great news - we serve ' + match.locality + ' in ' + match.city + '!</strong><br>' +
           'Same-day service available in Srinagar, next-day in other Kashmir cities.<br>' +
           '<a href="' + match.url + '" class="cta-link">View ' + match.city + ' service details →</a>';
       } else {
         resultDiv.className = 'result show error';
         resultDiv.innerHTML =
-          '<strong>Hmm — that pincode isn\'t in our standard service area.</strong><br>' +
+          '<strong>Hmm - that pincode isn\'t in our standard service area.</strong><br>' +
           'We may still be able to help. Please call us at <a href="tel:+917051587802">+91-70515-87802</a> to confirm availability and pricing for your location.';
       }
     }, 400); // small delay for UX feel

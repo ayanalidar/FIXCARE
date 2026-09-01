@@ -228,7 +228,7 @@ def footer_page_number(canvas, doc):
     canvas.setFillColor(TEXT_MUTED)
     page_num = canvas.getPageNumber()
     canvas.drawRightString(A4[0] - 0.5*inch, 0.4*inch, f"Page {page_num}")
-    canvas.drawString(0.5*inch, 0.4*inch, "FixCare Service Center — Website Overhaul Strategy")
+    canvas.drawString(0.5*inch, 0.4*inch, "FixCare Service Center - Website Overhaul Strategy")
     canvas.setStrokeColor(BORDER)
     canvas.setLineWidth(0.5)
     canvas.line(0.5*inch, 0.55*inch, A4[0] - 0.5*inch, 0.55*inch)
@@ -281,7 +281,7 @@ story.append(Spacer(1, 80))
 story.append(cover_meta_t)
 story.append(Spacer(1, 60))
 story.append(HRFlowable(width="40%", thickness=1, color=BORDER, hAlign='LEFT', spaceBefore=10, spaceAfter=10))
-story.append(muted("Confidential — for client review and developer handover."))
+story.append(muted("Confidential - for client review and developer handover."))
 
 story.append(PageBreak())
 
@@ -299,7 +299,7 @@ story.append(PageBreak())
 # ============== SECTION 1: EXECUTIVE SUMMARY ==============
 story.append(h1("Executive Summary"))
 story.append(p(
-    "FixCare Service Center currently operates a single-page brochure website that under-utilizes the company's strong local reputation in the Jammu appliance repair market. With more than 500 completed repairs, a 4.8-star rating across 9 verified reviews, service coverage in 10+ cities, and expertise across 8+ major appliance brands, the business has the operational credentials to dominate local search — yet the current website is structurally unable to capture this demand. The single-page architecture means every search query — whether for \"washing machine repair in Anantnag\" or \"Samsung refrigerator technician in Jammu city\" — competes for the same thin page, diluting relevance signals and pushing FixCare below competitors who have invested in dedicated service and location pages."
+    "FixCare Service Center currently operates a single-page brochure website that under-utilizes the company's strong local reputation in the Jammu appliance repair market. With more than 500 completed repairs, a 4.8-star rating across 9 verified reviews, service coverage in 10+ cities, and expertise across 8+ major appliance brands, the business has the operational credentials to dominate local search - yet the current website is structurally unable to capture this demand. The single-page architecture means every search query - whether for \"washing machine repair in Anantnag\" or \"Samsung refrigerator technician in Jammu city\" - competes for the same thin page, diluting relevance signals and pushing FixCare below competitors who have invested in dedicated service and location pages."
 ))
 story.append(p(
     "This document proposes a complete overhaul of the digital platform, transforming the website from a static brochure into a multi-page, SEO-optimized lead generation engine. The new architecture is built around three pillars: dedicated service pages for each of the six appliance categories, dedicated location pages for each of the eight major Jammu cities served, and a content engine (blog + FAQs) that captures informational and long-tail commercial search traffic. Each page is engineered with proper heading hierarchy, schema markup (LocalBusiness, FAQ, Service), and conversion-focused calls to action that channel visitors into the booking system or WhatsApp chat."
@@ -324,7 +324,7 @@ story.append(callout_box(
 story.append(PageBreak())
 
 # ============== SECTION 2: EXISTING WEBSITE ANALYSIS ==============
-story.append(h1("Phase 1.1 — Existing Website Analysis"))
+story.append(h1("Phase 1.1 - Existing Website Analysis"))
 story.append(p(
     "The current FixCare Service Center website (https://www.fixcareservicecenter.in/) is a single-page brochure that lists all services, location coverage, and contact information on one URL. While this approach was adequate at launch, it now actively prevents the business from ranking for the spectrum of service-specific and location-specific keywords that potential customers in the Jammu region are typing into Google every day. The table below summarizes the business information extracted from the existing site, followed by a structured gap analysis."
 ))
@@ -334,7 +334,7 @@ story.append(std_table(
     [
         ["Category", "Detail"],
         ["Services offered", "Washing Machine, Refrigerator, Microwave, Water Dispenser, Air Conditioner, Dishwasher repair"],
-        ["Service area", "Jammu region — Jammu City, Kathua, Samba, Udhampur, Reasi, Rajouri, Poonch, Doda"],
+        ["Service area", "Jammu region - Jammu City, Kathua, Samba, Udhampur, Reasi, Rajouri, Poonch, Doda"],
         ["Key selling points", "24/7 service, same-day service, certified technicians, genuine parts, warranty service"],
         ["Trust signals", "500+ repairs, 10+ cities served, 8+ major brands, 9 customer reviews, 4.8 rating"],
         ["Brand footprint", "Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, Panasonic"],
@@ -344,44 +344,44 @@ story.append(std_table(
 ))
 story.append(Spacer(1, 14))
 
-story.append(h2("Gap Analysis — Where the Current Site Falls Short"))
+story.append(h2("Gap Analysis - Where the Current Site Falls Short"))
 story.append(p(
     "Each gap below represents both a missed SEO opportunity and a friction point for potential customers. The right-hand column maps each gap to the specific phase of this overhaul that addresses it."
 ))
 story.append(std_table(
     [
         ["Gap / Weakness", "Impact on Business", "Fix in This Project"],
-        ["Single-page architecture", "All keywords compete for one URL; relevance signals diluted", "Phase 2 — 25+ page multi-page architecture"],
-        ["No dedicated service pages", "Cannot rank for \"washing machine repair\", \"AC service\" etc.", "Phase 3 — 6 service pages, 500+ words each"],
-        ["No dedicated location pages", "Cannot rank for \"repair in Jammu city\", \"repair in Anantnag\" etc.", "Phase 3 — 8 location pages, 300-400 words each"],
-        ["No online booking system", "Customers must call or WhatsApp — friction, lost overnight leads", "Phase 4 — multi-step booking form + CRM integration"],
-        ["No payment integration", "Cannot collect advance/service fees online", "Phase 4 — Razorpay/UPI integration"],
-        ["Missing legal pages", "Privacy, Terms, Warranty policy absent — GDPR/IT Act compliance risk", "Phase 3 — 3 legal pages drafted"],
-        ["No blog or educational content", "Misses informational search traffic; no authority signal", "Phase 3 — 5 blog articles + 10 topic ideas"],
-        ["Basic design and branding", "Looks like a 2015 template; weak mobile UX", "Phase 4 — GeneratePress + custom design system"],
-        ["No schema markup", "No rich snippets in SERPs, no Local Business signals to Google", "Phase 4 — LocalBusiness + FAQ + Service schema"],
-        ["No Google Business Profile optimization", "Inconsistent NAP, no review funnel", "Phase 5 — Post-launch GBP optimization plan"],
-        ["No FAQ section", "Misses FAQ rich snippets; customers call for repeatable questions", "Phase 3 — 15+ question FAQ with FAQ Schema"],
-        ["No analytics or Search Console", "Cannot measure traffic, conversions, or keyword performance", "Phase 4 — GA4 + GSC + tag manager setup"],
+        ["Single-page architecture", "All keywords compete for one URL; relevance signals diluted", "Phase 2 - 25+ page multi-page architecture"],
+        ["No dedicated service pages", "Cannot rank for \"washing machine repair\", \"AC service\" etc.", "Phase 3 - 6 service pages, 500+ words each"],
+        ["No dedicated location pages", "Cannot rank for \"repair in Jammu city\", \"repair in Anantnag\" etc.", "Phase 3 - 8 location pages, 300-400 words each"],
+        ["No online booking system", "Customers must call or WhatsApp - friction, lost overnight leads", "Phase 4 - multi-step booking form + CRM integration"],
+        ["No payment integration", "Cannot collect advance/service fees online", "Phase 4 - Razorpay/UPI integration"],
+        ["Missing legal pages", "Privacy, Terms, Warranty policy absent - GDPR/IT Act compliance risk", "Phase 3 - 3 legal pages drafted"],
+        ["No blog or educational content", "Misses informational search traffic; no authority signal", "Phase 3 - 5 blog articles + 10 topic ideas"],
+        ["Basic design and branding", "Looks like a 2015 template; weak mobile UX", "Phase 4 - GeneratePress + custom design system"],
+        ["No schema markup", "No rich snippets in SERPs, no Local Business signals to Google", "Phase 4 - LocalBusiness + FAQ + Service schema"],
+        ["No Google Business Profile optimization", "Inconsistent NAP, no review funnel", "Phase 5 - Post-launch GBP optimization plan"],
+        ["No FAQ section", "Misses FAQ rich snippets; customers call for repeatable questions", "Phase 3 - 15+ question FAQ with FAQ Schema"],
+        ["No analytics or Search Console", "Cannot measure traffic, conversions, or keyword performance", "Phase 4 - GA4 + GSC + tag manager setup"],
     ],
     col_ratios=[0.30, 0.40, 0.30]
 ))
 story.append(Spacer(1, 12))
 story.append(callout_box(
     "Strategic Insight",
-    "The single biggest unlock is not a design refresh — it is the move from 1 URL to 25+ URLs. Each new page is a new opportunity to rank for a specific service, a specific city, and a specific brand. The compound effect of 25 indexed pages with proper internal linking is typically a 3-5x increase in organic search visibility within 6 months for local service businesses of this size.",
+    "The single biggest unlock is not a design refresh - it is the move from 1 URL to 25+ URLs. Each new page is a new opportunity to rank for a specific service, a specific city, and a specific brand. The compound effect of 25 indexed pages with proper internal linking is typically a 3-5x increase in organic search visibility within 6 months for local service businesses of this size.",
     color=ACCENT_2, bg=CARD_BG
 ))
 
 story.append(PageBreak())
 
 # ============== SECTION 3: KEYWORD RESEARCH ==============
-story.append(h1("Phase 1.2 — Keyword Research"))
+story.append(h1("Phase 1.2 - Keyword Research"))
 story.append(p(
     "The Jammu appliance repair search market is fragmented across three intent layers: service-based queries (what is broken), location-based queries (where the customer is), and intent-based queries (what the customer wants to do next). A robust keyword strategy must capture all three layers. The tables below present a structured target keyword list grouped by category, with estimated monthly search volume (India-level, filtered to J&K region where possible) and a qualitative competition score (Low/Medium/High) based on the strength of currently ranking pages."
 ))
 story.append(p(
-    "Search volume estimates are indicative — actual volumes vary by season (AC repair peaks in May-July, refrigerator and washing machine queries peak during festival months Oct-Nov). Volumes marked \"Long-tail\" indicate low individual volume but high cumulative value across variants."
+    "Search volume estimates are indicative - actual volumes vary by season (AC repair peaks in May-July, refrigerator and washing machine queries peak during festival months Oct-Nov). Volumes marked \"Long-tail\" indicate low individual volume but high cumulative value across variants."
 ))
 
 story.append(h2("A. Service-Based Keywords"))
@@ -411,7 +411,7 @@ story.append(std_table(
 ))
 
 story.append(Spacer(1, 14))
-story.append(h2("B. Location-Based Keywords (Sample — One per City)"))
+story.append(h2("B. Location-Based Keywords (Sample - One per City)"))
 story.append(p(
     "Each of the 8 location pages will target a primary \"appliance repair [city]\" keyword plus 6-8 secondary \"service + city\" combinations. The table below shows the primary keyword per location; the full keyword set per location is provided in the corresponding location page content brief."
 ))
@@ -453,12 +453,12 @@ story.append(callout_box(
 story.append(PageBreak())
 
 # ============== SECTION 4: COMPETITOR ANALYSIS ==============
-story.append(h1("Phase 1.3 — Competitor Analysis & Opportunities"))
+story.append(h1("Phase 1.3 - Competitor Analysis & Opportunities"))
 story.append(p(
-    "The Jammu appliance repair market is served by a mix of national-brand authorized service centers (Samsung, LG, Whirlpool), local independent repair shops with basic websites or JustDial/IndiaMART listings, and a small number of multi-brand local repair businesses with their own websites. FixCare Service Center competes primarily in the third category — multi-brand local repair — which is also the category with the weakest digital presence and therefore the largest opportunity."
+    "The Jammu appliance repair market is served by a mix of national-brand authorized service centers (Samsung, LG, Whirlpool), local independent repair shops with basic websites or JustDial/IndiaMART listings, and a small number of multi-brand local repair businesses with their own websites. FixCare Service Center competes primarily in the third category - multi-brand local repair - which is also the category with the weakest digital presence and therefore the largest opportunity."
 ))
 
-story.append(h2("Typical Competitor Profile — Jammu Appliance Repair Websites"))
+story.append(h2("Typical Competitor Profile - Jammu Appliance Repair Websites"))
 story.append(std_table(
     [
         ["Competitor Type", "Common Strengths", "Common Weaknesses"],
@@ -477,7 +477,7 @@ story.append(std_table(
 story.append(Spacer(1, 12))
 story.append(h2("Opportunity Map for FixCare Service Center"))
 story.append(p(
-    "The gaps in competitor websites are clear and exploitable. FixCare has the operational credentials (500+ repairs, 4.8 rating, certified technicians, genuine parts, warranty) to back up the marketing claims — the missing piece is the digital infrastructure that surfaces these credentials to searchers at the right moment."
+    "The gaps in competitor websites are clear and exploitable. FixCare has the operational credentials (500+ repairs, 4.8 rating, certified technicians, genuine parts, warranty) to back up the marketing claims - the missing piece is the digital infrastructure that surfaces these credentials to searchers at the right moment."
 ))
 story.append(std_table(
     [
@@ -513,7 +513,7 @@ story.append(std_table(
 story.append(PageBreak())
 
 # ============== SECTION 5: SITEMAP ==============
-story.append(h1("Phase 2.1 — Site Architecture & Sitemap"))
+story.append(h1("Phase 2.1 - Site Architecture & Sitemap"))
 story.append(p(
     "The new website is organized into six content clusters: Homepage, Service pages, Location pages, Brand pages, Legal pages, and Blog. Each page has a defined URL structure, target keyword set, and role in the conversion funnel. The total page count at launch is 25 indexed pages plus 3 legal pages (set to noindex but accessible from the footer for compliance)."
 ))
@@ -590,10 +590,10 @@ story.append(h2("SEO Priority Matrix"))
 story.append(std_table(
     [
         ["Priority", "Page", "Reasoning"],
-        ["P0 — Critical", "Homepage, 6 service pages, Jammu City location, Contact, Booking form", "Core conversion paths + highest-volume keywords"],
-        ["P1 — High", "Other 7 location pages, Reviews, FAQ, About", "Local SEO coverage + trust signals"],
-        ["P2 — Medium", "Blog hub + 5 articles, Brands hub, Privacy/Terms/Warranty", "Authority building + compliance"],
-        ["P3 — Future", "Individual brand pages (Samsung, LG, etc.), additional blog content", "Scale after launch based on data"],
+        ["P0 - Critical", "Homepage, 6 service pages, Jammu City location, Contact, Booking form", "Core conversion paths + highest-volume keywords"],
+        ["P1 - High", "Other 7 location pages, Reviews, FAQ, About", "Local SEO coverage + trust signals"],
+        ["P2 - Medium", "Blog hub + 5 articles, Brands hub, Privacy/Terms/Warranty", "Authority building + compliance"],
+        ["P3 - Future", "Individual brand pages (Samsung, LG, etc.), additional blog content", "Scale after launch based on data"],
     ],
     col_ratios=[0.20, 0.45, 0.35]
 ))
@@ -601,22 +601,22 @@ story.append(std_table(
 story.append(PageBreak())
 
 # ============== SECTION 6: CONTENT BRIEFS ==============
-story.append(h1("Phase 2.2 — Content Briefs for Top 5 Pages"))
+story.append(h1("Phase 2.2 - Content Briefs for Top 5 Pages"))
 story.append(p(
     "Below are detailed content briefs for the five most important pages of the new website. The full written content for these and all other pages is delivered as separate Markdown files in the /content/ folder of this deliverable package. These briefs explain the strategic reasoning behind each page's structure so the developer and content team understand not just what to write but why."
 ))
 
 # Homepage brief
-story.append(h2("Brief 1 — Homepage"))
+story.append(h2("Brief 1 - Homepage"))
 story.append(std_table(
     [
         ["Element", "Specification"],
         ["Primary keyword", "appliance repair Jammu region, FixCare Service Center"],
         ["Secondary keywords", "same-day appliance repair, certified technician Jammu region, multi-brand repair service"],
-        ["Title tag", "FixCare Service Center — Same-Day Appliance Repair in the Jammu region | 24/7 Service"],
+        ["Title tag", "FixCare Service Center - Same-Day Appliance Repair in the Jammu region | 24/7 Service"],
         ["Meta description", "Jammu's trusted multi-brand appliance repair service. Same-day washing machine, fridge, AC, microwave, dishwasher & water dispenser repair across 10+ cities. Certified technicians, genuine parts, warranty. Call now."],
         ["Word count target", "1,200 - 1,500 words across all sections"],
-        ["H1", "Same-Day Appliance Repair Across the Jammu region — Certified Technicians You Can Trust"],
+        ["H1", "Same-Day Appliance Repair Across the Jammu region - Certified Technicians You Can Trust"],
         ["Required sections", "Hero (headline + CTA + trust badges), Trust stats strip, Services grid (6 cards), How We Work (3 steps), Locations covered (8 city chips), Featured testimonials (3), FAQ teaser (6 questions), Footer CTA"],
         ["CTA strategy", "Primary CTA \"Book a Repair\" in hero and sticky header; secondary CTA \"WhatsApp Us\" sticky bottom-right on mobile; tertiary CTA \"Call Now\" phone link prominent on mobile"],
         ["Internal linking", "Service cards → service pages; city chips → location pages; testimonials → reviews page; FAQ teaser → FAQ page"],
@@ -627,16 +627,16 @@ story.append(std_table(
 story.append(Spacer(1, 10))
 
 # Washing Machine Repair brief
-story.append(h2("Brief 2 — Washing Machine Repair Service Page"))
+story.append(h2("Brief 2 - Washing Machine Repair Service Page"))
 story.append(std_table(
     [
         ["Element", "Specification"],
         ["Primary keyword", "washing machine repair Jammu region"],
         ["Secondary keywords", "washing machine service Jammu city, washing machine not spinning, Samsung washing machine repair, LG washing machine technician, washing machine error code"],
-        ["Title tag", "Washing Machine Repair in the Jammu region — Same-Day Service for All Brands | FixCare"],
+        ["Title tag", "Washing Machine Repair in the Jammu region - Same-Day Service for All Brands | FixCare"],
         ["Meta description", "Expert washing machine repair across the Jammu region. Same-day service for Samsung, LG, Whirlpool, IFB, Bosch & more. Fixes for not spinning, not draining, error codes, leaking. Certified technicians, genuine parts, warranty. Book now."],
         ["Word count target", "600 - 800 words"],
-        ["H1", "Washing Machine Repair in the Jammu region — Same-Day Service for Every Brand & Problem"],
+        ["H1", "Washing Machine Repair in the Jammu region - Same-Day Service for Every Brand & Problem"],
         ["Required sections", "Intro (problem + solution), Common problems we fix (6-8 items), Brands we service, Our repair process (3 steps), Why choose professional repair (benefits), Warranty information, Service areas, Customer testimonial (1), CTA, FAQ (5 questions)"],
         ["CTA", "Book a Washing Machine Repair (primary button) + WhatsApp Chat (secondary)"],
         ["Internal linking", "Brands → individual brand pages (if exists), Service areas → 8 location pages, Related services → Refrigerator/AC/Dishwasher pages"],
@@ -647,16 +647,16 @@ story.append(std_table(
 story.append(Spacer(1, 10))
 
 # Refrigerator Repair brief
-story.append(h2("Brief 3 — Refrigerator Repair Service Page"))
+story.append(h2("Brief 3 - Refrigerator Repair Service Page"))
 story.append(std_table(
     [
         ["Element", "Specification"],
         ["Primary keyword", "refrigerator repair Jammu region"],
         ["Secondary keywords", "fridge not cooling, refrigerator service Jammu city, LG refrigerator technician, fridge leaking water, freezer not freezing"],
-        ["Title tag", "Refrigerator Repair in the Jammu region — Fridge Not Cooling? We Fix It Today | FixCare"],
-        ["Meta description", "Same-day refrigerator repair in the Jammu region. Fixes for not cooling, leaking, freezing issues, compressor problems. All brands serviced — Samsung, LG, Whirlpool, Godrej, Haier. Genuine parts, warranty. Book now."],
+        ["Title tag", "Refrigerator Repair in the Jammu region - Fridge Not Cooling? We Fix It Today | FixCare"],
+        ["Meta description", "Same-day refrigerator repair in the Jammu region. Fixes for not cooling, leaking, freezing issues, compressor problems. All brands serviced - Samsung, LG, Whirlpool, Godrej, Haier. Genuine parts, warranty. Book now."],
         ["Word count target", "600 - 800 words"],
-        ["H1", "Refrigerator Repair in the Jammu region — Same-Day Fixes for Cooling, Leaking & Freezer Issues"],
+        ["H1", "Refrigerator Repair in the Jammu region - Same-Day Fixes for Cooling, Leaking & Freezer Issues"],
         ["Required sections", "Intro, Common fridge problems (not cooling, leaking, over-freezing, compressor, thermostat, defrost), Brands we service, Repair process, Why professional service matters (food safety angle), Warranty, Service areas, Testimonial, CTA, FAQ"],
         ["CTA", "Book a Refrigerator Repair (primary) + WhatsApp (secondary)"],
         ["Schema markup", "Service, FAQ, BreadcrumbList"],
@@ -666,16 +666,16 @@ story.append(std_table(
 story.append(Spacer(1, 10))
 
 # AC Repair brief
-story.append(h2("Brief 4 — Air Conditioner Repair Service Page"))
+story.append(h2("Brief 4 - Air Conditioner Repair Service Page"))
 story.append(std_table(
     [
         ["Element", "Specification"],
         ["Primary keyword", "AC repair Jammu region, AC service Jammu city"],
         ["Secondary keywords", "AC gas refill, AC not cooling, AC installation, split AC service, Voltas AC repair, LG AC technician"],
-        ["Title tag", "AC Repair & Service in the Jammu region — Gas Refill, Installation, All Brands | FixCare"],
-        ["Meta description", "Same-day AC repair across the Jammu region. Gas refill, not cooling fixes, installation, annual maintenance. All brands — Voltas, LG, Samsung, Daikin, Hitachi. Certified technicians, genuine parts. Book now."],
+        ["Title tag", "AC Repair & Service in the Jammu region - Gas Refill, Installation, All Brands | FixCare"],
+        ["Meta description", "Same-day AC repair across the Jammu region. Gas refill, not cooling fixes, installation, annual maintenance. All brands - Voltas, LG, Samsung, Daikin, Hitachi. Certified technicians, genuine parts. Book now."],
         ["Word count target", "600 - 800 words"],
-        ["H1", "AC Repair & Service in the Jammu region — Gas Refill, Installations & Cooling Fixes"],
+        ["H1", "AC Repair & Service in the Jammu region - Gas Refill, Installations & Cooling Fixes"],
         ["Required sections", "Intro (Jammu summer angle), Common AC problems (not cooling, low cooling, gas refill, water leakage, noise, remote not working), Services offered (repair, gas refill, installation, AMC), Brands, Process, Why choose us (certified, genuine gas, warranty), Service areas, Testimonial, CTA, FAQ"],
         ["CTA", "Book an AC Repair / Book Free Site Visit (primary) + WhatsApp (secondary)"],
         ["Schema markup", "Service, FAQ, BreadcrumbList"],
@@ -685,21 +685,21 @@ story.append(std_table(
 story.append(Spacer(1, 10))
 
 # Jammu City location brief
-story.append(h2("Brief 5 — Jammu City Location Page"))
+story.append(h2("Brief 5 - Jammu City Location Page"))
 story.append(std_table(
     [
         ["Element", "Specification"],
         ["Primary keyword", "appliance repair Jammu city"],
         ["Secondary keywords", "washing machine repair Raghunath Bazar, AC repair Nanak Nagar, refrigerator repair Gandhinagar, microwave repair Jammu city"],
-        ["Title tag", "Appliance Repair in Jammu city — Same-Day Service Across All Localities | FixCare"],
+        ["Title tag", "Appliance Repair in Jammu city - Same-Day Service Across All Localities | FixCare"],
         ["Meta description", "Trusted appliance repair service in Jammu City covering Raghunath Bazar, Nanak Nagar, Gandhinagar, Talab Tillo, Bakshi Nagar, Janipur. Same-day washing machine, fridge, AC & microwave repair. Certified technicians. Book now."],
         ["Word count target", "350 - 450 words"],
-        ["H1", "Appliance Repair in Jammu city — Same-Day Service Across All Localities"],
+        ["H1", "Appliance Repair in Jammu city - Same-Day Service Across All Localities"],
         ["Required sections", "Local intro (mention Jammu context, Tawi river, Raghunath Bazar), Neighborhoods/landmarks we cover (8-10 named areas), Services offered (list of 6 with links to service pages), Why Jammu customers choose FixCare (local trust angle), Customer testimonial (1 Jammu customer), CTA, Embedded Google Map, FAQ (3 location-specific questions)"],
         ["CTA", "Book a Repair in Jammu city (primary) + WhatsApp + Call Jammu team"],
         ["Internal linking", "Service links → 6 service pages, Other location pages (cross-link), Contact page"],
         ["Schema markup", "LocalBusiness schema with Jammu City geo-coordinates, BreadcrumbList, FAQPage"],
-        ["Unique content rule", "Must be 100% unique — no copy-paste from other location pages. Local landmarks and neighborhood names must be specific to Jammu City."],
+        ["Unique content rule", "Must be 100% unique - no copy-paste from other location pages. Local landmarks and neighborhood names must be specific to Jammu City."],
     ],
     col_ratios=[0.25, 0.75]
 ))
@@ -707,9 +707,9 @@ story.append(std_table(
 story.append(PageBreak())
 
 # ============== SECTION 7: TECH STACK ==============
-story.append(h1("Phase 4.1 — Technology Stack Recommendation"))
+story.append(h1("Phase 4.1 - Technology Stack Recommendation"))
 story.append(p(
-    "The choice of technology stack determines the long-term cost, ease of content updates, SEO flexibility, and the available pool of developers who can maintain the site. For FixCare Service Center — a growing local service business with non-technical owners — the recommended stack is WordPress with the GeneratePress theme and the Rank Math SEO plugin. This combination offers the best balance of SEO capability, content management ease, and total cost of ownership."
+    "The choice of technology stack determines the long-term cost, ease of content updates, SEO flexibility, and the available pool of developers who can maintain the site. For FixCare Service Center - a growing local service business with non-technical owners - the recommended stack is WordPress with the GeneratePress theme and the Rank Math SEO plugin. This combination offers the best balance of SEO capability, content management ease, and total cost of ownership."
 ))
 
 story.append(h2("Stack Comparison"))
@@ -717,14 +717,14 @@ story.append(std_table(
     [
         ["Criterion", "WordPress + GeneratePress", "Webflow", "Next.js (custom)"],
         ["SEO capability", "Excellent (Rank Math/Yoast; full control over schema, meta, sitemap)", "Very good (limited schema control without code)", "Excellent (full programmatic control)"],
-        ["Ease of content updates", "Excellent — visual editor, content team can update without code", "Excellent — visual designer-friendly", "Poor — requires developer for content changes"],
+        ["Ease of content updates", "Excellent - visual editor, content team can update without code", "Excellent - visual designer-friendly", "Poor - requires developer for content changes"],
         ["Cost (year 1)", "₹15,000-25,000 (hosting + premium theme + plugins)", "₹25,000-40,000/yr (CMS plan)", "₹80,000+ (custom development)"],
         ["Cost (ongoing)", "₹8,000-15,000/yr hosting", "₹25,000-40,000/yr", "₹0 software + dev maintenance cost"],
         ["Developer availability in India", "Very high", "Low", "Medium"],
-        ["Booking system integration", "Mature plugins (WPForms, Amelia, BirchPress)", "Limited — Zapier-based", "Custom build required"],
+        ["Booking system integration", "Mature plugins (WPForms, Amelia, BirchPress)", "Limited - Zapier-based", "Custom build required"],
         ["Performance (Core Web Vitals)", "Good with caching plugins", "Excellent", "Excellent"],
-        ["Multi-page local SEO scale", "Excellent — easy to clone page templates", "Good", "Excellent but requires code"],
-        ["Recommendation for FixCare", "RECOMMENDED — best balance", "Alternative for design-led teams", "Overkill for current scope"],
+        ["Multi-page local SEO scale", "Excellent - easy to clone page templates", "Good", "Excellent but requires code"],
+        ["Recommendation for FixCare", "RECOMMENDED - best balance", "Alternative for design-led teams", "Overkill for current scope"],
     ],
     col_ratios=[0.22, 0.26, 0.26, 0.26]
 ))
@@ -751,7 +751,7 @@ story.append(std_table(
 story.append(PageBreak())
 
 # ============== SECTION 8: TECHNICAL SEO ==============
-story.append(h1("Phase 4.2 — Technical SEO Configuration"))
+story.append(h1("Phase 4.2 - Technical SEO Configuration"))
 story.append(p(
     "Technical SEO is the foundation that allows content to rank. Even the best-written page will fail to rank if search engines cannot crawl it, understand it, or render it properly. This section provides the complete technical SEO configuration for the new FixCare Service Center website, including on-page rules, schema markup, sitemap and robots.txt templates, redirect strategy, and performance optimization. All code samples referenced here are provided as separate files in the /code-samples/ folder of this deliverable."
 ))
@@ -763,7 +763,7 @@ story.append(p(
 story.append(std_table(
     [
         ["Element", "Rule", "Example"],
-        ["Title tag length", "50-60 characters", "\"Washing Machine Repair in the Jammu region — Same-Day Service | FixCare\" (54 chars)"],
+        ["Title tag length", "50-60 characters", "\"Washing Machine Repair in the Jammu region - Same-Day Service | FixCare\" (54 chars)"],
         ["Meta description length", "140-160 characters", "See content brief examples"],
         ["H1 per page", "Exactly one H1, contains primary keyword", "H1: \"Washing Machine Repair in the Jammu region...\""],
         ["H2-H3 hierarchy", "Logical nesting; H2 for sections, H3 for sub-sections", "Never skip levels (H2 → H4 is forbidden)"],
@@ -780,7 +780,7 @@ story.append(std_table(
 story.append(Spacer(1, 14))
 story.append(h2("Schema Markup"))
 story.append(p(
-    "Three schema types are required across the new website. The complete JSON-LD code for each is provided as separate files in /code-samples/ — this section explains what each schema does and where it should be deployed."
+    "Three schema types are required across the new website. The complete JSON-LD code for each is provided as separate files in /code-samples/ - this section explains what each schema does and where it should be deployed."
 ))
 story.append(std_table(
     [
@@ -801,7 +801,7 @@ story.append(p(
 story.append(Spacer(1, 12))
 story.append(h2("Sitemap & Robots.txt"))
 story.append(p(
-    "WordPress with Rank Math automatically generates a dynamic sitemap at /sitemap_index.xml. The sample sitemap.xml file in /code-samples/ is a static reference for what the sitemap should contain — useful for custom platforms or for verifying the Rank Math output. The robots.txt file in /code-samples/ blocks WordPress admin and plugin folders, allows the rest of the site, and points to the sitemap URL."
+    "WordPress with Rank Math automatically generates a dynamic sitemap at /sitemap_index.xml. The sample sitemap.xml file in /code-samples/ is a static reference for what the sitemap should contain - useful for custom platforms or for verifying the Rank Math output. The robots.txt file in /code-samples/ blocks WordPress admin and plugin folders, allows the rest of the site, and points to the sitemap URL."
 ))
 
 story.append(Spacer(1, 12))
@@ -842,7 +842,7 @@ story.append(std_table(
 story.append(PageBreak())
 
 # ============== SECTION 9: KEY FUNCTIONALITIES ==============
-story.append(h1("Phase 4.3 — Key Functionalities"))
+story.append(h1("Phase 4.3 - Key Functionalities"))
 story.append(p(
     "Beyond content and SEO, the new website must function as a lead generation tool. This section specifies four critical functional features: the online booking system, the WhatsApp live chat integration, the pincode/service-area checker, and the customer reviews management workflow. Each feature is described in terms of user flow, integration requirements, and developer reference."
 ))
@@ -902,7 +902,7 @@ story.append(std_table(
 story.append(PageBreak())
 
 # ============== SECTION 10: TIMELINE ==============
-story.append(h1("Phase 5.1 — Implementation Timeline"))
+story.append(h1("Phase 5.1 - Implementation Timeline"))
 story.append(p(
     "The complete overhaul can be delivered in 15 working days, with a 15-day post-launch monitoring and stabilization period. Content creation runs in parallel with development from day 4 to maximize throughput. The table below is the master schedule; the developer and content team should treat this as the working plan, with daily check-ins during the build phase."
 ))
@@ -945,7 +945,7 @@ story.append(std_table(
 story.append(PageBreak())
 
 # ============== SECTION 11: BUDGET ==============
-story.append(h1("Phase 5.2 — Budget Estimation"))
+story.append(h1("Phase 5.2 - Budget Estimation"))
 story.append(p(
     "The budget is split into one-time project costs and annual recurring costs. All figures are in Indian Rupees (INR) with USD equivalents shown for international stakeholders (exchange rate ₹83 ≈ $1). Costs assume a freelance development team and are indicative; agency rates may be 50-100% higher. Hosting recommendations assume shared/managed WordPress hosting suitable for a small business site."
 ))
@@ -994,7 +994,7 @@ story.append(callout_box(
 story.append(PageBreak())
 
 # ============== SECTION 12: POST-LAUNCH STRATEGY ==============
-story.append(h1("Phase 5.3 — Post-Launch Strategy & Next Steps"))
+story.append(h1("Phase 5.3 - Post-Launch Strategy & Next Steps"))
 story.append(p(
     "Launch is the starting line, not the finish line. The new website will reach its full potential only with a sustained 6-12 month post-launch program covering Google Business Profile optimization, review generation, content marketing, local citation building, and quarterly SEO audits. This section provides the 30/60/90 day roadmap and the long-term playbook."
 ))
@@ -1025,7 +1025,7 @@ story.append(p(
 
 story.append(h3("2. Customer Review Generation"))
 story.append(p(
-    "Reviews are a flywheel: more reviews → higher ranking → more customers → more reviews. The workflow is: (1) after every completed service, the technician enters the customer into HubSpot CRM with phone and email, (2) 24 hours later an automated SMS sends a personalized review request with the GBP review link, (3) 3 days later a follow-up email is sent if no review has been left, (4) all reviews — positive and negative — are responded to within 24 hours. Target: 4-6 new reviews per month. Reply template: \"Thank you [customer name] for trusting FixCare with your [appliance]. We're glad our technician [name] could help. Please consider leaving a Google review — it takes 30 seconds and helps other Jammu families find reliable service. [link]\""
+    "Reviews are a flywheel: more reviews → higher ranking → more customers → more reviews. The workflow is: (1) after every completed service, the technician enters the customer into HubSpot CRM with phone and email, (2) 24 hours later an automated SMS sends a personalized review request with the GBP review link, (3) 3 days later a follow-up email is sent if no review has been left, (4) all reviews - positive and negative - are responded to within 24 hours. Target: 4-6 new reviews per month. Reply template: \"Thank you [customer name] for trusting FixCare with your [appliance]. We're glad our technician [name] could help. Please consider leaving a Google review - it takes 30 seconds and helps other Jammu families find reliable service. [link]\""
 ))
 
 story.append(h3("3. Content Marketing Cadence"))
@@ -1035,7 +1035,7 @@ story.append(p(
 
 story.append(h3("4. Local Citations & Link Building"))
 story.append(p(
-    "Submit FixCare to all major Indian business directories: JustDial, IndiaMART, Sulekha, TradeIndia, Yellow Pages India, and Jammu-specific portals (Jammu portals, Jammu Horizon business directory). Ensure NAP (Name, Address, Phone) is 100% consistent across all citations — even small variations (\"Jammu city, J&K\" vs \"Jammu, Jammu region\") damage local SEO. Seek partnerships with local real estate agents, interior designers, and appliance retailers for mutual link building. Sponsor a local event or sports team for a high-quality backlink."
+    "Submit FixCare to all major Indian business directories: JustDial, IndiaMART, Sulekha, TradeIndia, Yellow Pages India, and Jammu-specific portals (Jammu portals, Jammu Horizon business directory). Ensure NAP (Name, Address, Phone) is 100% consistent across all citations - even small variations (\"Jammu city, J&K\" vs \"Jammu, Jammu region\") damage local SEO. Seek partnerships with local real estate agents, interior designers, and appliance retailers for mutual link building. Sponsor a local event or sports team for a high-quality backlink."
 ))
 
 story.append(h3("5. Quarterly SEO Audit"))
@@ -1051,7 +1051,7 @@ story.append(p(
 story.append(PageBreak())
 
 # ============== APPENDIX ==============
-story.append(h1("Appendix A — Deliverables Index"))
+story.append(h1("Appendix A - Deliverables Index"))
 story.append(p(
     "This strategy report is one of more than 30 deliverable files in this project package. The full set is organized into the folder structure below. Each file is named descriptively and contains ready-to-use content for the developer and content team."
 ))
@@ -1060,7 +1060,7 @@ story.append(h2("Strategy Report (this document)"))
 story.append(std_table(
     [
         ["File", "Description"],
-        ["FixCare-Home-Solutions-Website-Overhaul-Strategy.pdf", "This complete strategy report — Phases 1, 2, 4, 5 + Appendix"],
+        ["FixCare-Home-Solutions-Website-Overhaul-Strategy.pdf", "This complete strategy report - Phases 1, 2, 4, 5 + Appendix"],
     ],
     col_ratios=[0.40, 0.60]
 ))
@@ -1069,7 +1069,7 @@ story.append(h2("Website Content Files (Markdown)"))
 story.append(std_table(
     [
         ["Folder / File", "Description"],
-        ["/content/homepage/homepage.md", "Homepage hero, services grid, process, testimonials, FAQ — ready to paste into WordPress"],
+        ["/content/homepage/homepage.md", "Homepage hero, services grid, process, testimonials, FAQ - ready to paste into WordPress"],
         ["/content/service-pages/washing-machine-repair.md", "Full 600+ word service page with meta, H1, body, FAQ, CTA"],
         ["/content/service-pages/refrigerator-repair.md", "Full refrigerator repair service page"],
         ["/content/service-pages/air-conditioner-repair.md", "Full AC repair service page"],
@@ -1127,7 +1127,7 @@ story.append(p(
     "Hand this entire package to your developer with the following instruction: \"Build the new FixCare Service Center website using the Strategy PDF as the master brief, populate each page with the content from the matching .md file in /content/, and deploy the technical configurations from the /code-samples/ files. The 30-day timeline in Section 10 of the PDF is the project schedule.\""
 ))
 story.append(p(
-    "For the business owner: read the Executive Summary (Section 1) and Phase 5.3 Post-Launch Strategy (Section 12) carefully — these two sections explain what you are buying and what you need to do after launch to make the investment pay off. The technical sections can be skimmed or delegated to your developer."
+    "For the business owner: read the Executive Summary (Section 1) and Phase 5.3 Post-Launch Strategy (Section 12) carefully - these two sections explain what you are buying and what you need to do after launch to make the investment pay off. The technical sections can be skimmed or delegated to your developer."
 ))
 
 # Build the PDF
@@ -1139,7 +1139,7 @@ doc = TocDocTemplate(
     rightMargin=0.75*inch,
     topMargin=0.75*inch,
     bottomMargin=0.85*inch,
-    title="FixCare Service Center — Website Overhaul Strategy",
+    title="FixCare Service Center - Website Overhaul Strategy",
     author="Z.ai Digital Strategy Advisory",
     subject="Complete website overhaul strategy for FixCare Service Center Jammu region",
     creator="Z.ai"

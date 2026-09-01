@@ -11,8 +11,8 @@ OUTPUT_DIR = "/home/z/my-project/public/icons"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Brand colors
-NAVY = (15, 37, 64)        # #0F2540 — primary
-TEAL = (14, 124, 102)      # #0E7C66 — accent
+NAVY = (15, 37, 64)        # #0F2540 - primary
+TEAL = (14, 124, 102)      # #0E7C66 - accent
 WHITE = (255, 255, 255)
 LIGHT_TEAL = (45, 168, 144)
 
@@ -48,7 +48,7 @@ def draw_fixcare_icon(size: int, maskable: bool = False) -> Image.Image:
             fill=TEAL,
         )
 
-    # 3. Draw the letter "F" — bold, centered
+    # 3. Draw the letter "F" - bold, centered
     # Build an "F" shape using rectangles for crisp pixel-perfect rendering at any size
     f_left = int(size * 0.32)
     f_right = int(size * 0.68)

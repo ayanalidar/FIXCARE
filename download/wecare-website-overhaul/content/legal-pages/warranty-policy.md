@@ -1,5 +1,5 @@
 ---
-title: "Warranty & Service Policy — FixCare Service Center"
+title: "Warranty & Service Policy - FixCare Service Center"
 meta_description: "Warranty policy for appliance repairs completed by FixCare Service Center across Jammu region. Warranty periods, what is covered, exclusions, claim process, and refund terms."
 slug: /warranty-policy/
 schema: []

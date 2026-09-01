@@ -10,7 +10,7 @@ import { useEffect } from "react";
  */
 export function ServiceWorkerRegister() {
   useEffect(() => {
-    // Skip SW registration in dev mode — Next.js HMR conflicts with SW caching
+    // Skip SW registration in dev mode - Next.js HMR conflicts with SW caching
     if (process.env.NODE_ENV !== "production") return;
 
     if (typeof window === "undefined") return;
@@ -32,7 +32,7 @@ export function ServiceWorkerRegister() {
               newWorker.state === "installed" &&
               navigator.serviceWorker.controller
             ) {
-              // New version ready — notify the app to show "Refresh" toast
+              // New version ready - notify the app to show "Refresh" toast
               window.dispatchEvent(
                 new CustomEvent("sw-update-available", {
                   detail: { version: "v1" },

@@ -14,7 +14,7 @@
   "paymentAccepted": "Cash, UPI, Credit Card, Debit Card, Bank Transfer",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "[Street Address — fill in]",
+    "streetAddress": "[Street Address - fill in]",
     "addressLocality": "Srinagar",
     "addressRegion": "Jammu & Kashmir",
     "postalCode": "190001",

@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 import { PageHero } from "@/components/site/page-hero";
 
 export const metadata: Metadata = {
-  title: "You're Offline — FixCare Service Center",
+  title: "You're Offline - FixCare Service Center",
   description: "You're offline. Our website is cached for offline browsing, but you can still call or WhatsApp us at +91-70515-87802.",
   robots: { index: false, follow: false },
 };
@@ -15,7 +15,7 @@ export default function OfflinePage() {
       <PageHero
         eyebrow="Connection Status"
         title="You're Offline"
-        subtitle="You don't seem to have an active internet connection right now. You can still reach us by phone or WhatsApp — and the cached pages of this site will keep working."
+        subtitle="You don't seem to have an active internet connection right now. You can still reach us by phone or WhatsApp - and the cached pages of this site will keep working."
       />
 
       <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
@@ -28,7 +28,7 @@ export default function OfflinePage() {
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden="true" />
               <div>
-                <p className="font-medium text-primary">Call us — 24/7, even offline</p>
+                <p className="font-medium text-primary">Call us - 24/7, even offline</p>
                 <a
                   href={SITE.phoneHref}
                   className="text-accent hover:text-primary"

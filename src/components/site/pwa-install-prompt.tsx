@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 /**
- * PWA Install Prompt — captures the beforeinstallprompt event and shows a
+ * PWA Install Prompt - captures the beforeinstallprompt event and shows a
  * custom "Add FixCare to your phone" banner when the user has been on the
  * site for ~30 seconds (or clicks an "Install app" button).
  *
@@ -16,7 +16,7 @@ import { Card, CardContent } from "@/components/ui/card";
  *  - display-mode: standalone → app is already installed (hide banner entirely)
  *
  * Persistence:
- *  - "fixcare-pwa-install-dismissed" in localStorage — user clicked "Not now"
+ *  - "fixcare-pwa-install-dismissed" in localStorage - user clicked "Not now"
  *  - Dismissed banner re-appears after 14 days
  */
 const DISMISS_KEY = "fixcare-pwa-install-dismissed";
@@ -83,7 +83,7 @@ export function PWAInstallPrompt() {
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) {
-      // iOS Safari doesn't fire beforeinstallprompt — show iOS instructions
+      // iOS Safari doesn't fire beforeinstallprompt - show iOS instructions
       setShowBanner(false);
       return;
     }
@@ -93,7 +93,7 @@ export function PWAInstallPrompt() {
       setShowBanner(false);
       setDeferredPrompt(null);
     } else {
-      // User declined — dismiss for 14 days
+      // User declined - dismiss for 14 days
       dismiss();
     }
   };
@@ -128,7 +128,7 @@ export function PWAInstallPrompt() {
                 Install FixCare App
               </h3>
               <p className="mt-1 text-xs text-muted-foreground">
-                Get instant access to booking, service details, and offline support — right from your home screen.
+                Get instant access to booking, service details, and offline support - right from your home screen.
               </p>
               <div className="mt-3 flex items-center gap-2">
                 <Button

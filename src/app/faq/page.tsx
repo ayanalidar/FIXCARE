@@ -12,9 +12,9 @@ import { MessageCircle, Phone } from "lucide-react";
 const slug = "faq";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions — Appliance Repair in the Jammu Region",
+  title: "Frequently Asked Questions - Appliance Repair in the Jammu Region",
   description:
-    "Answers to 15+ common questions about appliance repair in the Jammu region — service timing, visit fees, certified technicians, genuine parts, warranty, pricing, and booking with FixCare Service Center.",
+    "Answers to 15+ common questions about appliance repair in the Jammu region - service timing, visit fees, certified technicians, genuine parts, warranty, pricing, and booking with FixCare Service Center.",
   keywords: [
     "appliance repair FAQ Jammu",
     "washing machine repair questions",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "Frequently Asked Questions — FixCare Service Center",
+    title: "Frequently Asked Questions - FixCare Service Center",
     description:
       "Answers to 15+ common questions about appliance repair in the Jammu region.",
     url: `${SITE.domain}/faq`,
@@ -93,14 +93,14 @@ export default function FAQPage() {
     <div>
       <PageHero
         eyebrow="FixCare · Help Center"
-        title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
+        title={frontmatter.title.replace(/\s+-\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
 
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-base leading-relaxed text-muted-foreground">
           We&apos;ve answered the questions our customers across the Jammu region
-          ask us most often — about how fast we reach, what we charge, the parts
+          ask us most often - about how fast we reach, what we charge, the parts
           we use, our warranty, and how to book a repair. If your question isn&apos;t
           covered below, just call or WhatsApp us and we&apos;ll answer it
           directly.
@@ -124,7 +124,7 @@ export default function FAQPage() {
                 Still have questions?
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Our team is happy to answer directly — 24/7, including holidays.
+                Our team is happy to answer directly - 24/7, including holidays.
               </p>
             </div>
             <div className="flex flex-col gap-2 sm:flex-row">
@@ -151,7 +151,7 @@ export default function FAQPage() {
 
       <CTASection
         title="Ready to Get Your Appliance Fixed?"
-        subtitle="If the answers above have helped you decide, the next step is simple — book a repair now and a certified FixCare technician will be at your door the same day in Jammu city, or the next day across the rest of the Jammu region."
+        subtitle="If the answers above have helped you decide, the next step is simple - book a repair now and a certified FixCare technician will be at your door the same day in Jammu city, or the next day across the rest of the Jammu region."
       />
 
       <script

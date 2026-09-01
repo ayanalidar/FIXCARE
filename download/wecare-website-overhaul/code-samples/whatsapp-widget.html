@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WhatsApp Widget — FixCare Service Center</title>
+<title>WhatsApp Widget - FixCare Service Center</title>
 <!--
   ──────────────────────────────────────────────────────────────────────
-  WhatsApp floating chat widget — drop-in snippet for FixCare Service Center.
+  WhatsApp floating chat widget - drop-in snippet for FixCare Service Center.
   Deploy: paste this entire block just before </body> on every page
   (or use the "Click to Chat" WordPress plugin and configure with the same
   message template below).
@@ -15,7 +15,7 @@
   ──────────────────────────────────────────────────────────────────────
 -->
 <style>
-  /* Floating WhatsApp button — bottom-right on desktop, sticky bottom-right on mobile */
+  /* Floating WhatsApp button - bottom-right on desktop, sticky bottom-right on mobile */
   .wa-float {
     position: fixed;
     bottom: 20px;
@@ -39,7 +39,7 @@
   }
   .wa-float svg { width: 32px; height: 32px; fill: #fff; }
 
-  /* Pulse ring — draws attention on first page view */
+  /* Pulse ring - draws attention on first page view */
   .wa-float::before {
     content: '';
     position: absolute;
@@ -89,7 +89,7 @@
   @media (max-width: 768px) {
     .wa-float { width: 54px; height: 54px; bottom: 16px; right: 16px; }
     .wa-float svg { width: 28px; height: 28px; }
-    .wa-label { display: none; } /* hide tooltip on mobile — button is enough */
+    .wa-label { display: none; } /* hide tooltip on mobile - button is enough */
   }
 </style>
 </head>
@@ -98,7 +98,7 @@
   <!-- ────────────────────────────────────────────────────────────────────
        WHATSAPP FLOATING BUTTON
        Replace PHONE_NUMBER below with your actual WhatsApp Business number
-       (international format, no + or spaces — e.g. 919XXXXXXXXX)
+       (international format, no + or spaces - e.g. 919XXXXXXXXX)
   ──────────────────────────────────────────────────────────────────── -->
   <a id="wa-float" class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -109,7 +109,7 @@
   <!-- Tooltip label (desktop only) -->
   <div id="wa-label" class="wa-label">
     <strong>Need help with an appliance?</strong><br>
-    Chat with us on WhatsApp — usually replies in 5 mins.
+    Chat with us on WhatsApp - usually replies in 5 mins.
   </div>
 
 <script>

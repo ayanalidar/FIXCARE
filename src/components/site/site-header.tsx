@@ -42,7 +42,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="flex items-center gap-2 text-primary font-bold tracking-tight"
-          aria-label="FixCare Service Center — home"
+          aria-label="FixCare Service Center - home"
         >
           <span className="flex size-9 items-center justify-center rounded-lg bg-accent text-accent-foreground">
             <Wrench className="size-5" aria-hidden="true" />
@@ -138,7 +138,7 @@ export function SiteHeader() {
 
         {/* Right cluster: phone + book CTA + mobile menu */}
         <div className="flex items-center gap-1.5 sm:gap-3">
-          {/* Phone link — full number visible on xl+, icon-only on sm..xl, icon button on xs */}
+          {/* Phone link - full number visible on xl+, icon-only on sm..xl, icon button on xs */}
           <a
             href={SITE.phoneHref}
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent"
@@ -153,7 +153,7 @@ export function SiteHeader() {
             <Link href="/book-repair">Book a Repair</Link>
           </Button>
 
-          {/* Mobile menu trigger — visible below lg */}
+          {/* Mobile menu trigger - visible below lg */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button

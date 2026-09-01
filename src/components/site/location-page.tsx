@@ -52,7 +52,7 @@ function extractTestimonial(
   markdown: string
 ): { quote: string; name: string } | null {
   const m = markdown.match(
-    />\s*"([^"]+)"\s*\n>\s*—\s*\*\*([^*]+)\*\*/
+    />\s*"([^"]+)"\s*\n>\s*-\s*\*\*([^*]+)\*\*/
   );
   if (!m) return null;
   return { quote: m[1].trim(), name: m[2].trim() };
@@ -76,7 +76,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ApplianceRepair",
-    name: `FixCare Service Center — ${location.name}`,
+    name: `FixCare Service Center - ${location.name}`,
     description: frontmatter.meta_description,
     url: `${SITE.domain}/locations/${slug}`,
     telephone: "+91-70515-87802",
@@ -123,7 +123,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
     <div>
       <PageHero
         eyebrow={`FixCare Locations · ${location.name}`}
-        title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
+        title={frontmatter.title.replace(/\s+-\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
 
@@ -172,7 +172,7 @@ export function LocationPage({ location }: { location: LocationMeta }) {
             {faqs.length > 0 && (
               <div className="mt-10">
                 <h2 className="mb-4 text-2xl font-bold tracking-tight text-primary">
-                  Frequently Asked Questions — {location.name}
+                  Frequently Asked Questions - {location.name}
                 </h2>
                 <FAQAccordion items={faqs} />
               </div>

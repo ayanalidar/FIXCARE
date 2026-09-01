@@ -1,5 +1,5 @@
 ---
-title: "Terms & Conditions — FixCare Service Center"
+title: "Terms & Conditions - FixCare Service Center"
 meta_description: "Terms and conditions of service for appliance repair bookings with FixCare Service Center across Jammu region. Booking, fees, payment, warranty, liability, cancellation, and refunds."
 slug: /terms/
 schema: []
@@ -53,7 +53,7 @@ You may cancel a booking at any time before the technician is dispatched to your
 
 ## 11. Intellectual Property
 
-All content on our website — including text, graphics, logos, images, and the FixCare Service Center brand name — is the property of FixCare Service Center and is protected under applicable Indian intellectual property laws. You may not reproduce, redistribute, or use any content from our website for commercial purposes without our prior written consent.
+All content on our website - including text, graphics, logos, images, and the FixCare Service Center brand name - is the property of FixCare Service Center and is protected under applicable Indian intellectual property laws. You may not reproduce, redistribute, or use any content from our website for commercial purposes without our prior written consent.
 
 ## 12. Governing Law & Jurisdiction
 

@@ -237,7 +237,7 @@ export function BlogArticle({ slug, icon }: BlogArticleInput) {
                     Need this repair done for you?
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Reading is great — but if your appliance is acting up right
+                    Reading is great - but if your appliance is acting up right
                     now, we can have a certified technician at your door the same
                     day in Jammu city, next-day across the Jammu region.
                   </p>
@@ -296,7 +296,7 @@ export function BlogArticle({ slug, icon }: BlogArticleInput) {
 
       <CTASection
         title="Skip the Reading, Get the Repair"
-        subtitle="If your appliance is already acting up, don't wait for the problem to get worse. Book a repair now — a certified FixCare technician will be at your door the same day in Jammu city, or the next day across the rest of the Jammu region."
+        subtitle="If your appliance is already acting up, don't wait for the problem to get worse. Book a repair now - a certified FixCare technician will be at your door the same day in Jammu city, or the next day across the rest of the Jammu region."
       />
 
       <script

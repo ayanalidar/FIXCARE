@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book a Repair — FixCare Service Center (Multi-Step Form Prototype)</title>
+<title>Book a Repair - FixCare Service Center (Multi-Step Form Prototype)</title>
 <style>
   /* ── Multi-step booking form prototype (UX reference for WPForms / Gravity Forms implementation) ── */
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -144,7 +144,7 @@
           <label class="slot-radio"><input type="radio" name="slot" value="Morning (9 AM - 12 PM)" required>Morning (9 AM - 12 PM)</label>
           <label class="slot-radio"><input type="radio" name="slot" value="Afternoon (12 - 4 PM)">Afternoon (12 - 4 PM)</label>
           <label class="slot-radio"><input type="radio" name="slot" value="Evening (4 - 7 PM)">Evening (4 - 7 PM)</label>
-          <label class="slot-radio"><input type="radio" name="slot" value="Emergency (within 1 hr, Srinagar only, extra fee)">Emergency (within 1 hr — Srinagar only, extra fee)</label>
+          <label class="slot-radio"><input type="radio" name="slot" value="Emergency (within 1 hr, Srinagar only, extra fee)">Emergency (within 1 hr - Srinagar only, extra fee)</label>
         </div>
       </div>
       <div class="btn-row">
@@ -289,7 +289,7 @@
   function populateReview() {
     const f = document.getElementById('booking-form');
     document.getElementById('rv-appliance').textContent = f.appliance.value;
-    document.getElementById('rv-brand').textContent = (f.brand.value || '—') + ' ' + (f.model.value || '');
+    document.getElementById('rv-brand').textContent = (f.brand.value || '-') + ' ' + (f.model.value || '');
     document.getElementById('rv-issue').textContent = f.issue.value;
     document.getElementById('rv-slot').textContent = f.date.value + ' ' + (document.querySelector('input[name=slot]:checked')?.value || '');
     document.getElementById('rv-contact').textContent = f.name.value + ', ' + f.phone.value;

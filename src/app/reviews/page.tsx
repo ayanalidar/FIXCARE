@@ -10,7 +10,7 @@ import { SITE } from "@/lib/site";
 const slug = "reviews";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews — FixCare Service Center Jammu",
+  title: "Customer Reviews - FixCare Service Center Jammu",
   description:
     "Read verified customer reviews of FixCare Service Center across the Jammu region. 4.8-star average rating from 9 verified reviews for washing machine, fridge, AC, microwave, and dishwasher repair.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/reviews" },
   openGraph: {
-    title: "Customer Reviews — FixCare Service Center",
+    title: "Customer Reviews - FixCare Service Center",
     description:
       "4.8-star average rating from 9 verified reviews across the Jammu region.",
     url: `${SITE.domain}/reviews`,
@@ -54,14 +54,14 @@ function parseReviews(markdown: string): Review[] {
   const leaveIdx = reviewsSection.search(/^##\s*Leave a Review/im);
   const body = leaveIdx >= 0 ? reviewsSection.slice(0, leaveIdx) : reviewsSection;
 
-  // Split on H3 (### Name — Location)
+  // Split on H3 (### Name - Location)
   const parts = body.split(/^###\s+(.+)$/m);
   const reviews: Review[] = [];
   // parts[0] is text before first review, then pairs (heading, body)
   for (let i = 1; i < parts.length; i += 2) {
     const heading = parts[i].trim();
     const rest = parts[i + 1] ?? "";
-    const [name, location] = heading.split(/\s+—\s+|\s+-\s+/).map((s) => s.trim());
+    const [name, location] = heading.split(/\s+-\s+|\s+-\s+/).map((s) => s.trim());
     if (!name) continue;
 
     const serviceMatch = rest.match(/\*\*Service:\*\*\s*(.+)/);
@@ -160,7 +160,7 @@ export default function ReviewsPage() {
       <PageHero
         eyebrow="FixCare · Customer Reviews"
         title={frontmatter.title
-          .replace(/\s+—\s+.*$/, "")
+          .replace(/\s+-\s+.*$/, "")
           .replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
@@ -220,7 +220,7 @@ export default function ReviewsPage() {
         {/* Intro */}
         <p className="mt-8 text-base leading-relaxed text-muted-foreground">
           At FixCare Service Center, our reputation in the Jammu region has been
-          built one repair at a time — through polite, certified technicians who
+          built one repair at a time - through polite, certified technicians who
           arrive when promised, transparent pricing, and written warranties that
           we actually honor. Below are {reviews.length} verified reviews from
           households across the region, covering washing machines, refrigerators,

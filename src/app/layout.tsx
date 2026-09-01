@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default: "FixCare Service Center — Same-Day Appliance Repair in Jammu | 24/7 Service",
+    default: "FixCare Service Center - Same-Day Appliance Repair in Jammu | 24/7 Service",
     template: "%s | FixCare Service Center",
   },
   description:
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     shortcut: ["/icons/favicon.ico"],
   },
   openGraph: {
-    title: "FixCare Service Center — Same-Day Appliance Repair in Jammu",
+    title: "FixCare Service Center - Same-Day Appliance Repair in Jammu",
     description:
       "Jammu region's trusted multi-brand appliance repair service. Certified technicians, genuine parts, written warranty.",
     url: SITE.domain,
@@ -72,14 +72,14 @@ export const metadata: Metadata = {
         url: "/icons/og-image.png",
         width: 1200,
         height: 630,
-        alt: "FixCare Service Center — Same-Day Appliance Repair in Jammu",
+        alt: "FixCare Service Center - Same-Day Appliance Repair in Jammu",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "FixCare Service Center",
-    description: "Same-day appliance repair across the Jammu region — certified technicians, genuine parts, written warranty.",
+    description: "Same-day appliance repair across the Jammu region - certified technicians, genuine parts, written warranty.",
     images: ["/icons/og-image.png"],
   },
   alternates: { canonical: "/" },

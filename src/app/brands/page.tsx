@@ -10,7 +10,7 @@ import { SITE, BRANDS } from "@/lib/site";
 const slug = "brands-we-service";
 
 export const metadata: Metadata = {
-  title: "Brands We Service — Certified Repair for All Major Appliance Brands | FixCare",
+  title: "Brands We Service - Certified Repair for All Major Appliance Brands | FixCare",
   description:
     "FixCare Service Center services Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, and Panasonic appliances across the Jammu region. Brand-trained technicians, genuine parts, written warranty.",
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/brands" },
   openGraph: {
-    title: "Brands We Service — FixCare Service Center",
+    title: "Brands We Service - FixCare Service Center",
     description:
       "Certified repair for Samsung, LG, Whirlpool, Bosch, IFB, Godrej, Haier, Voltas, and Panasonic appliances across the Jammu region.",
     url: `${SITE.domain}/brands`,
@@ -91,7 +91,7 @@ export default function BrandsPage() {
     <div>
       <PageHero
         eyebrow="FixCare · Brand Expertise"
-        title={frontmatter.title.replace(/\s+—\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
+        title={frontmatter.title.replace(/\s+-\s+.*$/, "").replace(/\s+\|\s+.*$/, "")}
         subtitle={frontmatter.meta_description}
       />
 
@@ -156,7 +156,7 @@ export default function BrandsPage() {
               </h3>
               <p className="text-sm text-muted-foreground">
                 Every part we install is sourced directly from the brand&apos;s
-                authorized J&amp;K distributor — no duplicates, no refurbished
+                authorized J&amp;K distributor - no duplicates, no refurbished
                 parts without your explicit consent.
               </p>
             </CardContent>
@@ -207,7 +207,7 @@ export default function BrandsPage() {
 
       <CTASection
         title="Book a Repair for Any Brand"
-        subtitle="Whatever brand of appliance has stopped working in your home, our team is ready to help — usually the same day in Jammu city, and next-day across the rest of the Jammu region."
+        subtitle="Whatever brand of appliance has stopped working in your home, our team is ready to help - usually the same day in Jammu city, and next-day across the rest of the Jammu region."
       />
 
       <script
