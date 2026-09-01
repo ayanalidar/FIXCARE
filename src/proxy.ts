@@ -7,7 +7,15 @@ function sign(value: string, secret: string): string {
   return crypto.createHmac("sha256", secret).update(value).digest("hex");
 }
 
-export function middleware(req: NextRequest) {
+/**
+ * Next.js 16 Proxy (formerly middleware).
+ *
+ * Protects all /admin/* routes except /admin/login. The matcher is configured
+ * via proxy's built-in path handling — we check the path inside the function
+ * rather than using a `config.matcher` export (which is no longer allowed in
+ * proxy files).
+ */
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   // Skip non-admin routes and the login route itself
   if (!pathname.startsWith("/admin") || pathname === "/admin/login") {
@@ -39,8 +47,3 @@ export function middleware(req: NextRequest) {
   }
   return NextResponse.next();
 }
-
-export const config = {
-  runtime: "nodejs",
-  matcher: ["/admin/:path*"],
-};
